@@ -2,9 +2,21 @@
 # Copyright Mat X 2025 - All Rights Reserved
 # Create TSV from volume list of type "Archive"
 #
+# Usage:
+#   ./create_tsv.sh [optional_output_directory]
+#
+# Example:
+#   ./create_tsv.sh /private/tmp/tsv_output
+#
+# If no argument is given, it defaults to /Volumes/Backup/AW/TSV
 # Change the path in case P5 is installed elsewhere
 chatcmd="/usr/local/aw/bin/nsdchat -c"
-output_directory="/Volumes/Backup/AW/TSV"
+
+# Use provided path or default
+output_directory="${1:-/private/tmp}}"
+
+# Ensure output directory exists
+mkdir -p "$output_directory"
 
 list=$($chatcmd Volume names)
 
