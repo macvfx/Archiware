@@ -5,7 +5,7 @@
 
 # Path to nsdchat, adjust if P5 is installed elsewhere
 chatcmd="/usr/local/aw/bin/nsdchat -c"
-output_directory="/private/tmp/"
+output_directory="/private/tmp/log"
 log_file="$output_directory/change_tape_modes_$(date +'%Y%m%d_%H%M%S').log"
 dialog="/usr/local/bin/dialog"
 
