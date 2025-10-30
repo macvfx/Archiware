@@ -4,7 +4,12 @@
 #
 # Change the path in case P5 is installed elsewhere
 chatcmd="/usr/local/aw/bin/nsdchat -c"
-output_directory="/Volumes/Backup/AW/TSV"
+
+# Use provided path or default
+output_directory="${1:-/private/tmp/tsv}"
+
+# Ensure output directory exists
+mkdir -p "$output_directory"
 
 list=`$chatcmd Volume names`
 
