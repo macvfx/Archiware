@@ -5,7 +5,7 @@
 # Created by Mat X
 
 timestamp=$(date +%Y%m%d-%H%M%S)
-outfile="/private/tmp/p5-all-Jobs-ExportSelectFields-${timestamp}.csv"
+outfile="/private/tmp/p5-all-Archive-Jobs-ExportSelectFields-${timestamp}.csv"
 
 sqlite3 /usr/local/aw/config/joblog/resources.db <<EOF
 .header on
