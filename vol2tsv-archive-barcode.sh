@@ -13,7 +13,7 @@
 chatcmd="/usr/local/aw/bin/nsdchat -c"
 
 # Use provided path or default
-output_directory="${1:-/private/tmp/tsv}}"
+output_directory="${1:-/private/tmp/tsv}"
 
 # Ensure output directory exists
 mkdir -p "$output_directory"
