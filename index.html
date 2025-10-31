@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Archiware P5 Scripts — Tools & Utilities</title>
+  <meta name="description" content="Collection of Archiware P5 helper scripts (TSV/CSV export, tape mode checks, API helpers). Examples, installation, and GitHub links." />
+  <meta property="og:title" content="Archiware P5 Scripts" />
+  <meta property="og:description" content="Helper scripts and utilities for Archiware P5 — exports, tape checks, API helpers." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#60a5fa;--glass: rgba(255,255,255,0.03)}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#071028 0%, #07192e 100%);color:#e6eef7}
+    .container{max-width:1100px;margin:48px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;font-weight:700;color:#022;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .scripts-list{display:grid;gap:10px}
+    .script{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.02)}
+    .script h3{margin:0;font-size:16px}
+    .script p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .meta{margin-top:12px;color:var(--muted);font-size:13px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#022;font-weight:600;text-decoration:none}
+    .small{font-size:13px}
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+    pre{background:var(--glass);padding:12px;border-radius:8px;overflow:auto;color:#dbeafe}
+    .right-col .card + .card{margin-top:14px}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted);margin-right:8px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.right-col{order:-1}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">P5</div>
+      <div>
+        <h1>Archiware P5 Scripts</h1>
+        <p class="lead">A small toolbox of shell scripts to inspect, export and manage Archiware P5 archives — CSV/TSV exports, tape mode checks, and API helpers.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h2>What this repo contains</h2>
+          <p class="small">This collection is aimed at system administrators automating inventory and tape lifecycle tasks in Archiware P5. Each script is single-file shell (sh/bash) and includes CLI usage in the repository README.</p>
+
+          <div class="scripts-list" style="margin-top:14px">
+
+            <div class="script">
+              <h3>API access scripts</h3>
+              <p>Get the overview of recent archive jobs via the API, or check archive pool usage via the API.</p>
+              <div class="meta">Purpose: quick status & usage reporting for P5 via REST API.</div>
+            </div>
+
+            <div class="script">
+              <h3>jobs-sql2csv</h3>
+              <p>Output all system, backup, and archive jobs ever into a CSV.</p>
+            </div>
+
+            <div class="script">
+              <h3>jobs-archive-only-sql2csv</h3>
+              <p>Export only archive jobs into CSV for fast auditing.</p>
+            </div>
+
+            <div class="script">
+              <h3>volt2tsv</h3>
+              <p>Create a TSV inventory file with contents for each P5 volume.</p>
+            </div>
+
+            <div class="script">
+              <h3>volt2tsv-archive-barcode</h3>
+              <p>TSV inventory for archive volumes containing P5 volume and LTO barcode in the filename.</p>
+            </div>
+
+            <div class="script">
+              <h3>volume-archive-full2readonly</h3>
+              <p>Find archive tapes marked "Full" and change their mode to "Readonly" (automated housekeeping).</p>
+            </div>
+
+            <div class="script">
+              <h3>volume-full-vs-appendable</h3>
+              <p>Classify tapes: Full/Readonly vs Appendable and show used size in TiB.</p>
+            </div>
+
+            <div class="script">
+              <h3>volume-list</h3>
+              <p>Create a P5 volume list as CSV and save it to /private/tmp/ (original Archiware CLI example, patched to write volume and file output).</p>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <h2>Example usage</h2>
+          <p class="small">All scripts are designed to run on macOS / BSD / Linux systems with sh/bash. They expect the Archiware CLI (nsdchat) to be installed where noted.</p>
+
+          <pre><code># Example: write all archive jobs to CSV
+./jobs-archive-only-sql2csv.sh > /private/tmp/archive-jobs.csv
+
+# Example: create per-volume TSV inventory
+./volt2tsv.sh --output /private/tmp/vol-inventory.tsv
+
+# Check tapes and change full -> readonly (dry-run first!)
+./volume-archive-full2readonly.sh --dry-run
+</code></pre>
+
+          <div style="margin-top:10px">
+            <span class="tag">Single-file</span>
+            <span class="tag">Shell</span>
+            <span class="tag">macOS-friendly</span>
+            <span class="tag">Admin-tools</span>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <h2>Install & contribute</h2>
+          <ol class="small">
+            <li>Clone the repository to your admin machine.</li>
+            <li>Make scripts executable: <code>chmod +x *.sh</code></li>
+            <li>Run with <code>--help</code> or inspect the header comments for usage and options.</li>
+            <li>Contributions: open issues and PRs on GitHub. Add tests and macOS-specific fixes if needed.</li>
+          </ol>
+
+          <p class="small" style="margin-top:8px">Replace the repository URL below with your repo before publishing this site.</p>
+
+        </section>
+
+      </main>
+
+      <aside class="right-col">
+        <div class="card">
+          <h3>Repository</h3>
+          <p class="small">Hosted on GitHub — replace the link with your repo URL.</p>
+          <p style="margin-top:8px"><a class="btn" href="https://github.com/macvfx/Archiware" target="_blank" rel="noopener">View on GitHub</a></p>
+
+          <div class="meta" style="margin-top:12px">Clone: <code>git clone https://github.com/macvfx/Archiware</code></div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Quick links</h3>
+          <ul class="small" style="padding-left:18px;margin:8px 0 0">
+            <li><a href="#" style="color:var(--accent);text-decoration:none">README</a></li>
+            <li style="margin-top:6px"><a href="#" style="color:var(--accent);text-decoration:none">Usage examples</a></li>
+            <li style="margin-top:6px"><a href="#" style="color:var(--accent);text-decoration:none">License</a></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Contact</h3>
+          <p class="small">Created by Mat X (https://matx.ca) and hosted on GitHub <code>index.html</code> or open an issue on GitHub.</p>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      <div class="small">Made for Archiware P5 admins • Modify freely with attribution to the original scripts.</div>
+    </footer>
+  </div>
+</body>
+</html>
