@@ -95,7 +95,7 @@
 
         <section class="card" style="margin-top:18px">
           <h2>Example usage</h2>
-          <p class="small">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification they should run in BSD / Linux systems with sh/bash. They expect the Archiware CLI (nsdchat) to be installed where noted. Some scripts also use the open source project swiftDialog for notification with the Applescript fall back. Read all scripts before using and customize as needed. If you need help or have questions please reach out.</p>
+          <p class="small">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification these scripts should run in BSD / Linux systems with bash. They expect the Archiware CLI (nsdchat) to be installed where noted. Some scripts also use the open source project swiftDialog for notification with the Applescript fall back. Read all scripts before using and customize as needed. If you need help or have questions please reach out.</p>
 
           <pre><code># Example: write all archive jobs to CSV in /private/tmp/
 ./jobs-archive-only-sql2csv.sh 
@@ -103,8 +103,8 @@
 # Example: create per-volume TSV inventory in a custom directory
 ./vol2tsv-archive-barcode.sh /private/tmp/tsv_output
 
-# Check tapes and change full -> readonly (dry-run first!)
-./volume-archive-full2readonly.sh --dry-run
+# Check tapes and change full 
+./volume-archive-full2readonly.sh 
 </code></pre>
 
           <div style="margin-top:10px">
