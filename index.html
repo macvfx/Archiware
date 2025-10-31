@@ -44,7 +44,7 @@
     <div class="grid">
       <main>
         <section class="card">
-          <h2>What this repo contains</h2>
+          <h2 id="README">What this repo contains</h2>
           <p class="small">This collection is aimed at system administrators automating inventory and tape lifecycle tasks in Archiware P5. Each script is single-file shell (sh/bash) and includes CLI usage in the repository README.</p>
 
           <div class="scripts-list" style="margin-top:14px">
@@ -94,7 +94,7 @@
         </section>
 
         <section class="card" style="margin-top:18px">
-          <h2>Example usage</h2>
+          <h2 id="USAGE">Example usage</h2>
           <p class="small">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification these scripts should run in BSD / Linux systems with bash. They expect the Archiware CLI (nsdchat) to be installed where noted. Some scripts also use the open source project swiftDialog for notification with the Applescript fall back. Read all scripts before using and customize as needed. If you need help or have questions please reach out.</p>
 
           <pre><code># Example: write all archive jobs to CSV in /private/tmp/
@@ -142,14 +142,14 @@
         <div class="card" style="margin-top:14px">
           <h3>Quick links</h3>
           <ul class="small" style="padding-left:18px;margin:8px 0 0">
-            <li><a href="#" style="color:var(--accent);text-decoration:none">README</a></li>
-            <li style="margin-top:6px"><a href="#" style="color:var(--accent);text-decoration:none">Usage examples</a></li>
-            <li style="margin-top:6px"><a href="#" style="color:var(--accent);text-decoration:none">License</a></li>
+            <li><a href="#README" style="color:var(--accent);text-decoration:none">README</a></li>
+            <li style="margin-top:6px"><a href="#USAGE" style="color:var(--accent);text-decoration:none">Usage examples</a></li>
+            <li style="margin-top:6px"><a href="#CONTACT" style="color:var(--accent);text-decoration:none">Contact</a></li>
           </ul>
         </div>
 
         <div class="card" style="margin-top:14px">
-          <h3>Contact</h3>
+          <h3 id="CONTACT">Contact</h3>
           <p class="small">Created by Mat X and hosted on <code>GitHub</code> </p>
           <p>www:<a href="https://matx.ca">matx.ca</a></p>
         </div>
