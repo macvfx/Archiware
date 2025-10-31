@@ -97,11 +97,11 @@
           <h2>Example usage</h2>
           <p class="small">All scripts are designed to run on macOS / BSD / Linux systems with sh/bash. They expect the Archiware CLI (nsdchat) to be installed where noted.</p>
 
-          <pre><code># Example: write all archive jobs to CSV
-./jobs-archive-only-sql2csv.sh > /private/tmp/archive-jobs.csv
+          <pre><code># Example: write all archive jobs to CSV in /private/tmp/
+./jobs-archive-only-sql2csv.sh 
 
-# Example: create per-volume TSV inventory
-./volt2tsv.sh --output /private/tmp/vol-inventory.tsv
+# Example: create per-volume TSV inventory in a custom directory
+./vol2tsv-archive-barcode.sh /private/tmp/tsv_output
 
 # Check tapes and change full -> readonly (dry-run first!)
 ./volume-archive-full2readonly.sh --dry-run
