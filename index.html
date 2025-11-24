@@ -367,38 +367,23 @@
 
             <div class="scripts-grid">
                 <div class="script-card">
-                    <h3>job-archive-details</h3>
-                    <p>Report details on a provided job number including name, size, files, and date.</p>
+                    <h3>api-archive-overview</h3>
+                    <p>Get the overview of recent archive jobs via the API.</p>
                 </div>
 
                 <div class="script-card">
-                    <h3>job-restore-details</h3>
-                    <p>Report details on a restore job similar to the above.</p>
+                    <h3>api-archive-pool-usage</h3>
+                    <p>Check archive pool usage via the API.</p>
                 </div>
 
                 <div class="script-card">
-                    <h3>jobs-archive-all</h3>
-                    <p>Show all archive jobs on a P5 server, includes Job #, Date, Size and Name.</p>
+                    <h3>jobs-sql2csv</h3>
+                    <p>Show all historical system, backup and archive jobs on a P5 server.</p>
                 </div>
 
                 <div class="script-card">
                     <h3>jobs-archive-only-sql2csv</h3>
-                    <p>Take server Job index and output an Archive only CSV with: Job #, Date, Size, Name and Server Name. Perfect for consolidating multiple servers.</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>jobs-running-archive</h3>
-                    <p>List currently running jobs on a server using progress command, not index.</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>jobs-search-date</h3>
-                    <p>Search for jobs matching year, month or date value: YYYY, YYYYMM, YYYYMMDD.</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>jobs-search-name</h3>
-                    <p>Search job index for a matching search term in the job name column (case insensitive).</p>
+                    <p>Output an Archive only CSV with: Job #, Date, Size, Name.</p>
                 </div>
 
                 <div class="script-card">
@@ -418,7 +403,7 @@
 
                 <div class="script-card">
                     <h3>volume-full-vs-appendable</h3>
-                    <p>Classify tapes: Full/Readonly vs Appendable and show used size in TiB.</p>
+                    <p>Find the right tape: Full/Readonly vs Appendable and show used size in TiB.</p>
                 </div>
 
                 <div class="script-card">
@@ -442,17 +427,11 @@
             <pre><code># Example: write all archive jobs to CSV in /private/tmp/
 ./jobs-archive-only-sql2csv.sh 
 
-# Example: create per-volume TSV inventory in a custom directory
+# Example: create per-volume TSV inventory of full archive tapes with barcode in a custom directory
 ./vol2tsv-archive-barcode.sh /private/tmp/tsv_output
 
-# Example: search for jobs from October 2024
-./jobs-search-date.sh 202410
-
-# Example: find jobs with "Squamish" in the name
-./jobs-search-name.sh squamish
-
-# Example: get details on job number 12345
-./job-archive-details.sh 12345</code></pre>
+# Example: find full archive tapes and mark them as read only, displays with swiftDialog (or with osascript as a faillback) and logs to csv
+./volume-archive-full2readonly.sh</code></pre>
         </div>
     </main>
 
