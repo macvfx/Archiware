@@ -15,4 +15,4 @@ Archiware P5 scripts
 - *volume-list* Create a P5 volume list as CSV from Archiware P5 and save it to /private/tmp/ (Note: Original script form Archiware cli manual. Modified by Mat X to add volume and file output directly).
 
 ## P5 Archive Checker
-- *P5 Archive check scripts and app* are in the P5 Archive Checker repo
+- *P5 Archive check scripts and app* are in the [P5 Archive Check repo](https://github.com/macvfx/p5ArchiveCheck)
