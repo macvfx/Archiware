@@ -277,7 +277,7 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="app-badge">🍎 Native macOS Application</div>
+                        <div class="app-badge">🍎 macOS Application for Archiware P5 data management</div>
                         <h2>P5 Archive Manager</h2>
                         <p class="subtitle">Professional archive verification for Archiware P5</p>
                         <p>A native macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
@@ -358,68 +358,35 @@
                     <li>Valid P5 Archive credentials</li>
                 </ul>
             </div>
-<!-- P5 Archive Overview Section -->
-       <div class="section-header">
-           <h2 id="p5-archive-overview">P5 Archive Overview</h2>
-<p>
-A native macOS application for querying and managing Archiware P5 Archive server data with secure credential storage and historical tracking. [attached_file:2]
-</p>
+             <!-- Hero Section - P5 Archive Overview -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="app-badge">🍎 macOS Application for Archiware P5 data management</div>
+                        <h2>P5 Archive Overview</h2>
+                        <p class="subtitle">Current and historical archive queries via REST API</p>
+                        <p>A native macOS application designed to query current and recent archives via REST API in Archiware P5.</p>
+                        
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/p5ArchiveOverview" class="btn btn-primary" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5ArchiveOverview/releases" class="btn btn-secondary" target="_blank">Download Latest Release</a>
+                        </div>
+                    </div>
+                    <div class="app-preview">
+                        <div class="app-preview-inner">
+                            <strong>P5 Archive Overview v.1.4</strong><br>
+                            macOS 14.0+ (Sonoma or later)<br>
+                            <br>
+                            Multiple server support<br>
+                            View current and recent archive jobs<br>
+                            Save historical jobs to sort and export
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<h3>Requirements</h3>
-<ul>
-  <li>macOS 14.0 or later [attached_file:2]</li>
-  <li>Archiware P5 server with REST API enabled [attached_file:2]</li>
-  <li>
-    Optional: <code>jq</code> command-line tool for CSV export during queries
-    (macOS 15 sequoia includes <code>jq</code> by default)
-  </li>
-</ul>
-
-<h3>Quick Start</h3>
-<ol>
-  <li>
-    <strong>Add a Server</strong> – Click the <code>+</code> button in the sidebar, enter server alias, IP address, port (default: 8000), username, and password, then click “Add”. [attached_file:2]
-  </li>
-  <li>
-    <strong>Run a Query</strong> – Select a server from the sidebar, click “Run Query”, then view results in the table and progress in the log. [attached_file:2]
-  </li>
-  <li>
-    <strong>View History</strong> – Toggle from “Current” to “History” in the toolbar, filter by server, and export to CSV using the export button. [attached_file:2]
-  </li>
-</ol>
-
-<h3>File Locations</h3>
-<table>
-  <thead>
-    <tr>
-      <th>File Type</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Query Output (CSV/JSON)</td>
-      <td><code>~/Documents/P5ArchiveOverview/[ServerAlias]_[timestamp]/</code> [attached_file:2]</td>
-    </tr>
-    <tr>
-      <td>SQLite Database</td>
-      <td><code>~/Library/Application Support/P5ArchiveOverview/P5ArchiveHistory.sqlite</code> [attached_file:2]</td>
-    </tr>
-    <tr>
-      <td>History CSV Export</td>
-      <td><code>~/Documents/P5ArchiveOverview/ArchiveHistory_[Server]_[timestamp].csv</code> [attached_file:2]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Features</h3>
-<ul>
-  <li>Secure credentials stored in macOS Keychain. [attached_file:2]</li>
-  <li>Uses <code>curl</code> to avoid App Transport Security issues. [attached_file:2]</li>
-  <li>Automatic deduplication of historical records by server, pool, start time, finish time, and client. [attached_file:2]</li>
-  <li>CSV export for both current query results and historical data. [attached_file:2]</li>
-</ul>
-  </div>
 
             <!-- Bash Scripts Section -->
             <div class="section-header">
