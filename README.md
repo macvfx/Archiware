@@ -14,5 +14,8 @@ Archiware P5 scripts
 - **volume-full-vs-appendable** Check tapes in the jukebox and categorize them: Full/Readonly tapes vs Appendable with used size in TiB
 - *volume-list* Create a P5 volume list as CSV from Archiware P5 and save it to /private/tmp/ (Note: Original script form Archiware cli manual. Modified by Mat X to add volume and file output directly).
 
-## P5 Archive Checker
-- *P5 Archive check scripts and app* are in the [P5 Archive Check repo](https://github.com/macvfx/p5ArchiveCheck)
+## P5 Archive Manager
+- P5 Archive check scripts and the *P5 Archive Manager app* are in [P5 Archive Check](https://github.com/macvfx/p5ArchiveCheck)
+
+## P5 Archive Overview
+- The *P5 Archive Overview app* based on the archive overview REST API script is in [P5 Archive Overview]{https://github.com/macvfx/p5ArchiveOverview)
