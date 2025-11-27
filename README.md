@@ -18,4 +18,4 @@ Archiware P5 scripts
 - P5 Archive check scripts and the *P5 Archive Manager app* are in [P5 Archive Check](https://github.com/macvfx/p5ArchiveCheck)
 
 ## P5 Archive Overview
-- The *P5 Archive Overview app* based on the archive overview REST API script is in [P5 Archive Overview]{https://github.com/macvfx/p5ArchiveOverview)
+- The *P5 Archive Overview app* based on the archive overview REST API script is in [P5 Archive Overview](https://github.com/macvfx/p5ArchiveOverview)
