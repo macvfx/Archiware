@@ -29,7 +29,6 @@
             background: #24292f;
             color: #ffffff;
             padding: 20px 0;
-            margin-bottom: 40px;
         }
 
         header h1 {
@@ -37,55 +36,250 @@
             font-weight: 600;
         }
 
-        /* Hero Section - P5 Archive Manager */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Main Hero - Three Apps Showcase */
+        .main-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: white;
-            padding: 60px 0;
-            margin-bottom: 60px;
-            border-radius: 12px;
+            padding: 60px 0 40px 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+        .main-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
 
-        .hero-text h2 {
-            font-size: 2.5rem;
+        .main-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .main-hero h2 {
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
             margin-bottom: 15px;
-            opacity: 0.9;
+            background: linear-gradient(135deg, #ffffff 0%, #a8dadc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .app-badge {
+        .main-hero .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+
+        /* Three App Cards */
+        .app-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .app-card .app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .app-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .app-card .app-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .app-card .api-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
+            padding: 4px 12px;
             border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .api-badge.nsdchat {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .api-badge.rest {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .app-card .app-features {
+            margin-top: 15px;
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        .app-card a {
+            color: #a8dadc;
+            text-decoration: none;
             font-weight: 500;
+            display: inline-block;
+            margin-top: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .app-card a:hover {
+            color: #ffffff;
+        }
+
+        /* Individual App Sections */
+        .app-section {
+            padding: 50px 0;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .app-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .app-section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .app-section-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-section-icon.overview {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-section-icon.search {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-section-title h2 {
+            font-size: 2rem;
+            color: #24292f;
+            margin-bottom: 5px;
+        }
+
+        .app-section-title .api-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .api-tag.nsdchat {
+            background: #fce7f3;
+            color: #be185d;
+        }
+
+        .api-tag.rest {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .app-section-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .app-description p {
+            font-size: 1.1rem;
+            color: #57606a;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .app-info-box {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .app-info-box h4 {
+            font-size: 1rem;
+            color: #24292f;
+            margin-bottom: 15px;
+        }
+
+        .app-info-box ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: #57606a;
+        }
+
+        .app-info-box ul li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .app-info-box ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .app-info-box .version-info {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #d0d7de;
+            font-size: 0.9rem;
+            color: #57606a;
         }
 
         .buttons {
             display: flex;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .btn {
@@ -99,85 +293,75 @@
         }
 
         .btn-primary {
-            background: white;
-            color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary.overview {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .btn-primary.search {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #1a1a2e;
         }
 
         .btn-primary:hover {
-            background: #f0f0f0;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
+            background: #f6f8fa;
+            color: #24292f;
+            border: 1px solid #d0d7de;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: #eaeef2;
             transform: translateY(-2px);
         }
 
         /* Features Grid */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            margin-bottom: 40px;
+            margin-top: 30px;
         }
 
         .feature-card {
             background: #f6f8fa;
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             border: 1px solid #d0d7de;
         }
 
         .feature-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #667eea;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #24292f;
         }
 
         .feature-card p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #57606a;
         }
 
         .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        /* App Screenshot Placeholder */
-        .app-preview {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .app-preview-inner {
-            background: white;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #667eea;
-            font-size: 0.9rem;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         /* Section Headers */
         .section-header {
-            margin: 60px 0 30px 0;
+            margin: 50px 0 30px 0;
             padding-bottom: 15px;
             border-bottom: 2px solid #d0d7de;
         }
 
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #24292f;
         }
 
@@ -187,17 +371,24 @@
         }
 
         /* Scripts Section */
+        .scripts-section {
+            background: #f6f8fa;
+            padding: 50px 0;
+            margin-top: 40px;
+        }
+
         .scripts-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin-bottom: 60px;
+            margin-top: 30px;
         }
 
         .script-card {
             background: white;
             border: 1px solid #d0d7de;
             border-radius: 8px;
-            padding: 25px;
+            padding: 20px;
             transition: all 0.3s ease;
         }
 
@@ -207,55 +398,72 @@
         }
 
         .script-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             color: #24292f;
             font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
         }
 
         .script-card p {
+            font-size: 0.9rem;
             color: #57606a;
-            line-height: 1.7;
         }
 
         /* Code Block */
         pre {
-            background: #f6f8fa;
-            border: 1px solid #d0d7de;
-            border-radius: 6px;
-            padding: 16px;
+            background: #24292f;
+            border-radius: 8px;
+            padding: 20px;
             overflow-x: auto;
-            margin: 20px 0;
-            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
-            font-size: 0.9rem;
+            margin: 25px 0;
         }
 
         code {
             font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            color: #e6edf3;
         }
 
         /* Footer */
         footer {
-            background: #f6f8fa;
+            background: #24292f;
             padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid #d0d7de;
             text-align: center;
-            color: #57606a;
+            color: #8b949e;
+        }
+
+        footer a {
+            color: #a8dadc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
+        @media (max-width: 968px) {
+            .app-showcase {
                 grid-template-columns: 1fr;
             }
 
-            .hero-text h2 {
+            .app-section-content {
+                grid-template-columns: 1fr;
+            }
+
+            .main-hero h2 {
                 font-size: 2rem;
             }
 
             .buttons {
                 flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-section-header {
+                flex-direction: column;
+                text-align: center;
             }
 
             .features {
@@ -272,30 +480,48 @@
     </header>
 
     <main>
-        <!-- Hero Section - P5 Archive Manager -->
-        <section class="hero">
+        <!-- Main Hero - Three Apps Showcase -->
+        <section class="main-hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <div class="app-badge">🍎 macOS Application for Archiware P5 data management</div>
-                        <h2>P5 Archive Manager</h2>
-                        <p class="subtitle">Professional archive verification for Archiware P5</p>
-                        <p>A native macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        
-                        <div class="buttons">
-                            <a href="https://github.com/macvfx/p5ArchiveCheck" class="btn btn-primary" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveCheck/releases" class="btn btn-secondary" target="_blank">Download Latest Release</a>
+                <div class="main-hero-content">
+                    <h2>P5 Archive Tools for macOS</h2>
+                    <p class="tagline">Native applications for Archiware P5 data management and verification</p>
+                    
+                    <div class="app-showcase">
+                        <!-- P5 Archive Manager -->
+                        <div class="app-card">
+                            <div class="app-icon">🗄️</div>
+                            <h3>P5 Archive Manager</h3>
+                            <p class="app-subtitle">File verification & archive status</p>
+                            <span class="api-badge nsdchat">nsdchat CLI</span>
+                            <div class="app-features">
+                                Drag-and-drop interface to verify if files have been archived. Get detailed reports with barcodes, volume IDs, and archive dates.
+                            </div>
+                            <a href="#archive-manager">Learn more →</a>
                         </div>
-                    </div>
-                    <div class="app-preview">
-                        <div class="app-preview-inner">
-                            <strong>P5 Archive Manager v2.8</strong><br>
-                            macOS 14.6+ (Sonoma or later)<br>
-                            <br>
-                            Drag and drop interface<br>
-                            Multiple server support<br>
-                            Custom archive indexes<br>
-                            Comprehensive reporting
+
+                        <!-- P5 Archive Overview -->
+                        <div class="app-card">
+                            <div class="app-icon">📊</div>
+                            <h3>P5 Archive Overview</h3>
+                            <p class="app-subtitle">Archive jobs & pool monitoring</p>
+                            <span class="api-badge rest">REST API</span>
+                            <div class="app-features">
+                                Query current and historical archive jobs via REST API. Monitor pool usage and track archive operations over time.
+                            </div>
+                            <a href="#archive-overview">Learn more →</a>
+                        </div>
+
+                        <!-- P5 Archive Search -->
+                        <div class="app-card">
+                            <div class="app-icon">🔍</div>
+                            <h3>P5 Archive Search</h3>
+                            <p class="app-subtitle">Index inventory browser & search</p>
+                            <span class="api-badge rest">REST API</span>
+                            <div class="app-features">
+                                Browse and search P5 archive index inventory. Navigate directories, build a local database, and find archived files quickly.
+                            </div>
+                            <a href="#archive-search">Learn more →</a>
                         </div>
                     </div>
                 </div>
@@ -303,159 +529,280 @@
         </section>
 
         <div class="container">
-            <!-- Key Features -->
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>Quick Verification</h3>
-                    <p>Check if files are backed up to P5 Archive with instant drag-and-drop verification</p>
+            <!-- P5 Archive Manager Section -->
+            <section id="archive-manager" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon">🗄️</div>
+                    <div class="app-section-title">
+                        <h2>P5 Archive Manager</h2>
+                        <span class="api-tag nsdchat">Uses nsdchat CLI</span>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Detailed Reports</h3>
-                    <p>Get file size, archive date, barcodes, volume ID, and location metadata</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🖥️</div>
-                    <h3>Multiple Servers</h3>
-                    <p>Configure and switch between different P5 servers and archive indexes</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>Comprehensive Logging</h3>
-                    <p>Complete execution logs with timestamps for auditing and troubleshooting</p>
-                </div>
-            </div>
-
-            <!-- What's New -->
-            <div class="section-header">
-                <h2>Latest Features (v2.8)</h2>
-            </div>
-            
-            <div class="feature-card" style="margin-bottom: 40px;">
-                <h3>✨ Custom Archive Index Support</h3>
-                <p>Now supports querying custom P5 Archive indexes beyond the default "Default-Archive". Configure each server with its specific archive index name, or set up multiple server aliases to query different indexes at the same location.</p>
-                <br>
-                <p><strong>Key improvements:</strong></p>
-                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
-                    <li>Specify which archive index to query when checking file status</li>
-                    <li>Support for both local and remote P5 servers</li>
-                    <li>Backward compatible with "Default-Archive" as fallback</li>
-                    <li>Real-time log file monitoring during operations</li>
-                </ul>
-            </div>
-             <!-- Hero Section - P5 Archive Overview -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <div class="app-badge">🍎 macOS Application for Archiware P5 data management</div>
-                        <h2>P5 Archive Overview</h2>
-                        <p class="subtitle">Current and historical archive queries via REST API</p>
-                        <p>A native macOS application designed to query current and recent archives via REST API in Archiware P5.</p>
+                
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A native macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
+                        <p>The app leverages the Archiware <strong>nsdchat</strong> command-line interface to query archive status, making it ideal for environments where direct CLI access to the P5 server is available.</p>
+                        
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">✓</div>
+                                <h3>Quick Verification</h3>
+                                <p>Drag-and-drop to check if files are backed up</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Detailed Reports</h3>
+                                <p>File size, archive date, barcodes, volume ID</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖥️</div>
+                                <h3>Multiple Servers</h3>
+                                <p>Configure multiple P5 server connections</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📝</div>
+                                <h3>Comprehensive Logging</h3>
+                                <p>Complete execution logs with timestamps</p>
+                            </div>
+                        </div>
                         
                         <div class="buttons">
-                            <a href="https://github.com/macvfx/p5ArchiveOverview" class="btn btn-primary" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveOverview/releases" class="btn btn-secondary" target="_blank">Download Latest Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveCheck" class="btn btn-primary" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5ArchiveCheck/releases" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
-                    <div class="app-preview">
-                        <div class="app-preview-inner">
-                            <strong>P5 Archive Overview v.1.4</strong><br>
-                            macOS 14.0+ (Sonoma or later)<br>
-                            <br>
-                            Multiple server support<br>
-                            View current and recent archive jobs<br>
-                            Save historical jobs to sort and export
+                    
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Custom archive index support</li>
+                            <li>Local and remote P5 servers</li>
+                            <li>Real-time log monitoring</li>
+                            <li>CSV export functionality</li>
+                            <li>Secure keychain credential storage</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v2.8<br>
+                            <strong>Requires:</strong> macOS 14.6+<br>
+                            <strong>API:</strong> nsdchat CLI
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-
-            <!-- Bash Scripts Section -->
-            <div class="section-header">
-                <h2>P5 Archive Bash Scripts</h2>
-                <p>Collection of bash scripts for P5 Archive automation and management</p>
-            </div>
-               <div class="buttons">
-                            <a href="https://github.com/macvfx/Archiware" class="btn btn-primary" target="_blank">View Archiware scripts on GitHub</a>
+            <!-- P5 Archive Overview Section -->
+            <section id="archive-overview" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon overview">📊</div>
+                    <div class="app-section-title">
+                        <h2>P5 Archive Overview</h2>
+                        <span class="api-tag rest">Uses REST API</span>
+                    </div>
+                </div>
+                
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A native macOS application designed to query current and recent archives via the P5 REST API. Monitor archive job status, view pool usage, and maintain historical records of archive operations.</p>
+                        <p>Uses the Archiware P5 <strong>REST API</strong> endpoint <code>/rest/v1/archive/overview</code> to retrieve archive job data, making it accessible from any machine on the network without requiring CLI installation.</p>
+                        
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📈</div>
+                                <h3>Job Monitoring</h3>
+                                <p>View current and completed archive jobs</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">💾</div>
+                                <h3>Pool Usage</h3>
+                                <p>Monitor storage pool capacity and usage</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🕐</div>
+                                <h3>Historical Data</h3>
+                                <p>SQLite database for historical tracking</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📤</div>
+                                <h3>Export Options</h3>
+                                <p>JSON and CSV export functionality</p>
+                            </div>
                         </div>
-            <div class="scripts-grid">
-                <div class="script-card">
-                    <h3>api-archive-overview</h3>
-                    <p>Get the overview of recent archive jobs via the API.</p>
+                        
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/p5ArchiveOverview" class="btn btn-primary overview" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5ArchiveOverview/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Multiple server support</li>
+                            <li>Current and historical job views</li>
+                            <li>Pool usage monitoring</li>
+                            <li>SQLite history database</li>
+                            <li>CSV and JSON exports</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v1.6<br>
+                            <strong>Requires:</strong> macOS 14.0+<br>
+                            <strong>API:</strong> REST /archive/overview
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- P5 Archive Search Section -->
+            <section id="archive-search" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon search">🔍</div>
+                    <div class="app-section-title">
+                        <h2>P5 Archive Search</h2>
+                        <span class="api-tag rest">Uses REST API</span>
+                    </div>
+                </div>
+                
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A native macOS application for browsing and searching P5 Archive Index inventory. Navigate through archived directories with a familiar file browser interface and maintain a local SQLite database for fast offline searching.</p>
+                        <p>Uses the P5 <strong>REST API</strong> endpoint <code>/rest/v1/archive/indexes/{index}/inventory/{path}</code> to browse archive contents. Features breadcrumb navigation, double-click to drill down into folders, and comprehensive search functionality.</p>
+                        
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📁</div>
+                                <h3>Directory Browsing</h3>
+                                <p>Navigate archive indexes with breadcrumb trails</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Fast Search</h3>
+                                <p>Search local database by name, path, or type</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🗃️</div>
+                                <h3>Local Database</h3>
+                                <p>SQLite storage for offline searching</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📋</div>
+                                <h3>Export Results</h3>
+                                <p>CSV export and JSON response saving</p>
+                            </div>
+                        </div>
+                        
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/p5ArchiveSearch" class="btn btn-primary search" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5ArchiveSearch/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Custom archive index support</li>
+                            <li>Breadcrumb path navigation</li>
+                            <li>Double-click folder browsing</li>
+                            <li>Filter by server, index, type</li>
+                            <li>Handles spaces in paths (URL encoding)</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v1.0<br>
+                            <strong>Requires:</strong> macOS 14.0+<br>
+                            <strong>API:</strong> REST /archive/indexes/.../inventory
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bash Scripts Section -->
+        <section class="scripts-section">
+            <div class="container">
+                <div class="section-header" style="border-bottom-color: #d0d7de; margin-top: 0;">
+                    <h2>P5 Archive Bash Scripts</h2>
+                    <p>Collection of bash scripts for P5 Archive automation and management</p>
+                </div>
+                
+                <div class="buttons" style="margin-bottom: 20px;">
+                    <a href="https://github.com/macvfx/Archiware" class="btn btn-primary" target="_blank">View Scripts on GitHub</a>
                 </div>
 
-                <div class="script-card">
-                    <h3>api-archive-pool-usage</h3>
-                    <p>Check archive pool usage via the API.</p>
+                <div class="scripts-grid">
+                    <div class="script-card">
+                        <h3>api-archive-overview</h3>
+                        <p>Get the overview of recent archive jobs via the API.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>api-archive-pool-usage</h3>
+                        <p>Check archive pool usage via the API.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>jobs-sql2csv</h3>
+                        <p>Show all historical system, backup and archive jobs on a P5 server.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>jobs-archive-only-sql2csv</h3>
+                        <p>Output an Archive only CSV with: Job #, Date, Size, Name.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>vol2tsv-all</h3>
+                        <p>TSV inventory for all archive volumes without barcode in the filename.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>volt2tsv-archive-barcode</h3>
+                        <p>TSV inventory for archive volumes with P5 volume and LTO barcode in filename.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>volume-archive-full2readonly</h3>
+                        <p>Find archive tapes marked "Full" and change mode to "Readonly".</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>volume-full-vs-appendable</h3>
+                        <p>Find tapes by status: Full/Readonly vs Appendable with used size in TiB.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>volume-list</h3>
+                        <p>Create a P5 volume list as CSV and save to /private/tmp/.</p>
+                    </div>
+
+                    <div class="script-card">
+                        <h3>p5-check</h3>
+                        <p>CLI predecessor to P5 Archive Manager - verify folder archive status.</p>
+                    </div>
                 </div>
 
-                <div class="script-card">
-                    <h3>jobs-sql2csv</h3>
-                    <p>Show all historical system, backup and archive jobs on a P5 server.</p>
+                <!-- Example Usage -->
+                <div class="section-header">
+                    <h2>Example Usage</h2>
                 </div>
 
-                <div class="script-card">
-                    <h3>jobs-archive-only-sql2csv</h3>
-                    <p>Output an Archive only CSV with: Job #, Date, Size, Name.</p>
-                </div>
+                <p style="margin-bottom: 20px; color: #57606a;">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification these scripts should run in BSD / Linux systems with bash. They expect the Archiware CLI (nsdchat) to be installed where noted.</p>
 
-                <div class="script-card">
-                    <h3>vol2tsv-all</h3>
-                    <p>TSV inventory for all archive volumes without barcode in the filename.</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>volt2tsv-archive-barcode</h3>
-                    <p>TSV inventory for archive volumes containing P5 volume and LTO barcode in the filename.</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>volume-archive-full2readonly</h3>
-                    <p>Find archive tapes marked "Full" and change their mode to "Readonly" (automated housekeeping).</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>volume-full-vs-appendable</h3>
-                    <p>Find the right tape: Full/Readonly vs Appendable and show used size in TiB.</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>volume-list</h3>
-                    <p>Create a P5 volume list as CSV and save it to /private/tmp/ (original Archiware CLI example, patched to write volume and file output).</p>
-                </div>
-
-                <div class="script-card">
-                    <h3>p5-check</h3>
-                    <p>P5 Archive Checker bash script that verifies whether files in a selected folder have been archived using Archiware P5. This is the command-line predecessor to the native macOS P5 Archive Manager app.</p>
-                </div>
-            </div>
-
-            <!-- Example Usage -->
-            <div class="section-header">
-                <h2>Example Usage</h2>
-            </div>
-
-            <p style="margin-bottom: 20px; color: #57606a;">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification these scripts should run in BSD / Linux systems with bash. They expect the Archiware CLI (nsdchat) to be installed where noted. Read all scripts before using and customize as needed.</p>
-
-            <pre><code># Example: write all archive jobs to CSV in /private/tmp/
+                <pre><code># Example: write all archive jobs to CSV in /private/tmp/
 ./jobs-archive-only-sql2csv.sh 
 
-# Example: create per-volume TSV inventory of full archive tapes with barcode in a custom directory
+# Example: create per-volume TSV inventory of full archive tapes with barcode
 ./vol2tsv-archive-barcode.sh /private/tmp/tsv_output
 
-# Example: find full archive tapes and mark them as read only, displays with swiftDialog (or with osascript as a faillback) and logs to csv
+# Example: find full archive tapes and mark them as read only
 ./volume-archive-full2readonly.sh</code></pre>
-        </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 code.matx.ca - P5 Archive Tools</p>
-            <p style="margin-top: 10px;">For support or feedback, reach out via GitHub</p>
+            <p>&copy; 2025 code.matx.ca - P5 Archive Tools for macOS</p>
+            <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
         </div>
     </footer>
 </body>
