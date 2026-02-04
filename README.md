@@ -20,5 +20,8 @@ Archiware P5 scripts
 ## P5 Archive Overview
 - The *P5 Archive Overview app* based on the archive overview REST API script is in [P5 Archive Overview](https://github.com/macvfx/p5ArchiveOverview)
 
+## P5 Archive Search
+- Crawl through your entire archive index via REST API. [P5 Archive Search](https://github.com/macvfx/p5ArchiveSearch)
+  
 ## P5 Archive Export
-- P5 Archive Export (mac and menu bar apps) are based on advanced versions of the **jobs-archive-only-sql2csv.sh script. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport) 
+- P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport) 
