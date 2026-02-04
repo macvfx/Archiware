@@ -81,7 +81,7 @@
         /* Three App Cards */
         .app-showcase {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 20px;
         }
@@ -155,6 +155,176 @@
 
         .app-card a:hover {
             color: #ffffff;
+        }
+
+        /* Export Hero Banner */
+        .export-hero {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 40%, #2a4a6b 100%);
+            color: white;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid #38ef7d;
+        }
+
+        .export-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(56, 239, 125, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .export-hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .export-hero-text .new-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+            color: #0d1b2a;
+            margin-bottom: 15px;
+        }
+
+        .export-hero-text h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .export-hero-text .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .export-hero-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .export-highlight {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .export-highlight .hl-icon {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .export-highlight h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .export-highlight p {
+            font-size: 0.82rem;
+            opacity: 0.75;
+            line-height: 1.4;
+        }
+
+        .export-hero-apps {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .export-app-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 22px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .export-app-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(56, 239, 125, 0.3);
+        }
+
+        .export-app-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .export-app-card .card-header span {
+            font-size: 1.6rem;
+        }
+
+        .export-app-card .card-header h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .export-app-card .card-meta {
+            font-size: 0.82rem;
+            opacity: 0.65;
+            margin-bottom: 8px;
+        }
+
+        .export-app-card .card-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .export-app-card a {
+            color: #38ef7d;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .export-app-card a:hover {
+            color: #ffffff;
+        }
+
+        .app-section-icon.export {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary.export {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: #0d1b2a;
+        }
+
+        @media (max-width: 968px) {
+            .export-hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .export-hero-text h2 {
+                font-size: 1.8rem;
+            }
         }
 
         /* Individual App Sections */
@@ -444,7 +614,7 @@
         /* Responsive */
         @media (max-width: 968px) {
             .app-showcase {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .app-section-content {
@@ -461,12 +631,20 @@
         }
 
         @media (max-width: 768px) {
+            .app-showcase {
+                grid-template-columns: 1fr;
+            }
+
             .app-section-header {
                 flex-direction: column;
                 text-align: center;
             }
 
             .features {
+                grid-template-columns: 1fr;
+            }
+
+            .export-hero-highlights {
                 grid-template-columns: 1fr;
             }
         }
@@ -522,6 +700,76 @@
                                 Browse and search P5 archive index inventory. Navigate directories, build a local database, and find archived files quickly.
                             </div>
                             <a href="#archive-search">Learn more →</a>
+                        </div>
+
+                        <!-- P5 Archive Export -->
+                        <div class="app-card">
+                            <div class="app-icon">📤</div>
+                            <h3>P5 Archive Export</h3>
+                            <p class="app-subtitle">CSV export & job analytics</p>
+                            <span class="api-badge rest">SQLite</span>
+                            <div class="app-features">
+                                Export archive job data to CSV with 13 built-in queries. Available as a windowed app and a menu bar utility with shared settings.
+                            </div>
+                            <a href="#archive-export">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- P5 Archive Export Hero -->
+        <section class="export-hero">
+            <div class="container">
+                <div class="export-hero-content">
+                    <div class="export-hero-text">
+                        <span class="new-badge">New</span>
+                        <h2>P5 Archive Export</h2>
+                        <p class="subtitle">Native macOS apps for exporting Archiware P5 archive job data to CSV. 13 built-in analytical queries, configurable scheduling, and network volume sync — available as a full windowed app or a lightweight menu bar utility.</p>
+
+                        <div class="export-hero-highlights">
+                            <div class="export-highlight">
+                                <div class="hl-icon">13</div>
+                                <h4>Built-in Queries</h4>
+                                <p>Throughput analysis, storage growth, tape utilization, and more</p>
+                            </div>
+                            <div class="export-highlight">
+                                <div class="hl-icon">⏱</div>
+                                <h4>Automated Scheduling</h4>
+                                <p>Daily, weekly, or monthly exports with configurable time</p>
+                            </div>
+                            <div class="export-highlight">
+                                <div class="hl-icon">🔒</div>
+                                <h4>Read-Only Access</h4>
+                                <p>Opens resources.db in read-only mode — never modifies P5 data</p>
+                            </div>
+                            <div class="export-highlight">
+                                <div class="hl-icon">🔌</div>
+                                <h4>Custom SQL Support</h4>
+                                <p>Add your own .sql files with {{MIN_SIZE_KB}} placeholder</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="export-hero-apps">
+                        <div class="export-app-card">
+                            <div class="card-header">
+                                <span>🖥</span>
+                                <h3>P5 Archive Export</h3>
+                            </div>
+                            <div class="card-meta">macOS 12+ &middot; SwiftUI &middot; v1.1</div>
+                            <div class="card-desc">Full windowed app with dashboard, sidebar query browser, results table, real-time progress, and log viewer with level filtering.</div>
+                            <a href="#archive-export">Learn more →</a>
+                        </div>
+
+                        <div class="export-app-card">
+                            <div class="card-header">
+                                <span>📦</span>
+                                <h3>P5 Archive Export MenuBar</h3>
+                            </div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v1.1</div>
+                            <div class="card-desc">Lightweight menu bar utility — no Dock icon. One-click exports, inline settings, and quick status checks from the popover.</div>
+                            <a href="#archive-export-menubar">Learn more →</a>
                         </div>
                     </div>
                 </div>
@@ -710,6 +958,136 @@
                             <strong>Latest:</strong> v1.0<br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/indexes/.../inventory
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- P5 Archive Export (Mac) Section -->
+            <section id="archive-export" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon export">🖥</div>
+                    <div class="app-section-title">
+                        <h2>P5 Archive Export</h2>
+                        <span class="api-tag rest">SQLite &middot; macOS 12+</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A native SwiftUI application that reads the Archiware P5 <code>resources.db</code> database and exports archive job data to CSV. Features a full dashboard with sidebar query browser, results table, progress reporting, and a filterable log viewer.</p>
+                        <p>Ships with 13 analytical queries covering throughput analysis, storage growth trends, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Dashboard &amp; Results</h3>
+                                <p>Sidebar query list, results table with row/column counts and execution time</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📅</div>
+                                <h3>Built-in Scheduler</h3>
+                                <p>Daily, weekly, or monthly exports at a configurable time</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📝</div>
+                                <h3>Live Log Viewer</h3>
+                                <p>Scrollable log with INFO, WARN, ERROR level filters</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🌐</div>
+                                <h3>Network Volume Sync</h3>
+                                <p>Auto-copy CSVs to a network share after each export</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/p5ArchiveExport" class="btn btn-primary export" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5ArchiveExport/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>13 bundled analytical SQL queries</li>
+                            <li>Custom SQL directory with overrides</li>
+                            <li>Configurable size threshold (512 MB – 50 GB)</li>
+                            <li>CSV delimiter options (comma, tab, semicolon)</li>
+                            <li>Real-time progress with query names</li>
+                            <li>Path validation with status indicators</li>
+                            <li>Read-only database access</li>
+                            <li>Shared settings with Menu Bar app</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v1.1<br>
+                            <strong>Requires:</strong> macOS 12 (Monterey)+<br>
+                            <strong>API:</strong> SQLite (read-only)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- P5 Archive Export MenuBar Section -->
+            <section id="archive-export-menubar" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon export">📦</div>
+                    <div class="app-section-title">
+                        <h2>P5 Archive Export MenuBar</h2>
+                        <span class="api-tag rest">SQLite &middot; macOS 14+</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A lightweight menu bar companion that provides the same export engine as the windowed app, accessible from an always-visible archive box icon. No Dock presence — click the icon to open a popover with status, one-click exports, and inline settings.</p>
+                        <p>Shares the same P5ExportCore library and settings as the full Mac app. Add it to Login Items for unattended, always-on scheduling on your P5 server.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📌</div>
+                                <h3>Always Available</h3>
+                                <p>Lives in the menu bar with no Dock icon</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>One-Click Export</h3>
+                                <p>Instant export with progress indicator in the popover</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔄</div>
+                                <h3>Shared Settings</h3>
+                                <p>Synced with the windowed app via common settings</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🚀</div>
+                                <h3>Login Item Ready</h3>
+                                <p>Start at login for unattended server scheduling</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/p5ArchiveExport" class="btn btn-primary export" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5ArchiveExport/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Menu bar popover with status display</li>
+                            <li>Last run info with CSV and row counts</li>
+                            <li>Next scheduled run indicator</li>
+                            <li>Compact inline settings panel</li>
+                            <li>Same 13 built-in queries as Mac app</li>
+                            <li>Custom SQL directory support</li>
+                            <li>Network volume auto-copy</li>
+                            <li>Login Items integration</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v1.1<br>
+                            <strong>Requires:</strong> macOS 14 (Sonoma)+<br>
+                            <strong>API:</strong> SQLite (read-only)
                         </div>
                     </div>
                 </div>
