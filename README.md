@@ -15,13 +15,13 @@ Archiware P5 scripts
 - *volume-list* Create a P5 volume list as CSV from Archiware P5 and save it to /private/tmp/ (Note: Original script form Archiware cli manual. Modified by Mat X to add volume and file output directly).
 
 ## P5 Archive Manager
-- P5 Archive check scripts and the *P5 Archive Manager app* are in [P5 Archive Check](https://github.com/macvfx/p5ArchiveCheck)
+- The P5 Archive check scripts and the *P5 Archive Manager app* are in [P5 Archive Check](https://github.com/macvfx/p5ArchiveCheck)
 
 ## P5 Archive Overview
 - The *P5 Archive Overview app* based on the archive overview REST API script is in [P5 Archive Overview](https://github.com/macvfx/p5ArchiveOverview)
 
 ## P5 Archive Search
-- Crawl through your entire archive index via REST API. [P5 Archive Search](https://github.com/macvfx/p5ArchiveSearch)
+- The *P5 Archive Search app* lets you crawl through your entire archive index via REST API. [P5 Archive Search](https://github.com/macvfx/p5ArchiveSearch)
   
 ## P5 Archive Export
 - P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport) 
