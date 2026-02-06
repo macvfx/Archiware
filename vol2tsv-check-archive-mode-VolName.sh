@@ -21,7 +21,7 @@ do
 
         # Base name for output
         if [ "$volume_mode" = "Readonly" ]; then
-            tsv_file="$output_directory/${i}_ReadOnly.tsv"
+            tsv_file="$output_directory/${i}.tsv"
         else
             timestamp=$(date +"%Y%m%d-%H%M%S")
             tsv_file="$output_directory/${i}_${volume_mode}_${timestamp}.tsv"
