@@ -11,6 +11,7 @@ Archiware P5 scripts
 - See [P5 Archive Export](https://github.com/macvfx/p5ArchiveExport) **repo** for a SQL to CSV script which analyses all the data. And there's now a Mac app too. 
 - *volt2tsv* create a TSV (tab separated value) file with inventory contents for each P5 volume,
 - **volt2tsv-archive-barcode** Only create a TSV inventory file of archive volumes with P5 volume and LTO barcode in the name
+- **volt2tsv-check-archive-mode-VolName** Only create a TSV inventory file of archive volumes with P5 volume and mode (full, appendable) in the name
 - *volume-archive-full2readonly* Identifies all archive tapes marked as "Full" and changes their mode to "Readonly"
 - **volume-full-vs-appendable** Check tapes in the jukebox and categorize them: Full/Readonly tapes vs Appendable with used size in TiB
 - *volume-list* Create a P5 volume list as CSV from Archiware P5 and save it to /private/tmp/ (Note: Original script form Archiware cli manual. Modified by Mat X to add volume and file output directly).
