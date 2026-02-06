@@ -7,7 +7,8 @@ Archiware P5 scripts
 
 ## Random scripts
 - *jobs-sql2csv* Output all system, backup, and archive jobs ever into a CSV,
-- **jobs-archive-only-sql2csv** Output only all archive jobs ever into a CSV, 
+- **jobs-archive-only-sql2csv** Output only all archive jobs ever into a CSV,
+- See [P5 Archive Export](https://github.com/macvfx/p5ArchiveExport) **repo** for a SQL to CSV script which analyses all the data. And there's now a Mac app too. 
 - *volt2tsv* create a TSV (tab separated value) file with inventory contents for each P5 volume,
 - **volt2tsv-archive-barcode** Only create a TSV inventory file of archive volumes with P5 volume and LTO barcode in the name
 - *volume-archive-full2readonly* Identifies all archive tapes marked as "Full" and changes their mode to "Readonly"
