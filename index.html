@@ -36,7 +36,7 @@
             font-weight: 600;
         }
 
-        /* Main Hero - Three Apps Showcase */
+        /* Main Hero - Featured Apps Showcase */
         .main-hero {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: white;
@@ -74,14 +74,14 @@
 
         .main-hero .tagline {
             font-size: 1.3rem;
-            opacity: 0.9;
+            color: #e7edf5;
             margin-bottom: 50px;
         }
 
-        /* Three App Cards */
+        /* App Cards */
         .app-showcase {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin-top: 20px;
         }
@@ -115,7 +115,7 @@
 
         .app-card .app-subtitle {
             font-size: 0.95rem;
-            opacity: 0.8;
+            color: #e6edf5;
             margin-bottom: 15px;
         }
 
@@ -124,28 +124,36 @@
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            color: #101828;
         }
 
         .api-badge.nsdchat {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #3f1237;
         }
 
         .api-badge.rest {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #0b3550;
+        }
+
+        .api-badge.utility {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #2b2b2b;
         }
 
         .app-card .app-features {
             margin-top: 15px;
             font-size: 0.9rem;
-            opacity: 0.85;
+            color: #eaf2fb;
             line-height: 1.8;
         }
 
         .app-card a {
-            color: #a8dadc;
+            color: #c9f0ff;
             text-decoration: none;
             font-weight: 500;
             display: inline-block;
@@ -209,7 +217,7 @@
 
         .export-hero-text .subtitle {
             font-size: 1.15rem;
-            opacity: 0.85;
+            color: #e7edf5;
             margin-bottom: 25px;
             line-height: 1.6;
         }
@@ -240,7 +248,7 @@
 
         .export-highlight p {
             font-size: 0.82rem;
-            opacity: 0.75;
+            color: #e2ebf5;
             line-height: 1.4;
         }
 
@@ -281,13 +289,13 @@
 
         .export-app-card .card-meta {
             font-size: 0.82rem;
-            opacity: 0.65;
+            color: #d2dde9;
             margin-bottom: 8px;
         }
 
         .export-app-card .card-desc {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #e4edf7;
             line-height: 1.5;
         }
 
@@ -366,6 +374,20 @@
             background-clip: text;
         }
 
+        .app-section-icon.health {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-section-icon.fcpxml {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .app-section-title h2 {
             font-size: 2rem;
             color: #24292f;
@@ -382,13 +404,18 @@
         }
 
         .api-tag.nsdchat {
-            background: #fce7f3;
-            color: #be185d;
+            background: #fbcfe8;
+            color: #831843;
         }
 
         .api-tag.rest {
-            background: #e0f2fe;
-            color: #0369a1;
+            background: #bae6fd;
+            color: #0c4a6e;
+        }
+
+        .api-tag.utility {
+            background: #fde68a;
+            color: #7c2d12;
         }
 
         .app-section-content {
@@ -400,7 +427,7 @@
 
         .app-description p {
             font-size: 1.1rem;
-            color: #57606a;
+            color: #424b57;
             margin-bottom: 20px;
             line-height: 1.7;
         }
@@ -421,7 +448,7 @@
         .app-info-box ul {
             list-style: none;
             font-size: 0.95rem;
-            color: #57606a;
+            color: #495463;
         }
 
         .app-info-box ul li {
@@ -443,7 +470,7 @@
             padding-top: 15px;
             border-top: 1px solid #d0d7de;
             font-size: 0.9rem;
-            color: #57606a;
+            color: #495463;
         }
 
         .buttons {
@@ -469,11 +496,22 @@
 
         .btn-primary.overview {
             background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: #073b35;
         }
 
         .btn-primary.search {
             background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
             color: #1a1a2e;
+        }
+
+        .btn-primary.health {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: #f8fbff;
+        }
+
+        .btn-primary.utility {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #3f2a00;
         }
 
         .btn-primary:hover {
@@ -515,7 +553,7 @@
 
         .feature-card p {
             font-size: 0.9rem;
-            color: #57606a;
+            color: #495463;
         }
 
         .feature-icon {
@@ -536,7 +574,7 @@
         }
 
         .section-header p {
-            color: #57606a;
+            color: #495463;
             margin-top: 10px;
         }
 
@@ -576,7 +614,25 @@
 
         .script-card p {
             font-size: 0.9rem;
-            color: #57606a;
+            color: #495463;
+        }
+
+        /* Code */
+        code {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            color: #1f2937;
+            background: #eef2f7;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1px 6px;
+        }
+
+        .main-hero code,
+        .export-hero code {
+            color: #f8fafc;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         /* Code Block */
@@ -588,10 +644,12 @@
             margin: 25px 0;
         }
 
-        code {
-            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
-            font-size: 0.9rem;
+        pre code {
             color: #e6edf3;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
         }
 
         /* Footer */
@@ -599,7 +657,7 @@
             background: #24292f;
             padding: 40px 0;
             text-align: center;
-            color: #8b949e;
+            color: #c7d0da;
         }
 
         footer a {
@@ -612,11 +670,13 @@
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
+        @media (max-width: 1200px) {
             .app-showcase {
                 grid-template-columns: repeat(2, 1fr);
             }
+        }
 
+        @media (max-width: 968px) {
             .app-section-content {
                 grid-template-columns: 1fr;
             }
@@ -658,12 +718,12 @@
     </header>
 
     <main>
-        <!-- Main Hero - Three Apps Showcase -->
+        <!-- Main Hero - Featured Apps Showcase -->
         <section class="main-hero">
             <div class="container">
                 <div class="main-hero-content">
                     <h2>P5 Archive Tools for macOS</h2>
-                    <p class="tagline">Native applications for Archiware P5 data management and verification</p>
+                    <p class="tagline">Native applications for Archiware P5 operations, verification, and media workflow utilities</p>
                     
                     <div class="app-showcase">
                         <!-- P5 Archive Manager -->
@@ -712,6 +772,30 @@
                                 Export archive job data to CSV with 13 built-in queries. Available as a windowed app and a menu bar utility with shared settings.
                             </div>
                             <a href="#archive-export">Learn more →</a>
+                        </div>
+
+                        <!-- P5 Health Check -->
+                        <div class="app-card">
+                            <div class="app-icon">🩺</div>
+                            <h3>P5 Health Check</h3>
+                            <p class="app-subtitle">Multi-server health monitoring</p>
+                            <span class="api-badge rest">REST API</span>
+                            <div class="app-features">
+                                New health monitoring suite with a full desktop app, menu bar monitor, and CLI script for quick checks, alerts, and CSV exports.
+                            </div>
+                            <a href="#health-check">Learn more →</a>
+                        </div>
+
+                        <!-- FCPXMLD Conversion -->
+                        <div class="app-card">
+                            <div class="app-icon">🎬</div>
+                            <h3>FCPXMLD Conversion Tool</h3>
+                            <p class="app-subtitle">Drag-and-drop XMLD to XML</p>
+                            <span class="api-badge utility">Workflow Utility</span>
+                            <div class="app-features">
+                                SwiftUI macOS drag-and-drop app that converts <code>.fcpxmld</code> bundles into <code>.fcpxml</code> output in place or to a destination folder.
+                            </div>
+                            <a href="#fcpxmld-conversion">Learn more →</a>
                         </div>
                     </div>
                 </div>
@@ -1107,6 +1191,132 @@
                     </div>
                 </div>
             </section>
+
+            <!-- P5 Health Check Section -->
+            <section id="health-check" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon health">🩺</div>
+                    <div class="app-section-title">
+                        <h2>P5 Health Check</h2>
+                        <span class="api-tag rest">REST API &middot; New</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>P5 Health Check provides quick operational visibility into one or more P5 servers. It includes a full window app (<code>P5Window</code>), a menu bar monitor (<code>P5MenuBar</code>), and a CLI script (<code>p5_health_check.sh</code>) for terminal automation.</p>
+                        <p>The tools surface actionable signals including server uptime, drive cleaning requirements, warning/error jobs, and tape mode pressure across <code>Appendable</code>, <code>Readonly</code>, and <code>Full</code> volumes.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🖥️</div>
+                                <h3>Window Dashboard</h3>
+                                <p>Detailed multi-server view with historical sections and CSV volume export</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📌</div>
+                                <h3>Menu Bar Monitor</h3>
+                                <p>Always-available popover with per-server status and quick refresh actions</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚠️</div>
+                                <h3>Cleaning Alerts</h3>
+                                <p>Highlights cleaning-required devices, including flashing red icon indicators</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧰</div>
+                                <h3>CLI Automation</h3>
+                                <p>Non-interactive mode, JSON config input, and JSON/CSV output artifacts</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                           <a href="https://github.com/macvfx/p5HealthCheck" class="btn btn-primary export" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/p5HealthCheck/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Shared multi-server JSON configuration</li>
+                            <li>Keychain-backed password storage</li>
+                            <li>Server info and uptime checks</li>
+                            <li>Warning and failed job visibility</li>
+                            <li>Volume mode and inventory monitoring</li>
+                            <li>Refresh selected server or all servers</li>
+                            <li>CLI output: JSON, warnings CSV, errors CSV, volumes CSV</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Status:</strong> v0.7 (in progress)<br>
+                            <strong>Requires:</strong> macOS 12+ (Window), macOS 14+ (Menu Bar)<br>
+                            <strong>API:</strong> P5 REST API
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FCPXMLD Conversion Tool Section -->
+            <section id="fcpxmld-conversion" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon fcpxml">🎬</div>
+                    <div class="app-section-title">
+                        <h2>FCPXMLD Drag Convert App</h2>
+                        <span class="api-tag utility">Workflow Utility</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A small macOS SwiftUI drag-and-drop tool for converting Final Cut Pro <code>.fcpxmld</code> bundles into renamed <code>.fcpxml</code> output. The app wraps the bundled shell script <code>find-all-FCPXMLD-convert-count-move.sh</code>.</p>
+                        <p>Drop one or more folders or bundles, choose output mode, and monitor progress in a live in-app log.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🖱️</div>
+                                <h3>Drag-and-Drop Input</h3>
+                                <p>Accepts folders and direct <code>.fcpxmld</code> bundle drops</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📂</div>
+                                <h3>Two Output Modes</h3>
+                                <p>Save in place or mirror converted output to a destination folder</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📝</div>
+                                <h3>Live Logging</h3>
+                                <p>Shows conversion activity and processing details while running</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧩</div>
+                                <h3>Toolchain Fallbacks</h3>
+                                <p>Uses <code>xmllint</code>, then <code>xmlstarlet</code>, then raw copy fallback</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="../FCPXMLD Conversion/README.md" class="btn btn-primary utility" target="_blank">Open Project README</a>
+                            <a href="../FCPXMLD Conversion/FCPXMLDDragConvertApp.xcodeproj" class="btn btn-secondary" target="_blank">Open Xcode Project</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>SwiftUI native macOS app</li>
+                            <li>Bundled conversion shell script at runtime</li>
+                            <li>Batch conversion across nested folders</li>
+                            <li>Preserves relative path structure in destination mode</li>
+                            <li>Direct local build via <code>swift build</code></li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Project:</strong> FCPXMLD Drag Convert App<br>
+                            <strong>Build:</strong> Swift Package / Xcode project<br>
+                            <strong>Mode:</strong> Drag-and-drop conversion utility
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- Bash Scripts Section -->
@@ -1178,7 +1388,7 @@
                     <h2>Example Usage</h2>
                 </div>
 
-                <p style="margin-bottom: 20px; color: #57606a;">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification these scripts should run in BSD / Linux systems with bash. They expect the Archiware CLI (nsdchat) to be installed where noted.</p>
+                <p style="margin-bottom: 20px; color: #495463;">All scripts are tested on macOS in the Bash shell. Output is usually set to /private/tmp. With some slight modification these scripts should run in BSD / Linux systems with bash. They expect the Archiware CLI (nsdchat) to be installed where noted.</p>
 
                 <pre><code># Example: write all archive jobs to CSV in /private/tmp/
 ./jobs-archive-only-sql2csv.sh 
