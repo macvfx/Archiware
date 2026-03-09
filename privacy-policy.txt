@@ -1,0 +1,7 @@
+### Privacy & Security
+
+• All data cached locally on your Mac
+• No data sent to third parties
+• Only communicates with the server you have configured
+• Sandboxed for security
+• API keys protected by macOS Keychain
