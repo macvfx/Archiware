@@ -29,5 +29,5 @@ Archiware P5 scripts
 - P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport)
 
 ## 2026 code.matx.ca - P5 Archive Tools for macOS & iOS
-[For feedback, reach out via](https://github.com/macvfx) and [Support this project](https://www.paypal.com/ncp/payment/ZX52VNS49SRZA)
+[For feedback, reach out via GitHub](https://github.com/macvfx) and [Support this project by optional donation](https://www.paypal.com/ncp/payment/ZX52VNS49SRZA)
   
