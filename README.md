@@ -26,4 +26,8 @@ Archiware P5 scripts
 - The *P5 Archive Search app* lets you crawl through your entire archive index via REST API. [P5 Archive Search](https://github.com/macvfx/p5ArchiveSearch)
   
 ## P5 Archive Export
-- P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport) 
+- P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport)
+
+## 2026 code.matx.ca - P5 Archive Tools for macOS & iOS
+            [For feedback, reach out via](https://github.com/macvfx) and [Support this project](https://www.paypal.com/ncp/payment/ZX52VNS49SRZA)
+  
