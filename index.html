@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code.matx.ca - P5 Archive Tools</title>
+    <title>code.matx.ca - P5 Archive Tools for macOS & iOS</title>
     <style>
         * {
             margin: 0;
@@ -31,9 +31,30 @@
             padding: 20px 0;
         }
 
+        header .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         header h1 {
             font-size: 1.5rem;
             font-weight: 600;
+        }
+
+        .header-donate {
+            padding: 6px 16px;
+            background: #ffc439;
+            color: #003087;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .header-donate:hover {
+            background: #ffda75;
         }
 
         /* Main Hero - Featured Apps Showcase */
@@ -652,6 +673,84 @@
             padding: 0;
         }
 
+        /* Donation Banner */
+        .donation-banner {
+            background: linear-gradient(135deg, #0070ba 0%, #003087 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .donation-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .donation-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -5%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .donation-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .donation-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .donation-content p {
+            font-size: 1.1rem;
+            color: #cce0f5;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-donate {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #ffc439;
+            color: #003087;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-donate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+            background: #ffda75;
+        }
+
+        .donation-note {
+            font-size: 0.85rem !important;
+            color: #a3c5e8 !important;
+            margin-top: 15px !important;
+            margin-bottom: 0 !important;
+        }
+
         /* Footer */
         footer {
             background: #24292f;
@@ -713,7 +812,10 @@
 <body>
     <header>
         <div class="container">
-            <h1>code.matx.ca</h1>
+            <div class="header-inner">
+                <h1>code.matx.ca</h1>
+                <a href="#donate" class="header-donate">Donate</a>
+            </div>
         </div>
     </header>
 
@@ -722,7 +824,7 @@
         <section class="main-hero">
             <div class="container">
                 <div class="main-hero-content">
-                    <h2>P5 Archive Tools for macOS</h2>
+                    <h2>P5 Archive Tools for macOS & iOS</h2>
                     <p class="tagline">Native applications for Archiware P5 operations, verification, and media workflow utilities</p>
                     
                     <div class="app-showcase">
@@ -781,7 +883,7 @@
                             <p class="app-subtitle">Multi-server health monitoring</p>
                             <span class="api-badge rest">REST API</span>
                             <div class="app-features">
-                                New health monitoring suite with a full desktop app, menu bar monitor, and CLI script for quick checks, alerts, and CSV exports.
+                                Health monitoring suite with a desktop app, menu bar monitor, iPhone companion app, and CLI script for quick checks, alerts, and CSV exports.
                             </div>
                             <a href="#health-check">Learn more →</a>
                         </div>
@@ -1198,25 +1300,30 @@
                     <div class="app-section-icon health">🩺</div>
                     <div class="app-section-title">
                         <h2>P5 Health Check</h2>
-                        <span class="api-tag rest">REST API &middot; New</span>
+                        <span class="api-tag rest">REST API &middot; macOS & iOS</span>
                     </div>
                 </div>
 
                 <div class="app-section-content">
                     <div class="app-description">
-                        <p>P5 Health Check provides quick operational visibility into one or more P5 servers. It includes a full window app (<code>P5Window</code>), a menu bar monitor (<code>P5MenuBar</code>), and a CLI script (<code>p5_health_check.sh</code>) for terminal automation.</p>
+                        <p>P5 Health Check provides quick operational visibility into one or more P5 servers. It includes a full Mac app (<code>P5Window</code>), a menu bar monitor (<code>P5MenuBar</code>), an iPhone companion app (<code>P5iPhone</code>), and a CLI script (<code>p5_health_check.sh</code>) for terminal automation.</p>
                         <p>The tools surface actionable signals including server uptime, drive cleaning requirements, warning/error jobs, and tape mode pressure across <code>Appendable</code>, <code>Readonly</code>, and <code>Full</code> volumes.</p>
 
                         <div class="features">
                             <div class="feature-card">
                                 <div class="feature-icon">🖥️</div>
-                                <h3>Window Dashboard</h3>
+                                <h3>Mac Dashboard</h3>
                                 <p>Detailed multi-server view with historical sections and CSV volume export</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">📌</div>
                                 <h3>Menu Bar Monitor</h3>
                                 <p>Always-available popover with per-server status and quick refresh actions</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📱</div>
+                                <h3>iPhone App</h3>
+                                <p>Mobile fleet dashboard with per-server status cards, pull-to-refresh, and full server detail drill-down</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">⚠️</div>
@@ -1244,12 +1351,13 @@
                             <li>Server info and uptime checks</li>
                             <li>Warning and failed job visibility</li>
                             <li>Volume mode and inventory monitoring</li>
-                            <li>Refresh selected server or all servers</li>
+                            <li>Jukebox status and license tracking</li>
+                            <li>iPhone app with fleet dashboard and server detail drill-down</li>
                             <li>CLI output: JSON, warnings CSV, errors CSV, volumes CSV</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Status:</strong> v0.7 (in progress)<br>
-                            <strong>Requires:</strong> macOS 12+ (Window), macOS 14+ (Menu Bar)<br>
+                            <strong>Latest:</strong> Build 11<br>
+                            <strong>Requires:</strong> macOS 13.5+ (Mac), macOS 14+ (Menu Bar), iOS 17+ (iPhone)<br>
                             <strong>API:</strong> P5 REST API
                         </div>
                     </div>
@@ -1400,12 +1508,24 @@
 ./volume-archive-full2readonly.sh</code></pre>
             </div>
         </section>
+        <!-- Donation Banner -->
+        <section id="donate" class="donation-banner">
+            <div class="container">
+                <div class="donation-content">
+                    <h2>Support P5 Archive Tools</h2>
+                    <p>These tools are free and open source. If they save you time managing your Archiware P5 infrastructure, consider buying me a coffee.</p>
+                    <a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" class="btn-donate" target="_blank">Donate via PayPal</a>
+                    <p class="donation-note">Completely optional — every contribution is appreciated</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS</p>
+            <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
+            <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
 </body>
