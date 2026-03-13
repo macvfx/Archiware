@@ -356,6 +356,192 @@
             }
         }
 
+        /* MHL Tools Hero Banner */
+        .mhl-hero {
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 40%, #4a2c6b 100%);
+            color: white;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid #c084fc;
+        }
+
+        .mhl-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mhl-hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .mhl-hero-text .new-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+            color: #1a0a2e;
+            margin-bottom: 15px;
+        }
+
+        .mhl-hero-text h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .mhl-hero-text .subtitle {
+            font-size: 1.15rem;
+            color: #e7edf5;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .mhl-hero-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .mhl-highlight {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .mhl-highlight .hl-icon {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .mhl-highlight h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .mhl-highlight p {
+            font-size: 0.82rem;
+            color: #e2ebf5;
+            line-height: 1.4;
+        }
+
+        .mhl-hero-apps {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .mhl-app-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 22px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .mhl-app-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(192, 132, 252, 0.3);
+        }
+
+        .mhl-app-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .mhl-app-card .card-header span {
+            font-size: 1.6rem;
+        }
+
+        .mhl-app-card .card-header h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .mhl-app-card .card-meta {
+            font-size: 0.82rem;
+            color: #d2dde9;
+            margin-bottom: 8px;
+        }
+
+        .mhl-app-card .card-desc {
+            font-size: 0.9rem;
+            color: #e4edf7;
+            line-height: 1.5;
+        }
+
+        .mhl-app-card a {
+            color: #c084fc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .mhl-app-card a:hover {
+            color: #ffffff;
+        }
+
+        .app-section-icon.mhl {
+            background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary.mhl {
+            background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+            color: #1a0a2e;
+        }
+
+        .api-badge.mhl {
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+            color: #1a0a2e;
+        }
+
+        .api-tag.mhl {
+            background: #e9d5ff;
+            color: #581c87;
+        }
+
+        @media (max-width: 968px) {
+            .mhl-hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mhl-hero-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mhl-hero-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Individual App Sections */
         .app-section {
             padding: 50px 0;
@@ -899,6 +1085,42 @@
                             </div>
                             <a href="#fcpxmld-conversion">Learn more →</a>
                         </div>
+
+                        <!-- MHL Verify -->
+                        <div class="app-card">
+                            <div class="app-icon">🔐</div>
+                            <h3>MHL Verify</h3>
+                            <p class="app-subtitle">Verify media hash lists</p>
+                            <span class="api-badge mhl">MHL v1.1</span>
+                            <div class="app-features">
+                                Load an existing MHL file and verify that media files still match. Works with MHLs from any compatible tool including Silverstack, OffShoot, and YoYotta.
+                            </div>
+                            <a href="#mhl-verify">Learn more →</a>
+                        </div>
+
+                        <!-- Drop Verify -->
+                        <div class="app-card">
+                            <div class="app-icon">📋</div>
+                            <h3>Drop Verify</h3>
+                            <p class="app-subtitle">One-folder trust reporting</p>
+                            <span class="api-badge mhl">MHL v1.1</span>
+                            <div class="app-features">
+                                Drag a folder to generate an MHL manifest, contact sheet PDF with thumbnails and camera data, and EXIF metadata CSV in one step.
+                            </div>
+                            <a href="#drop-verify">Learn more →</a>
+                        </div>
+
+                        <!-- CopyTrust -->
+                        <div class="app-card">
+                            <div class="app-icon">🛡️</div>
+                            <h3>CopyTrust</h3>
+                            <p class="app-subtitle">Camera card ingest & verify</p>
+                            <span class="api-badge mhl">MHL v1.1</span>
+                            <div class="app-features">
+                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts.
+                            </div>
+                            <a href="#copytrust">Learn more →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -956,6 +1178,74 @@
                             <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v1.2</div>
                             <div class="card-desc">Lightweight menu bar utility — no Dock icon. One-click exports, inline settings, and quick status checks from the popover.</div>
                             <a href="#archive-export-menubar">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MHL Tools Hero -->
+        <section class="mhl-hero">
+            <div class="container">
+                <div class="mhl-hero-content">
+                    <div class="mhl-hero-text">
+                        <span class="new-badge">New</span>
+                        <h2>MHL Tools</h2>
+                        <p class="subtitle">Copy, then Prove It. Three native macOS tools for creating and verifying Media Hash Lists — the industry-standard format for proving your copies are intact. Generate MHL manifests, contact sheet PDFs, and EXIF reports, then verify them anytime.</p>
+
+                        <div class="mhl-hero-highlights">
+                            <div class="mhl-highlight">
+                                <div class="hl-icon">🔒</div>
+                                <h4>MHL v1.1 Standard</h4>
+                                <p>Industry-standard XML manifests compatible with Silverstack, OffShoot, ShotPut Pro, and YoYotta</p>
+                            </div>
+                            <div class="mhl-highlight">
+                                <div class="hl-icon">⚡</div>
+                                <h4>xxHash64 Speed</h4>
+                                <p>~9.6 GB/s on Apple Silicon — 47x faster than SHA-256 for large media files</p>
+                            </div>
+                            <div class="mhl-highlight">
+                                <div class="hl-icon">📄</div>
+                                <h4>Contact Sheet PDF</h4>
+                                <p>Dark-themed US Letter PDFs with thumbnails, codec info, and camera metadata</p>
+                            </div>
+                            <div class="mhl-highlight">
+                                <div class="hl-icon">🔗</div>
+                                <h4>Chain of Custody</h4>
+                                <p>Prove integrity from initial card download through final archive handoff</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mhl-hero-apps">
+                        <div class="mhl-app-card">
+                            <div class="card-header">
+                                <span>🔐</span>
+                                <h3>MHL Verify</h3>
+                            </div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.2</div>
+                            <div class="card-desc">Load any MHL file and verify media files still match. Reports matched, mismatched, and missing files with explicit issue details.</div>
+                            <a href="#mhl-verify">Learn more →</a>
+                        </div>
+
+                        <div class="mhl-app-card">
+                            <div class="card-header">
+                                <span>📋</span>
+                                <h3>Drop Verify</h3>
+                            </div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.2</div>
+                            <div class="card-desc">Drag one folder, generate an MHL manifest, contact sheet PDF, and EXIF metadata CSV. Trust artifacts in one step.</div>
+                            <a href="#drop-verify">Learn more →</a>
+                        </div>
+
+                        <div class="mhl-app-card">
+                            <div class="card-header">
+                                <span>🛡️</span>
+                                <h3>CopyTrust</h3>
+                            </div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.2</div>
+                            <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts.</div>
+                            <a href="#copytrust">Learn more →</a>
                         </div>
                     </div>
                 </div>
@@ -1421,6 +1711,209 @@
                             <strong>Project:</strong> FCPXMLD Drag Convert App<br>
                             <strong>Build:</strong> Swift Package / Xcode project<br>
                             <strong>Mode:</strong> Drag-and-drop conversion utility
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- MHL Verify Section -->
+            <section id="mhl-verify" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon mhl">🔐</div>
+                    <div class="app-section-title">
+                        <h2>MHL Verify</h2>
+                        <span class="api-tag mhl">MHL v1.1</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>Load an existing MHL (Media Hash List) file and verify that media files still match the recorded hashes. Works with MHL manifests from any compatible tool — Drop Verify, CopyTrust, Silverstack, OffShoot, ShotPut Pro, or YoYotta.</p>
+                        <p>Use MHL Verify to re-check copies on another drive or machine, confirm archived or handed-off media still matches the original manifest, or validate MHLs received from external teams and facilities.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">✓</div>
+                                <h3>Hash Verification</h3>
+                                <p>Re-hash files and compare against MHL manifest values</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Detailed Reports</h3>
+                                <p>Matched, mismatched, and missing files with explicit issue listing</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔄</div>
+                                <h3>Cross-Tool Compatible</h3>
+                                <p>Reads MHL v1.1 from Silverstack, OffShoot, ShotPut Pro, YoYotta</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🛠️</div>
+                                <h3>Bad MHL Recovery</h3>
+                                <p>Rename Bad MHL function for failed checks with explicit failed file lists</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Load and parse MHL v1.1 XML manifests</li>
+                            <li>Verify file hashes against manifest</li>
+                            <li>Matched / mismatched / missing reporting</li>
+                            <li>Works with MHLs from any compatible tool</li>
+                            <li>Bad MHL recovery with rename function</li>
+                            <li>Deep Compare for path-agnostic integrity</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v2.1.2<br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Format:</strong> MHL v1.1 (XML)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drop Verify Section -->
+            <section id="drop-verify" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon mhl">📋</div>
+                    <div class="app-section-title">
+                        <h2>Drop Verify</h2>
+                        <span class="api-tag mhl">MHL v1.1</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A lightweight macOS app for one-folder trust reporting. Drag in a folder and generate an MHL manifest, contact sheet PDF with thumbnails and camera data, and an EXIF metadata CSV — all in one step.</p>
+                        <p>Artifacts are written to a <code>Drop Verify_Receipts/</code> folder inside the dropped folder, with an optional export to a separate location. Only media files are hashed; hidden files and system artifacts are excluded by default.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🖱️</div>
+                                <h3>Drag-and-Drop</h3>
+                                <p>Drop one folder to scan, hash, and generate trust artifacts</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📄</div>
+                                <h3>MHL Generation</h3>
+                                <p>MHL v1.1 manifest with file paths, sizes, dates, and hashes</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖼️</div>
+                                <h3>Contact Sheet PDF</h3>
+                                <p>Dark-themed layout with thumbnails, codec info, and camera metadata</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>EXIF Metadata CSV</h3>
+                                <p>Camera make, model, lens, ISO, shutter speed, and resolution data</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Recursive media file scanning</li>
+                            <li>MHL v1.1 manifest generation</li>
+                            <li>Contact sheet PDF with thumbnails</li>
+                            <li>EXIF camera metadata CSV export</li>
+                            <li>Configurable exclusion patterns</li>
+                            <li>Local or exported artifact output</li>
+                            <li>Operator name and settings</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v2.1.2<br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Output:</strong> MHL, PDF, CSV
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CopyTrust Section -->
+            <section id="copytrust" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon mhl">🛡️</div>
+                    <div class="app-section-title">
+                        <h2>CopyTrust</h2>
+                        <span class="api-tag mhl">MHL v1.1 &middot; xxHash64</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A full camera card ingest system with multi-source, multi-destination copy and verification. CopyTrust detects camera cards, copies media to multiple destinations simultaneously, verifies every byte with xxHash64, and generates MHL manifests, contact sheet PDFs, and session receipts.</p>
+                        <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📷</div>
+                                <h3>Card Detection</h3>
+                                <p>Camera-card-aware source detection with DCIM and folder signatures</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📂</div>
+                                <h3>Multi-Destination</h3>
+                                <p>Copy to multiple destinations with preset groups and volume pool</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>xxHash64 Verification</h3>
+                                <p>~9.6 GB/s on Apple Silicon with None, Quick, or Full verify modes</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📝</div>
+                                <h3>Session Receipts</h3>
+                                <p>JSON and TXT receipts, per-ingest logs, and session summary</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖼️</div>
+                                <h3>Contact Sheet PDF</h3>
+                                <p>Video frames with codec/FPS data, photo thumbnails with EXIF</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⏏️</div>
+                                <h3>Safe-to-Eject</h3>
+                                <p>Guided eject flow after successful verification completes</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Multi-source, multi-destination ingest</li>
+                            <li>Volume Browser with network shares</li>
+                            <li>Destination preset groups</li>
+                            <li>Per-destination preflight checks</li>
+                            <li>Four-phase progress tracking</li>
+                            <li>Post-copy verification (xxHash64)</li>
+                            <li>MHL v1.1 generation</li>
+                            <li>Contact sheet PDF generation</li>
+                            <li>Auto-advance multi-source copy</li>
+                            <li>Incremental subfolder naming</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> v2.1.2<br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
                     </div>
                 </div>
