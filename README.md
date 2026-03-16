@@ -31,3 +31,10 @@ Archiware P5 scripts
 ## 2026 code.matx.ca - P5 Archive Tools for macOS & iOS
 [For feedback, reach out via GitHub](https://github.com/macvfx) and [Support this project by optional donation](https://www.paypal.com/ncp/payment/ZX52VNS49SRZA)
   
+## License
+
+Apache 2.0 License - See LICENSE file for details.
+
+## Acknowledgments
+
+Built for use with [Archiware P5](https://www.archiware.com/)
