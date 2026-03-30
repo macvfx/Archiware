@@ -1054,10 +1054,10 @@
                         <div class="app-card">
                             <div class="app-icon">📤</div>
                             <h3>P5 Archive Export</h3>
-                            <p class="app-subtitle">CSV export & job analytics</p>
-                            <span class="api-badge rest">SQLite</span>
+                            <p class="app-subtitle">CSV export, job analytics & volume inventory</p>
+                            <span class="api-badge rest">SQLite &middot; nsdchat</span>
                             <div class="app-features">
-                                Export archive job data to CSV with 13 built-in queries. Available as a windowed app and a menu bar utility with shared settings.
+                                Export archive job data and volume inventory to CSV. 13 built-in queries plus nsdchat-driven volume export with scheduling.
                             </div>
                             <a href="#archive-export">Learn more →</a>
                         </div>
@@ -1079,11 +1079,23 @@
                             <div class="app-icon">🎬</div>
                             <h3>FCPXMLD Conversion Tool</h3>
                             <p class="app-subtitle">Drag-and-drop XMLD to XML</p>
-                            <span class="api-badge utility">Workflow Utility</span>
+                            <span class="api-badge utility">FCP Workflow Utility</span>
                             <div class="app-features">
                                 SwiftUI macOS drag-and-drop app that converts <code>.fcpxmld</code> bundles into <code>.fcpxml</code> output in place or to a destination folder.
                             </div>
                             <a href="#fcpxmld-conversion">Learn more →</a>
+                        </div>
+
+                        <!-- FCP Backup Manager -->
+                        <div class="app-card">
+                            <div class="app-icon">💾</div>
+                            <h3>FCP Backup Manager</h3>
+                            <p class="app-subtitle">Automated FCP project backup</p>
+                            <span class="api-badge utility">FCP Workflow Utility</span>
+                            <div class="app-features">
+                                Menu bar utility that watches your FCP backup folder, compresses <code>.fcpbundle</code> files, and copies them to multiple destinations on a schedule.
+                            </div>
+                            <a href="#fcp-backup-manager">Learn more →</a>
                         </div>
 
                         <!-- MHL Verify -->
@@ -1312,7 +1324,6 @@
                             <li>Secure keychain credential storage</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v3.0<br>
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>API:</strong> nsdchat CLI
                         </div>
@@ -1374,7 +1385,6 @@
                             <li>CSV and JSON exports</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v1.6<br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/overview
                         </div>
@@ -1446,7 +1456,6 @@
                             <li>Handles spaces in paths (URL encoding)</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v1.6<br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/indexes/.../inventory
                         </div>
@@ -1468,6 +1477,7 @@
                     <div class="app-description">
                         <p>A native SwiftUI application that reads the Archiware P5 <code>resources.db</code> database and exports archive job data to CSV. Features a full dashboard with sidebar query browser, results table, progress reporting, and a filterable log viewer.</p>
                         <p>Ships with 13 analytical queries covering throughput analysis, storage growth trends, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
+                        <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume file inventories to a local folder and optionally copy to a network destination. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and toggle between full and read-only database access.</p>
 
                         <div class="features">
                             <div class="feature-card">
@@ -1476,9 +1486,14 @@
                                 <p>Sidebar query list, results table with row/column counts and execution time</p>
                             </div>
                             <div class="feature-card">
+                                <div class="feature-icon">💿</div>
+                                <h3>Volume Inventory Export</h3>
+                                <p>nsdchat-driven per-volume inventory with LTO generation sorting, archive-only filter, and volume list CSV</p>
+                            </div>
+                            <div class="feature-card">
                                 <div class="feature-icon">📅</div>
                                 <h3>Built-in Scheduler</h3>
-                                <p>Daily, weekly, or monthly exports at a configurable time</p>
+                                <p>Schedule SQL Export, Volume Export, or Both at a configurable frequency and time</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">📝</div>
@@ -1490,6 +1505,11 @@
                                 <h3>Network Volume Sync</h3>
                                 <p>Auto-copy CSVs to a network share after each export</p>
                             </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚙️</div>
+                                <h3>Volume Export Settings</h3>
+                                <p>Naming mode, overwrite control, full/read-only switch, and archive-only toggle</p>
+                            </div>
                         </div>
 
                         <div class="buttons">
@@ -1499,7 +1519,7 @@
                     </div>
 
                     <div class="app-info-box">
-                        <h4>Key Features</h4>
+                        <h4>SQL Export</h4>
                         <ul>
                             <li>13 bundled analytical SQL queries</li>
                             <li>Custom SQL directory with overrides</li>
@@ -1510,10 +1530,27 @@
                             <li>Read-only database access</li>
                             <li>Shared settings with Menu Bar app</li>
                         </ul>
+                        <h4>Volume Inventory Export</h4>
+                        <ul>
+                            <li>nsdchat path configuration</li>
+                            <li>Local volume output folder</li>
+                            <li>Network copy destination</li>
+                            <li>Naming mode selection</li>
+                            <li>Archive-only volume toggle</li>
+                            <li>Export volume list CSV</li>
+                            <li>Full / read-only database switch</li>
+                            <li>Sort by LTO generation</li>
+                            <li>Overwrite files option</li>
+                        </ul>
+                        <h4>Automation</h4>
+                        <ul>
+                            <li>Scheduled workflow target: SQL Export, Volume Export, or Both</li>
+                            <li>Configurable frequency</li>
+                            <li>Configurable time</li>
+                        </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v1.2<br>
                             <strong>Requires:</strong> macOS 12 (Monterey)+<br>
-                            <strong>API:</strong> SQLite (read-only)
+                            <strong>API:</strong> SQLite (read-only) &middot; nsdchat CLI
                         </div>
                     </div>
                 </div>
@@ -1576,7 +1613,6 @@
                             <li>Login Items integration</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v1.2<br>
                             <strong>Requires:</strong> macOS 14 (Sonoma)+<br>
                             <strong>API:</strong> SQLite (read-only)
                         </div>
@@ -1646,7 +1682,6 @@
                             <li>CLI output: JSON, warnings CSV, errors CSV, volumes CSV</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> Build 11<br>
                             <strong>Requires:</strong> macOS 13.5+ (Mac), macOS 14+ (Menu Bar), iOS 17+ (iPhone)<br>
                             <strong>API:</strong> P5 REST API
                         </div>
@@ -1715,6 +1750,70 @@
                     </div>
                 </div>
             </section>
+            <!-- FCP Backup Manager Section -->
+            <section id="fcp-backup-manager" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon fcpxml">💾</div>
+                    <div class="app-section-title">
+                        <h2>FCP Backup Manager</h2>
+                        <span class="api-tag utility">FCP Workflow Utility</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A macOS menu bar utility that automatically backs up Final Cut Pro project bundles. Watches your FCP backup source folder, compresses new <code>.fcpbundle</code> files into zip archives, and copies them to one or more destinations while maintaining a manifest to prevent duplicates.</p>
+                        <p>Runs silently in the background with configurable schedules, smart project filtering, and retention management. Supports local folders, external drives, NAS shares, and SMB volumes as backup destinations.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📂</div>
+                                <h3>Multi-Destination Backup</h3>
+                                <p>Copy backups to local folders, external drives, NAS shares, or any mounted volume with per-destination deduplication</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⏱️</div>
+                                <h3>Scheduled & Manual</h3>
+                                <p>Run automatically on a customizable schedule or trigger manually via the menu bar with launch-at-login support</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔍</div>
+                                <h3>Smart Project Filtering</h3>
+                                <p>Filter which backup bundles to process using case-insensitive keyword matching against bundle names</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧹</div>
+                                <h3>Retention Management</h3>
+                                <p>Automatically clean up old backups with configurable rules — keep last N per project or delete older than X days</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/FCPBackupManager" class="btn btn-primary export" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/FCPBackupManager/releases/" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Menu bar utility (no Dock icon)</li>
+                            <li>Zip compression of <code>.fcpbundle</code> files</li>
+                            <li>Manifest-based duplicate prevention</li>
+                            <li>Configurable backup schedules</li>
+                            <li>Multi-destination with network volume support</li>
+                            <li>MDM profile support for managed deployment</li>
+                            <li>Setup JSON import for bulk configuration</li>
+                            <li>Comprehensive session and destination logging</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Type:</strong> Menu Bar Utility
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- MHL Verify Section -->
             <section id="mhl-verify" class="app-section">
                 <div class="app-section-header">
@@ -1770,7 +1869,6 @@
                             <li>Deep Compare for path-agnostic integrity</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v2.1.2<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Format:</strong> MHL v1.1 (XML)
                         </div>
@@ -1834,7 +1932,6 @@
                             <li>Operator name and settings</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v2.1.2<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Output:</strong> MHL, PDF, CSV
                         </div>
@@ -1911,7 +2008,6 @@
                             <li>Incremental subfolder naming</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> v2.1.2<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
