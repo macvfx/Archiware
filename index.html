@@ -542,6 +542,192 @@
             }
         }
 
+        /* Folder Copy Compare Hero */
+        .fcc-hero {
+            background: linear-gradient(135deg, #061624 0%, #0a2035 40%, #0e3050 100%);
+            color: white;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid #22d3ee;
+        }
+
+        .fcc-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .fcc-hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .fcc-hero-text .new-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #22d3ee 0%, #0891b2 100%);
+            color: #061624;
+            margin-bottom: 15px;
+        }
+
+        .fcc-hero-text h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .fcc-hero-text .subtitle {
+            font-size: 1.15rem;
+            color: #e7edf5;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .fcc-hero-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .fcc-highlight {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .fcc-highlight .hl-icon {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .fcc-highlight h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .fcc-highlight p {
+            font-size: 0.82rem;
+            color: #e2ebf5;
+            line-height: 1.4;
+        }
+
+        .fcc-hero-apps {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .fcc-app-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 22px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .fcc-app-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(34, 211, 238, 0.35);
+        }
+
+        .fcc-app-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .fcc-app-card .card-header span {
+            font-size: 1.6rem;
+        }
+
+        .fcc-app-card .card-header h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .fcc-app-card .card-meta {
+            font-size: 0.82rem;
+            color: #d2dde9;
+            margin-bottom: 8px;
+        }
+
+        .fcc-app-card .card-desc {
+            font-size: 0.9rem;
+            color: #e4edf7;
+            line-height: 1.5;
+        }
+
+        .fcc-app-card a {
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .fcc-app-card a:hover {
+            color: #ffffff;
+        }
+
+        .app-section-icon.fcc {
+            background: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary.fcc {
+            background: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
+            color: #061624;
+        }
+
+        .api-badge.fcc {
+            background: linear-gradient(135deg, #22d3ee 0%, #0891b2 100%);
+            color: #061624;
+        }
+
+        .api-tag.fcc {
+            background: #cffafe;
+            color: #164e63;
+        }
+
+        @media (max-width: 968px) {
+            .fcc-hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .fcc-hero-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fcc-hero-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Individual App Sections */
         .app-section {
             padding: 50px 0;
@@ -1145,6 +1331,18 @@
                             </div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
+
+                        <!-- Folder Copy Compare -->
+                        <div class="app-card">
+                            <div class="app-icon">🗂️</div>
+                            <h3>Folder Copy Compare</h3>
+                            <p class="app-subtitle">Folder diff & hash verification</p>
+                            <span class="api-badge fcc">xxHash64</span>
+                            <div class="app-features">
+                                Compare two folder trees file-by-file with xxHash64 hashing, use subfolder comparison for drill-down triage, and clean up P5 stub files before final handoff.
+                            </div>
+                            <a href="#folder-copy-compare">Learn more →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1270,6 +1468,79 @@
                             <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.7</div>
                             <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts.</div>
                             <a href="#copytrust">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Folder Copy Compare Hero -->
+        <section class="fcc-hero">
+            <div class="container">
+                <div class="fcc-hero-content">
+                    <div class="fcc-hero-text">
+                        <span class="new-badge">Workflow Tool</span>
+                        <h2>Folder Copy Compare</h2>
+                        <p class="subtitle">A macOS utility for verifying that two folder trees match, file-by-file, using xxHash64. Part of the same trust workflow as MHL Verify and CopyTrust — use it to confirm a copy destination is identical to its source, clean up leftover P5 stub files, and sign off or archive with confidence.</p>
+
+                        <div class="fcc-hero-highlights">
+                            <div class="fcc-highlight">
+                                <div class="hl-icon">⚡</div>
+                                <h4>xxHash64 Speed</h4>
+                                <p>The same ~9.6 GB/s engine used in CopyTrust and Drop Verify — consistent hashes across the entire toolset</p>
+                            </div>
+                            <div class="fcc-highlight">
+                                <div class="hl-icon">📂</div>
+                                <h4>Subfolder Comparison</h4>
+                                <p>New: scan one level deep, see per-subfolder match status at a glance, then drill in to inspect individual mismatches</p>
+                            </div>
+                            <div class="fcc-highlight">
+                                <div class="hl-icon">🔗</div>
+                                <h4>Trust Workflow Fit</h4>
+                                <p>Pairs naturally with MHL tools — compare first, then generate an MHL manifest once you know the copy is clean</p>
+                            </div>
+                            <div class="fcc-highlight">
+                                <div class="hl-icon">🔍</div>
+                                <h4>Explicit Diff Report</h4>
+                                <p>Matched, mismatched, source-only, and destination-only files all surfaced with clear status indicators</p>
+                            </div>
+                            <div class="fcc-highlight">
+                                <div class="hl-icon">🧹</div>
+                                <h4>P5 Stub Cleanup</h4>
+                                <p>Identify and remove leftover P5 stub files so restored folders are easier to validate before delivery or archive</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fcc-hero-apps">
+                        <div class="fcc-app-card">
+                            <div class="card-header">
+                                <span>🗂️</span>
+                                <h3>Folder Compare</h3>
+                            </div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.2</div>
+                            <div class="card-desc">Drop two folders and compare their full file trees using xxHash64. Results show every matched, mismatched, and missing file side-by-side, with P5 stub file cleanup available before final sign-off.</div>
+                            <a href="#folder-copy-compare">Learn more →</a>
+                        </div>
+
+                        <div class="fcc-app-card">
+                            <div class="card-header">
+                                <span>🗃️</span>
+                                <h3>Subfolder View <span style="font-size:0.75rem; background: rgba(34,211,238,0.2); color: #22d3ee; padding: 2px 8px; border-radius: 10px; font-weight: 700; vertical-align: middle;">NEW</span></h3>
+                            </div>
+                            <div class="card-meta">v2.2 &middot; Drill-down hash comparison</div>
+                            <div class="card-desc">Compare folders organised into subfolders — camera reels, shoot days, card dumps. See a pass/fail per subfolder, then tap to hash just that pair on demand.</div>
+                            <a href="#folder-copy-compare">Learn more →</a>
+                        </div>
+
+                        <div class="fcc-app-card">
+                            <div class="card-header">
+                                <span>🔐</span>
+                                <h3>MHL Tools</h3>
+                            </div>
+                            <div class="card-meta">MHL Verify · Drop Verify · CopyTrust</div>
+                            <div class="card-desc">Once Folder Copy Compare confirms your copy is clean, hand off to Drop Verify or CopyTrust to generate an MHL manifest and lock in your chain of custody.</div>
+                            <a href="https://github.com/macvfx/MHL" target="_blank">View MHL repo on GitHub →</a>
                         </div>
                     </div>
                 </div>
@@ -2006,6 +2277,85 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Output:</strong> MHL, PDF, CSV
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folder Copy Compare Section -->
+            <section id="folder-copy-compare" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon fcc">🗂️</div>
+                    <div class="app-section-title">
+                        <h2>Folder Copy Compare</h2>
+                        <span class="api-tag fcc">xxHash64 &middot; Workflow Tool</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A macOS utility for verifying that two folder trees are identical, file-by-file. Drop a source and a destination, and Folder Copy Compare hashes every file with xxHash64 — the same engine used across the MHL toolset — and reports exactly what matches, what doesn't, and what's missing on either side. It also helps clean up leftover P5 stub files before final delivery or archive handoff.</p>
+                        <p>Version 2.2 adds <strong>Subfolder Comparison</strong>: the new Subfolder view scans one level deep and shows a per-subfolder pass/fail summary instantly, without hashing. Click any subfolder pair to trigger on-demand xxHash64 hashing for just that pair, so you can pinpoint a problem reel or card dump without waiting for the entire tree. Combined with P5 stub files cleanup, it fits naturally into a camera-to-archive handoff workflow alongside MHL Verify and CopyTrust — compare the copy, remove archive stubs, confirm it's clean, then generate an MHL manifest to lock in your chain of custody.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🗂️</div>
+                                <h3>Full Tree Compare</h3>
+                                <p>Recursive xxHash64 comparison of two folder trees — matched, mismatched, and missing files all shown</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🗃️</div>
+                                <h3>Subfolder View <span style="font-size: 0.7rem; background: #cffafe; color: #164e63; padding: 1px 6px; border-radius: 8px; font-weight: 700;">NEW</span></h3>
+                                <p>One-level-deep overview with per-subfolder status, then drill in to hash just that pair</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>xxHash64 Engine</h3>
+                                <p>~9.6 GB/s on Apple Silicon — the same hash used by CopyTrust, Drop Verify, and MHL Verify</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧹</div>
+                                <h3>P5 Stub Files Cleanup</h3>
+                                <p>Remove leftover P5 archive stub files from restored folders so your compare results reflect the files you actually need to deliver</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔗</div>
+                                <h3>MHL Workflow Fit</h3>
+                                <p>Confirm copy integrity first, then hand off to Drop Verify or CopyTrust to generate an MHL manifest</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖱️</div>
+                                <h3>Drag-and-Drop</h3>
+                                <p>Drop both folders to begin — no configuration required for a basic compare</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📋</div>
+                                <h3>Explicit Diff Report</h3>
+                                <p>Every file categorised: match, hash mismatch, source-only, or destination-only</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                           <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Full recursive folder tree comparison</li>
+                            <li>Subfolder overview with drill-down</li>
+                            <li>On-demand per-subfolder hashing</li>
+                            <li>xxHash64 (~9.6 GB/s on Apple Silicon)</li>
+                            <li>Match / mismatch / missing categorisation</li>
+                            <li>Drag-and-drop source and destination</li>
+                            <li>Works alongside MHL Verify &amp; CopyTrust</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Hash:</strong> xxHash64<br>
+                            <strong>Latest:</strong> v2.2 — Subfolder Compare
                         </div>
                     </div>
                 </div>
