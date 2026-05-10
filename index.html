@@ -707,9 +707,19 @@
             color: #061624;
         }
 
+        .api-badge.backup {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            color: #052e2b;
+        }
+
         .api-tag.fcc {
             background: #cffafe;
             color: #164e63;
+        }
+
+        .api-tag.backup {
+            background: #d1fae5;
+            color: #065f46;
         }
 
         @media (max-width: 968px) {
@@ -776,6 +786,13 @@
 
         .app-section-icon.fcpxml {
             background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-section-icon.backup {
+            background: linear-gradient(135deg, #059669 0%, #34d399 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -905,6 +922,11 @@
         .btn-primary.utility {
             background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
             color: #3f2a00;
+        }
+
+        .btn-primary.backup {
+            background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+            color: #052e2b;
         }
 
         .btn-primary:hover {
@@ -1258,6 +1280,18 @@
                                 Health monitoring suite with a desktop app, menu bar monitor, iPhone companion app, and CLI script for quick checks, alerts, and CSV exports.
                             </div>
                             <a href="#health-check">Learn more →</a>
+                        </div>
+
+                        <!-- BackupTrust -->
+                        <div class="app-card">
+                            <div class="app-icon">🗃️</div>
+                            <h3>BackupTrust</h3>
+                            <p class="app-subtitle">Incremental menu bar backup for macOS</p>
+                            <span class="api-badge backup">Sandboxed &middot; Verified</span>
+                            <div class="app-features">
+                                Scheduled folder backup with incremental copy, multi-destination plans, verification, exclusions, versioning, mirror mode, and overflow routing.
+                            </div>
+                            <a href="#backuptrust">Learn more →</a>
                         </div>
 
                         <!-- FCPXMLD Conversion -->
@@ -2356,6 +2390,79 @@
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64<br>
                             <strong>Latest:</strong> v2.2 — Subfolder Compare
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BackupTrust Section -->
+            <section id="backuptrust" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon backup">🗃️</div>
+                    <div class="app-section-title">
+                        <h2>BackupTrust</h2>
+                        <span class="api-tag backup">Sandboxed &middot; Incremental Backup</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A macOS menu bar backup app for folders that change every day. BackupTrust creates scheduled plans that copy only new or changed files from a source folder to one or more destinations, helping protect active projects without repeating a full backup every run.</p>
+                        <p>Built for real working storage on macOS, BackupTrust supports local disks, external SSDs, NAS volumes, and other mounted folders. Plans can include file filters, excluded-directory presets, mirror mode, versioned overwrite protection, optional post-copy verification, and overflow routing for files that need a separate destination.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">⏱️</div>
+                                <h3>Scheduled Plans</h3>
+                                <p>Run backups hourly, daily, or weekly with optional busy windows</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🗂️</div>
+                                <h3>Incremental Copy</h3>
+                                <p>Copies only files that are new or changed since the last run</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📦</div>
+                                <h3>Multi-Destination</h3>
+                                <p>Send the same source to multiple backup targets in parallel</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">✅</div>
+                                <h3>Verification</h3>
+                                <p>Optional xxHash64 post-copy verification for critical backups</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧹</div>
+                                <h3>Filters and Exclusions</h3>
+                                <p>Skip disposable folders, filter by extension, and control hidden files</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">♻️</div>
+                                <h3>Versioning and Mirror</h3>
+                                <p>Keep replaced files or mirror source deletions to the destination</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/Backup-Trust" class="btn btn-primary backup" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Menu bar app with per-plan status and manual run controls</li>
+                            <li>One source folder with one or more destinations per plan</li>
+                            <li>Hourly, daily, or weekly schedules with busy windows</li>
+                            <li>Conflict handling: overwrite, skip, or version and keep</li>
+                            <li>Mirror mode for destination cleanup</li>
+                            <li>Excluded-directory presets for Xcode, Final Cut Pro, Adobe, Node, and macOS system folders</li>
+                            <li>Optional overflow destination for oversized or long-filename files</li>
+                            <li>Sandboxed folder access with re-select prompts when bookmarks need refreshing</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>App Style:</strong> Menu bar app, sandboxed folder access
                         </div>
                     </div>
                 </div>
