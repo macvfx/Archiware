@@ -738,6 +738,192 @@
             }
         }
 
+        /* Find File Type Hero */
+        .fft-hero {
+            background: linear-gradient(135deg, #221106 0%, #3a1f0b 42%, #6b3b14 100%);
+            color: white;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid #f59e0b;
+        }
+
+        .fft-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .fft-hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .fft-hero-text .new-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #2a1608;
+            margin-bottom: 15px;
+        }
+
+        .fft-hero-text h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .fft-hero-text .subtitle {
+            font-size: 1.15rem;
+            color: #f4eadf;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .fft-hero-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .fft-highlight {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .fft-highlight .hl-icon {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .fft-highlight h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .fft-highlight p {
+            font-size: 0.82rem;
+            color: #f2e6d8;
+            line-height: 1.4;
+        }
+
+        .fft-hero-apps {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .fft-app-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 22px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .fft-app-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(245, 158, 11, 0.35);
+        }
+
+        .fft-app-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .fft-app-card .card-header span {
+            font-size: 1.6rem;
+        }
+
+        .fft-app-card .card-header h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .fft-app-card .card-meta {
+            font-size: 0.82rem;
+            color: #e7d7c5;
+            margin-bottom: 8px;
+        }
+
+        .fft-app-card .card-desc {
+            font-size: 0.9rem;
+            color: #f7efe7;
+            line-height: 1.5;
+        }
+
+        .fft-app-card a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .fft-app-card a:hover {
+            color: #ffffff;
+        }
+
+        .app-section-icon.fft {
+            background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary.fft {
+            background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+            color: #2a1608;
+        }
+
+        .api-badge.fft {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #2a1608;
+        }
+
+        .api-tag.fft {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        @media (max-width: 968px) {
+            .fft-hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .fft-hero-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fft-hero-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Individual App Sections */
         .app-section {
             padding: 50px 0;
@@ -1044,7 +1230,8 @@
         }
 
         .main-hero code,
-        .export-hero code {
+        .export-hero code,
+        .fft-hero code {
             color: #f8fafc;
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(255, 255, 255, 0.2);
@@ -1219,7 +1406,7 @@
             <div class="container">
                 <div class="main-hero-content">
                     <h2>macOS Tools for Archive and Media Production Workflows</h2>
-                    <p class="tagline">P5 Archive apps, Media Trust tools, and workflow utilities built for production</p>
+                    <p class="tagline">P5 Archive apps, Media Trust tools, and storage workflow utilities built for production</p>
                     
                     <div class="app-showcase">
                         <!-- P5 Archive Manager -->
@@ -1376,6 +1563,18 @@
                                 Compare two folder trees file-by-file with xxHash64 hashing, use subfolder comparison for drill-down triage, and clean up P5 stub files before final handoff.
                             </div>
                             <a href="#folder-copy-compare">Learn more →</a>
+                        </div>
+
+                        <!-- Find File Type -->
+                        <div class="app-card">
+                            <div class="app-icon">🧭</div>
+                            <h3>Find File Type</h3>
+                            <p class="app-subtitle">Storage breakdown for post-production folders</p>
+                            <span class="api-badge fft">SQLite &middot; Workflow Tool</span>
+                            <div class="app-features">
+                                Watch edit storage, NAS shares, and cloud workspaces to see which file types are consuming space. Ideal for answering why camera originals like <code>.mxf</code>, <code>.r3d</code>, or <code>.braw</code> are filling an editor's volume.
+                            </div>
+                            <a href="#find-file-type">Learn more →</a>
                         </div>
                     </div>
                 </div>
@@ -1575,6 +1774,74 @@
                             <div class="card-meta">MHL Verify · Drop Verify · CopyTrust</div>
                             <div class="card-desc">Once Folder Copy Compare confirms your copy is clean, hand off to Drop Verify or CopyTrust to generate an MHL manifest and lock in your chain of custody.</div>
                             <a href="https://github.com/macvfx/MHL" target="_blank">View MHL repo on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Find File Type Hero -->
+        <section class="fft-hero">
+            <div class="container">
+                <div class="fft-hero-content">
+                    <div class="fft-hero-text">
+                        <span class="new-badge">Workflow Tool</span>
+                        <h2>Find File Type</h2>
+                        <p class="subtitle">A native macOS storage analysis app for post-production teams. Point it at an editor drive, NAS volume, LucidLink filespace, or restore folder and it tells you exactly which file types are taking up space, how that mix changes over time, and whether camera originals are quietly overwhelming editorial storage.</p>
+
+                        <div class="fft-hero-highlights">
+                            <div class="fft-highlight">
+                                <div class="hl-icon">📦</div>
+                                <h4>Why Is Storage Full?</h4>
+                                <p>Break down real usage by extension, category, group, stage, and role so you can see if camera originals, renders, proxies, or archives are driving growth</p>
+                            </div>
+                            <div class="fft-highlight">
+                                <div class="hl-icon">🎥</div>
+                                <h4>Camera Original Visibility</h4>
+                                <p>Spot heavy formats like <code>.mxf</code>, <code>.r3d</code>, <code>.ari</code>, and <code>.braw</code> inside folders that were supposed to hold only editorial media</p>
+                            </div>
+                            <div class="fft-highlight">
+                                <div class="hl-icon">📈</div>
+                                <h4>Trend History</h4>
+                                <p>Scheduled rescans build snapshots over time so you can prove whether storage pressure is rising, stabilising, or getting cleaned up</p>
+                            </div>
+                            <div class="fft-highlight">
+                                <div class="hl-icon">🔎</div>
+                                <h4>Search Across Volumes</h4>
+                                <p>Find large files, specific extensions, and problem folders across watched storage without digging through Finder by hand</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fft-hero-apps">
+                        <div class="fft-app-card">
+                            <div class="card-header">
+                                <span>🧭</span>
+                                <h3>Find File Type</h3>
+                            </div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v1.1 (build 4)</div>
+                            <div class="card-desc">Recursive scanning, SQLite-backed history, and a file-type breakdown built for post-production storage triage. See exactly how much space is going to camera originals versus editorial media, graphics, documents, or archive artifacts.</div>
+                            <a href="#find-file-type">Learn more →</a>
+                        </div>
+
+                        <div class="fft-app-card">
+                            <div class="card-header">
+                                <span>🗃️</span>
+                                <h3>Watched Storage</h3>
+                            </div>
+                            <div class="card-meta">NAS &middot; LucidLink &middot; SAN &middot; RAID &middot; USB SSD</div>
+                            <div class="card-desc">Works across the kinds of storage editors actually use. Keep last-known data when a volume goes offline, then rescan when it comes back.</div>
+                            <a href="#find-file-type">Learn more →</a>
+                        </div>
+
+                        <div class="fft-app-card">
+                            <div class="card-header">
+                                <span>🧪</span>
+                                <h3>Workflow Fit</h3>
+                            </div>
+                            <div class="card-meta">Storage triage before cleanup, handoff, or archive</div>
+                            <div class="card-desc">Use it when someone asks why a project share is bloated. Confirm whether camera originals landed on the wrong volume, whether proxies are actually growing, or whether old renders and exports are the real culprit.</div>
+                            <a href="#find-file-type">Learn more →</a>
                         </div>
                     </div>
                 </div>
@@ -2311,6 +2578,79 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Output:</strong> MHL, PDF, CSV
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folder Copy Compare Section -->
+            <section id="find-file-type" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon fft">🧭</div>
+                    <div class="app-section-title">
+                        <h2>Find File Type</h2>
+                        <span class="api-tag fft">SQLite &middot; Storage Workflow Tool</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A native macOS app for understanding what is actually consuming storage inside production folders. Add a watched folder on a RAID, NAS, SAN, LucidLink filespace, or external SSD, and Find File Type scans it recursively into a local SQLite database so you can inspect file usage by extension, category, group, stage, and workflow role.</p>
+                        <p>It is especially useful when post-production editors are asking why "camera originals" are taking over an edit volume. Instead of guessing, you can open the folder, look at the type breakdown, and confirm whether formats like <code>.mxf</code>, <code>.r3d</code>, <code>.ari</code>, <code>.braw</code>, or camera-original <code>.mov</code> files are still sitting on storage that should now hold only proxies, editorial media, or exports. Scheduled scans and historical snapshots also make it easy to prove whether the problem is growing over time or already under control.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📂</div>
+                                <h3>Watched Folders</h3>
+                                <p>Track local disks, RAIDs, NAS shares, SAN volumes, LucidLink workspaces, and removable SSDs from one app</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🏷️</div>
+                                <h3>100+ File Types</h3>
+                                <p>Seeded for real media workflows with camera raw, editorial, color, metadata, archive, and document formats</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎬</div>
+                                <h3>Stage and Role</h3>
+                                <p>Classify files beyond extension alone so you can separate camera originals from editorial media, delivery files, and archive artifacts</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Breakdowns and Trends</h3>
+                                <p>Review current storage by type or folder, then compare snapshots over time with Swift Charts</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔍</div>
+                                <h3>Cross-Folder Search</h3>
+                                <p>Search by file name, extension, or size range across all watched locations to find the true storage offenders</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧷</div>
+                                <h3>Offline-Aware</h3>
+                                <p>Unmounted volumes keep their last-known data in the database so you can still answer questions when storage is offline</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/Find-File-Type" class="btn btn-primary fft" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Recursive folder scanning into a local SQLite database</li>
+                            <li>Breakdowns by extension, category, group, stage, and role</li>
+                            <li>Designed for camera-original versus editorial-storage triage</li>
+                            <li>Scheduled rescans with historical snapshots</li>
+                            <li>Search by name, extension, or size range across watched folders</li>
+                            <li>Dead symlink tracking and bundle exclusions</li>
+                            <li>Menu bar summary for quick storage checks</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Latest:</strong> v1.1 (build 4)<br>
+                            <strong>Best for:</strong> Editorial storage audits, camera-original triage, and workflow cleanup
                         </div>
                     </div>
                 </div>
