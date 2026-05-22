@@ -1449,10 +1449,10 @@
                         <div class="app-card">
                             <div class="app-icon">📤</div>
                             <h3>P5 Archive Export</h3>
-                            <p class="app-subtitle">CSV export, job analytics & volume inventory</p>
+                            <p class="app-subtitle">CSV export, volume inventory & backup</p>
                             <span class="api-badge rest">SQLite &middot; nsdchat</span>
                             <div class="app-features">
-                                Export archive job data and volume inventory to CSV. 13 built-in queries plus nsdchat-driven volume export with scheduling.
+                                Export archive job analytics, per-volume TSV inventories, volume list CSVs, and P5 config/log backups with scheduling.
                             </div>
                             <a href="#archive-export">Learn more →</a>
                         </div>
@@ -1588,7 +1588,7 @@
                     <div class="export-hero-text">
                         <span class="new-badge">New</span>
                         <h2>P5 Archive Export</h2>
-                        <p class="subtitle">SwiftUI macOS software for exporting Archiware P5 archive job data to CSV. 13 built-in analytical queries, configurable scheduling, and network volume sync — available as a full windowed app or a lightweight menu bar utility.</p>
+                        <p class="subtitle">SwiftUI macOS software for exporting Archiware P5 archive job data, volume inventories, and server backup archives. 13 built-in analytical queries, nsdchat-driven TSV inventory export, configurable scheduling, and network volume sync — available as a full windowed app or a lightweight menu bar utility.</p>
 
                         <div class="export-hero-highlights">
                             <div class="export-highlight">
@@ -1599,17 +1599,17 @@
                             <div class="export-highlight">
                                 <div class="hl-icon">⏱</div>
                                 <h4>Automated Scheduling</h4>
-                                <p>Daily, weekly, or monthly exports with configurable time</p>
+                                <p>Daily, weekly, or monthly SQL, volume, backup, or combined workflow runs</p>
                             </div>
                             <div class="export-highlight">
-                                <div class="hl-icon">🔒</div>
-                                <h4>Read-Only Access</h4>
-                                <p>Opens resources.db in read-only mode — never modifies P5 data</p>
+                                <div class="hl-icon">💿</div>
+                                <h4>Volume Inventories</h4>
+                                <p>Per-volume TSV export with dated snapshots or a reusable incremental folder</p>
                             </div>
                             <div class="export-highlight">
-                                <div class="hl-icon">🔌</div>
-                                <h4>Custom SQL Support</h4>
-                                <p>Add your own .sql files with {{MIN_SIZE_KB}} placeholder</p>
+                                <div class="hl-icon">🗄</div>
+                                <h4>P5 Backup Export</h4>
+                                <p>Create compressed config and log backups for migration or recovery workflows</p>
                             </div>
                         </div>
                     </div>
@@ -2061,7 +2061,8 @@
                     <div class="app-description">
                         <p>A SwiftUI macOS application that reads the Archiware P5 <code>resources.db</code> database and exports archive job data to CSV. Features a full dashboard with sidebar query browser, results table, progress reporting, and a filterable log viewer.</p>
                         <p>Ships with 13 analytical queries covering throughput analysis, storage growth trends, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
-                        <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume file inventories to a local folder and optionally copy to a network destination. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and toggle between full and read-only database access.</p>
+                        <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume TSV inventories to dated run folders for snapshots or a standard <code>VolumeExport</code> folder for incremental runs. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and optionally copy outputs to a network destination.</p>
+                        <p>The backup workflow creates compressed archives of the local P5 config and log folders, with optional clip exclusion and separate clip backup support for migration, disaster recovery, and regular server snapshots.</p>
 
                         <div class="features">
                             <div class="feature-card">
@@ -2072,12 +2073,12 @@
                             <div class="feature-card">
                                 <div class="feature-icon">💿</div>
                                 <h3>Volume Inventory Export</h3>
-                                <p>nsdchat-driven per-volume inventory with LTO generation sorting, archive-only filter, and volume list CSV</p>
+                                <p>nsdchat-driven per-volume TSV inventory with LTO sorting, archive-only filter, volume list CSV, and dated or standard folder modes</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">📅</div>
                                 <h3>Built-in Scheduler</h3>
-                                <p>Schedule SQL Export, Volume Export, or Both at a configurable frequency and time</p>
+                                <p>Schedule SQL Export, Volume Export, Backup Export, or combined workflow runs at a configurable frequency and time</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">📝</div>
@@ -2087,12 +2088,12 @@
                             <div class="feature-card">
                                 <div class="feature-icon">🌐</div>
                                 <h3>Network Volume Sync</h3>
-                                <p>Auto-copy CSVs to a network share after each export</p>
+                                <p>Auto-copy SQL CSVs, volume TSVs, volume lists, and backup archives to a network destination</p>
                             </div>
                             <div class="feature-card">
-                                <div class="feature-icon">⚙️</div>
-                                <h3>Volume Export Settings</h3>
-                                <p>Naming mode, overwrite control, full/read-only switch, and archive-only toggle</p>
+                                <div class="feature-icon">🗄</div>
+                                <h3>Backup Export</h3>
+                                <p>Create compressed P5 config and log archives, with optional clip handling for migration-ready backups</p>
                             </div>
                         </div>
 
@@ -2118,6 +2119,7 @@
                         <ul>
                             <li>nsdchat path configuration</li>
                             <li>Local volume output folder</li>
+                            <li>Dated run folder or standard incremental folder mode</li>
                             <li>Network copy destination</li>
                             <li>Naming mode selection</li>
                             <li>Archive-only volume toggle</li>
@@ -2126,9 +2128,16 @@
                             <li>Sort by LTO generation</li>
                             <li>Overwrite files option</li>
                         </ul>
+                        <h4>Backup Export</h4>
+                        <ul>
+                            <li>P5 config and log archive creation</li>
+                            <li>Optional clip exclusion</li>
+                            <li>Separate clip backup option</li>
+                            <li>Local output folder and network copy destination</li>
+                        </ul>
                         <h4>Automation</h4>
                         <ul>
-                            <li>Scheduled workflow target: SQL Export, Volume Export, or Both</li>
+                            <li>Scheduled workflow target: SQL Export, Volume Export, SQL + Volume, Backup Export, or All Workflows</li>
                             <li>Configurable frequency</li>
                             <li>Configurable time</li>
                         </ul>
@@ -2152,7 +2161,7 @@
 
                 <div class="app-section-content">
                     <div class="app-description">
-                        <p>A lightweight menu bar companion that provides the same export engine as the windowed app, accessible from an always-visible archive box icon. No Dock presence — click the icon to open a popover with status, one-click exports, and inline settings.</p>
+                        <p>A lightweight menu bar companion that provides the same SQL, volume inventory, and backup export engines as the windowed app, accessible from an always-visible archive box icon. No Dock presence — click the icon to open a popover with status, one-click exports, and inline settings.</p>
                         <p>Shares the same P5ExportCore library and settings as the full Mac app. Add it to Login Items for unattended, always-on scheduling on your P5 server.</p>
 
                         <div class="features">
@@ -2164,7 +2173,7 @@
                             <div class="feature-card">
                                 <div class="feature-icon">⚡</div>
                                 <h3>One-Click Export</h3>
-                                <p>Instant export with progress indicator in the popover</p>
+                                <p>Run SQL, volume inventory, or backup exports with progress indicators in the popover</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">🔄</div>
@@ -2192,6 +2201,9 @@
                             <li>Next scheduled run indicator</li>
                             <li>Compact inline settings panel</li>
                             <li>Same 13 built-in queries as Mac app</li>
+                            <li>Volume inventory TSV export with dated or standard folder modes</li>
+                            <li>Volume list CSV export</li>
+                            <li>P5 config/log backup export</li>
                             <li>Custom SQL directory support</li>
                             <li>Network volume auto-copy</li>
                             <li>Login Items integration</li>
