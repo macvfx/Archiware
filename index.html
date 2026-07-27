@@ -1413,10 +1413,10 @@
                         <div class="app-card">
                             <div class="app-icon">🗄️</div>
                             <h3>P5 Archive Manager</h3>
-                            <p class="app-subtitle">File verification & archive status</p>
-                            <span class="api-badge nsdchat">nsdchat CLI</span>
+                            <p class="app-subtitle">Verify, archive, and safely delete</p>
+                            <span class="api-badge rest">nsdchat &middot; REST API Beta</span>
                             <div class="app-features">
-                                Drag-and-drop interface to verify if files have been archived. Get detailed reports with barcodes, volume IDs, and archive dates.
+                                Verify what is already in P5, delete proven-archived local copies, and use the REST API beta to archive the remaining files, re-check them, and then safely delete them.
                             </div>
                             <a href="#archive-manager">Learn more →</a>
                         </div>
@@ -1443,6 +1443,18 @@
                                 Browse and search P5 archive index inventory. Navigate directories, build a local database, and find archived files quickly.
                             </div>
                             <a href="#archive-search">Learn more →</a>
+                        </div>
+
+                        <!-- P5 Archive Browser -->
+                        <div class="app-card">
+                            <div class="app-icon">🧭</div>
+                            <h3>P5 Archive Browser</h3>
+                            <p class="app-subtitle">Find files and the exact LTO tape</p>
+                            <span class="api-badge rest">TSV &middot; REST API</span>
+                            <div class="app-features">
+                                Browse imported per-volume inventories, search across every tape, organize archive groups, and verify selected paths against live P5.
+                            </div>
+                            <a href="#archive-browser">Learn more →</a>
                         </div>
 
                         <!-- P5 Archive Export -->
@@ -1855,14 +1867,16 @@
                     <div class="app-section-icon">🗄️</div>
                     <div class="app-section-title">
                         <h2>P5 Archive Manager</h2>
-                        <span class="api-tag nsdchat">Uses nsdchat CLI</span>
+                        <span class="api-tag rest">nsdchat CLI &middot; REST API Beta</span>
                     </div>
                 </div>
                 
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>The app leverages the Archiware <strong>nsdchat</strong> command-line interface to query archive status, making it ideal for environments where direct CLI access to the P5 server is available.</p>
+                        <p>Choose the established <strong>nsdchat CLI</strong> edition or the new <strong>REST API beta v0.10 (build 22)</strong>. The API edition connects over the network and can search every configured archive index without requiring local CLI access to the P5 server.</p>
+                        <p>The REST API edition adds a complete proof-first lifecycle. Delete local copies that are already verified in P5, then submit files that are not yet archived directly to a configured P5 plan and client, monitor the archive job, re-check the files, and delete the newly archived local copies only after P5 proof is confirmed.</p>
+                        <p>New in v0.10: add an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
                         
                         <div class="features">
                             <div class="feature-card">
@@ -1886,15 +1900,26 @@
                                 <p>Complete execution logs with timestamps</p>
                             </div>
                             <div class="feature-card">
-                                <div class="feature-icon">📝</div>
-                                <h3>Verify with Delete </h3>
-                                <p>Verify files are archived and then delete</p>
+                                <div class="feature-icon">🛡️</div>
+                                <h3>Proof-First Delete</h3>
+                                <p>Write proof reports, re-check each candidate, and delete only local files verified in P5</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📤</div>
+                                <h3>Archive the Rest</h3>
+                                <p>Send unarchived files to a P5 plan, monitor the job, re-check, and then delete once verified</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧭</div>
+                                <h3>Historical Locations</h3>
+                                <p>Automatically search older storage roots when a project has moved since it was archived</p>
                             </div>
                         </div>
                         
                         <div class="buttons">
                             <a href="https://github.com/macvfx/p5ArchiveManager" class="btn btn-primary" target="_blank">View on GitHub</a>
                             <a href="https://github.com/macvfx/p5ArchiveManager/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveManager/releases/tag/0.10%2B22" class="btn btn-secondary" target="_blank">REST API Beta 0.10</a>
                         </div>
                     </div>
                     
@@ -1906,10 +1931,15 @@
                             <li>Real-time log monitoring</li>
                             <li>CSV export functionality</li>
                             <li>Secure keychain credential storage</li>
+                            <li>REST API multi-index search</li>
+                            <li>Historical archived-location fallback</li>
+                            <li>Archive unarchived files through a P5 plan and client</li>
+                            <li>Proof reports, deletion receipts, and audit logs</li>
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
-                            <strong>API:</strong> nsdchat CLI
+                            <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
+                            <strong>REST release:</strong> v0.10 build 22 (Beta &mdash; test only)
                         </div>
                     </div>
                 </div>
@@ -2042,6 +2072,81 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/indexes/.../inventory
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- P5 Archive Browser Section -->
+            <section id="archive-browser" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon overview">🧭</div>
+                    <div class="app-section-title">
+                        <h2>P5 Archive Browser</h2>
+                        <span class="api-tag rest">TSV Inventories &middot; REST API</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A native macOS app for browsing the contents of P5 Archive volumes, usually LTO tapes. Import per-volume TSV inventories, search filenames and paths across the complete local catalog, and identify the exact tape to load for a restore.</p>
+                        <p>The Browser combines fast SQLite-backed offline navigation with optional read-only P5 REST checks. Organize tapes into archive groups, add operator-owned aliases and location notes, review catalog data sources, and safely import matching volume-list CSV metadata without changing data on the P5 server.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Search All Tapes</h3>
+                                <p>Find a filename or path across every imported volume and reveal the matching tape</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📁</div>
+                                <h3>Per-Volume Browser</h3>
+                                <p>Expand large tape inventories folder by folder without loading the whole tree into memory</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">💿</div>
+                                <h3>Archive Groups</h3>
+                                <p>Organize tapes into persistent groups with LTO generation, barcode, location, and health details</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📥</div>
+                                <h3>Safe Inventory Import</h3>
+                                <p>Review and validate six- or eight-column TSV layouts before replacing catalog data</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔄</div>
+                                <h3>Automatic Watch Folder</h3>
+                                <p>Import only new or changed stable TSV inventories while preserving the last good catalog</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🛡️</div>
+                                <h3>Read-Only P5 Checks</h3>
+                                <p>Refresh volume metadata and verify selected paths without restoring or modifying server data</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/P5-Archive-Browser" class="btn btn-primary overview" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/P5-Archive-Browser/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Cross-volume file and project search</li>
+                            <li>SQLite-backed offline catalog</li>
+                            <li>Six- and eight-column TSV support</li>
+                            <li>Volume-list CSV metadata import</li>
+                            <li>Archive groups, aliases, locations, and notes</li>
+                            <li>Saved and recent searches</li>
+                            <li>Automatic TSV watch folder</li>
+                            <li>Portable catalog backup and guarded reset</li>
+                            <li>Optional read-only P5 REST integration</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Requires:</strong> macOS 14.6+<br>
+                            <strong>Sources:</strong> TSV &middot; CSV &middot; P5 REST API
                         </div>
                     </div>
                 </div>
