@@ -16,8 +16,14 @@ Archiware P5 scripts
 - **volume-full-vs-appendable** Check tapes in the jukebox and categorize them: Full/Readonly tapes vs Appendable with used size in TiB
 - *volume-list* Create a P5 volume list as CSV from Archiware P5 and save it to /private/tmp/ (Note: Original script form Archiware cli manual. Modified by Mat X to add volume and file output directly).
 
+## P5 Archive Browser
+- P5 Archive Browser (mac app) exists to search the TSV files created by **P5 Archive Export** or the scripts provided here **volt2tsv-check-archive-mode-VolName**. Or even now in the P5 web GUI. See [P5 Archive Browser repo](https://github.com/macvfx/P5-Archive-Browser)
+
 ## P5 Archive Check
 - The P5 Archive check scripts is in [P5 Archive Check](https://github.com/macvfx/p5ArchiveCheck)
+
+## P5 Archive Export
+- P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport)
 
 ## P5 Health Check
 The P5 Health Check script and API based app is in [P5 Health Check](https://github.com/macvfx/p5HealthCheck)
@@ -31,9 +37,6 @@ The P5 Health Check script and API based app is in [P5 Health Check](https://git
 ## P5 Archive Search
 - The *P5 Archive Search app* lets you crawl through your entire archive index via REST API. [P5 Archive Search](https://github.com/macvfx/p5ArchiveSearch)
   
-## P5 Archive Export
-- P5 Archive Export (mac and menu bar apps) are based on advanced version of **jobs-archive-only-sql2csv**. See [P5 Archive Export repo](https://github.com/macvfx/p5ArchiveExport)
-
 ## 2026 code.matx.ca - P5 Archive Tools for macOS & iOS
 [For feedback, reach out via GitHub](https://github.com/macvfx) and [Support this project by optional donation](https://www.paypal.com/ncp/payment/ZX52VNS49SRZA)
   
