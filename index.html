@@ -1493,14 +1493,14 @@
                             <a href="#backuptrust">Learn more →</a>
                         </div>
 
-                        <!-- FCPXMLD Conversion -->
+                        <!-- FCP Reports -->
                         <div class="app-card">
                             <div class="app-icon">🎬</div>
-                            <h3>FCPXMLD Conversion Tool</h3>
-                            <p class="app-subtitle">Drag-and-drop XMLD to XML</p>
+                            <h3>FCP Reports</h3>
+                            <p class="app-subtitle">Library capture, Excel / PDF reports &amp; XMLD conversion</p>
                             <span class="api-badge utility">FCP Workflow Utility</span>
                             <div class="app-features">
-                                SwiftUI macOS drag-and-drop app that converts <code>.fcpxmld</code> bundles into <code>.fcpxml</code> output in place or to a destination folder.
+                                macOS SwiftUI app that archives Final Cut libraries as validated FCPXML evidence, builds OpenFCPXMLKit Excel / PDF reports, and converts <code>.fcpxmld</code> bundles to <code>.fcpxml</code>.
                             </div>
                             <a href="#fcpxmld-conversion">Learn more →</a>
                         </div>
@@ -2390,41 +2390,41 @@
                 </div>
             </section>
 
-            <!-- FCPXMLD Conversion Tool Section -->
+            <!-- FCP Reports Section -->
             <section id="fcpxmld-conversion" class="app-section">
                 <div class="app-section-header">
                     <div class="app-section-icon fcpxml">🎬</div>
                     <div class="app-section-title">
-                        <h2>FCPXMLD Drag Convert App</h2>
-                        <span class="api-tag utility">Workflow Utility</span>
+                        <h2>FCP Reports</h2>
+                        <span class="api-tag utility">FCP Workflow Utility</span>
                     </div>
                 </div>
 
                 <div class="app-section-content">
                     <div class="app-description">
-                        <p>A small macOS SwiftUI drag-and-drop tool for converting Final Cut Pro <code>.fcpxmld</code> bundles into renamed <code>.fcpxml</code> output. The app wraps the bundled shell script <code>find-all-FCPXMLD-convert-count-move.sh</code>.</p>
-                        <p>Drop one or more folders or bundles, choose output mode, and monitor progress in a live in-app log.</p>
+                        <p>A macOS SwiftUI utility for Final Cut Pro XML work. <strong>FCP Reports</strong> (formerly FCPXMLD Drag Convert App) archives Final Cut libraries as byte-for-byte FCPXML evidence with OpenFCPXMLKit validation, builds Excel / PDF reports from <code>.fcpxml</code> files or <code>.fcpxmld</code> bundles, and converts bundles to standalone <code>.fcpxml</code> output.</p>
+                        <p>Four tabs: <strong>Library Capture</strong>, <strong>FCP Reports</strong>, <strong>Convert FCPXMLD</strong>, and <strong>Settings</strong>.</p>
 
                         <div class="features">
                             <div class="feature-card">
-                                <div class="feature-icon">🖱️</div>
-                                <h3>Drag-and-Drop Input</h3>
-                                <p>Accepts folders and direct <code>.fcpxmld</code> bundle drops</p>
+                                <div class="feature-icon">🗄️</div>
+                                <h3>Library Capture</h3>
+                                <p>Drag a library or event from the Final Cut sidebar — the app saves a byte-for-byte safety FCPXML with SHA-256, JSON inventory, and validation report</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Excel / PDF Reports</h3>
+                                <p>OpenFCPXMLKit report workbooks and PDFs with role inventory, markers, keywords, transitions, effects, summary, and media summary sections</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">📂</div>
-                                <h3>Two Output Modes</h3>
-                                <p>Save in place or mirror converted output to a destination folder</p>
+                                <h3>Convert FCPXMLD</h3>
+                                <p>Batch <code>.fcpxmld</code> to renamed <code>.fcpxml</code> across nested folders using the bundled conversion script</p>
                             </div>
                             <div class="feature-card">
-                                <div class="feature-icon">📝</div>
-                                <h3>Live Logging</h3>
-                                <p>Shows conversion activity and processing details while running</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">🧩</div>
-                                <h3>Toolchain Fallbacks</h3>
-                                <p>Uses <code>xmllint</code>, then <code>xmlstarlet</code>, then raw copy fallback</p>
+                                <div class="feature-icon">📌</div>
+                                <h3>Global Output Settings</h3>
+                                <p>Save in Place beside each input or mirror to a persistent destination folder — both can be enabled at once</p>
                             </div>
                         </div>
 
@@ -2437,16 +2437,18 @@
                     <div class="app-info-box">
                         <h4>Key Features</h4>
                         <ul>
-                            <li>SwiftUI macOS app</li>
-                            <li>Bundled conversion shell script at runtime</li>
-                            <li>Batch conversion across nested folders</li>
-                            <li>Preserves relative path structure in destination mode</li>
+                            <li>Library FCPXML capture with byte-for-byte preservation and validation</li>
+                            <li>Auto-build Excel / PDF reports after capture using the report defaults in Settings</li>
+                            <li>Independent FCP Reports tab for custom report sections, format, and options</li>
+                            <li>Configurable report sections and options (timecode format, disabled-clip exclusion, sheet protection, copyright, project filter)</li>
+                            <li>Batch conversion across nested folders with Save in Place / Save to Destination</li>
+                            <li>Live in-app logging with <code>xmllint</code> / <code>xmlstarlet</code> formatting fallbacks</li>
                             <li>Direct local build via <code>swift build</code></li>
                         </ul>
                         <div class="version-info">
-                            <strong>Project:</strong> FCPXMLD Drag Convert App<br>
+                            <strong>Project:</strong> FCP Reports<br>
                             <strong>Build:</strong> Swift Package / Xcode project<br>
-                            <strong>Mode:</strong> Drag-and-drop conversion utility
+                            <strong>Mode:</strong> Library capture, reporting &amp; conversion utility
                         </div>
                     </div>
                 </div>
