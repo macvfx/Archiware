@@ -1493,7 +1493,210 @@
                             <a href="#backuptrust">Learn more →</a>
                         </div>
 
-                        <!-- FCP Reports -->
+                        <!-- P5 Search Jumper Section -->
+            <section id="search-jumper" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon overview">🎯</div>
+                    <div class="app-section-title">
+                        <h2>P5 Search Jumper</h2>
+                        <span class="api-tag rest">Uses REST API</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A SwiftUI macOS app that bridges <strong>Jumper</strong> — a local media analysis app that builds a searchable cache of visual and speech analysis over your footage — and <strong>Archiware P5</strong>, which holds the source media on tape.</p>
+                        <p>Search Jumper's analysis cache for the exact shot or spoken phrase you need. When the source file is no longer on disk, resolve its exact P5 <code>ArchiveEntry</code> handle and restore just that file, straight from the result. The restore folder defaults to the file's original parent directory, so a missing file returns to the path it came from.</p>
+                        <p><strong>Requires a Jumper analysis cache</strong>, local or on shared storage. Search Jumper does not create the cache; it searches one Jumper has already built.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Visual &amp; Transcript Search</h3>
+                                <p>Semantic search over what is on screen or what is said, grouped by source file</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📼</div>
+                                <h3>Restore From P5</h3>
+                                <p>Offline results offer Restore from P5 — one archive entry handle, one restore job</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎛️</div>
+                                <h3>Metadata Filters</h3>
+                                <p>Narrow by media kind, resolution, codec, camera, and duration</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">▶️</div>
+                                <h3>Clip Preview</h3>
+                                <p>Play the source from the matched timecode inline; stills open in a viewer</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📌</div>
+                                <h3>Menu Bar Quick Search</h3>
+                                <p>A compact popover that opens the main window on the matching result</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🕐</div>
+                                <h3>Restore History</h3>
+                                <p>SQLite-backed audit trail, plus an API log with credentials redacted</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/P5-Search-Jumper" class="btn btn-primary overview" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/P5-Search-Jumper/releases" data-release="p5-search-jumper" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Semantic visual and transcript search</li>
+                            <li>Results-per-file limit and same-name collapsing</li>
+                            <li>Restore an exact P5 ArchiveEntry handle</li>
+                            <li>Restores default to the original folder</li>
+                            <li>Inventory tab: check paths against the cache</li>
+                            <li>Shared-storage path remapping</li>
+                            <li>Keychain-stored Jumper and P5 credentials</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-search-jumper">v0.2.1-beta build 4</span> (Beta &mdash; test only)<br>
+                            <strong>Requires:</strong> macOS 14+, a Jumper analysis cache<br>
+                            <strong>API:</strong> REST /restore/restoreselections
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Folder Creator Section -->
+            <section id="project-folder-creator" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon fft">🏗️</div>
+                    <div class="app-section-title">
+                        <h2>Project Folder Creator</h2>
+                        <span class="api-tag utility">Workflow Utility</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>Creates one numbered project across edit, archive, cloud, or custom storage from a single main folder template. The same project number and name land everywhere they need to, with the copy rules each destination requires, rather than being made by hand on one volume and forgotten on the next.</p>
+                        <p>The app opens in <strong>Simple</strong> mode: a project number, a project name, the projects already on the storage, and one row per storage saying whether it is loaded and how much room is left. Nothing in that window can change what gets created. <strong>Advanced</strong> — the other half of the picker in the header, or ⇧⌘M — is where the template, copy rules, renaming, and destinations live. Storage is checked before you type, so an unmounted archive is reported up front rather than after a number, a name and a wait.</p>
+                        <p>Saved profiles carry a whole set-up, including the template itself, to another Mac. Destinations can be taken from a CopyTrust preset.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🗂️</div>
+                                <h3>One Template, Every Storage</h3>
+                                <p>Edit, archive, cloud, or custom destinations from a single main folder template</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">👁️</div>
+                                <h3>Simple and Advanced</h3>
+                                <p>A window for whoever works under a set-up, and a window for whoever made it</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">✅</div>
+                                <h3>Verified Creation</h3>
+                                <p>Per-destination verification, partial-failure reporting, retry, and JSON/text receipts</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📦</div>
+                                <h3>Portable Profiles</h3>
+                                <p>A profile carries the whole set-up, template included, to another Mac</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary fft" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="project-folder-creator" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>One numbered project across every storage</li>
+                            <li>Per-destination copy rules</li>
+                            <li>Storage loaded/free reported before you type</li>
+                            <li>Verification and partial-failure reporting</li>
+                            <li>Retry, plus JSON and text receipts</li>
+                            <li>Profiles that carry the template itself</li>
+                            <li>Destinations importable from a CopyTrust preset</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="project-folder-creator">v0.5.0 build 23</span> (Beta &mdash; test only)<br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Ships with:</strong> the Media Trust tools
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- mhl-tool Section -->
+            <section id="mhl-tool" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon mhl">⌨️</div>
+                    <div class="app-section-title">
+                        <h2>mhl-tool</h2>
+                        <span class="api-tag mhl">CLI &middot; MHL v1.1</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>The command-line half of the Media Trust tools. <code>mhl-tool</code> creates and verifies MHL manifests without a window, so the same hashing and the same manifest format used by CopyTrust, Drop Verify and MHL Verify can run inside a script, a cron job, a watch folder, or a render-farm step.</p>
+                        <p>Manifests are written into the folder they describe, beside the files they list, so their relative paths resolve in any vendor's reader. Older manifests still sitting in a <code>Receipts</code>, <code>*_Receipts</code> or <code>ascmhl</code> subfolder keep verifying against the parent, so nothing already written is stranded.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📄</div>
+                                <h3>create</h3>
+                                <p>Write an MHL v1.1 manifest for a folder, in the folder it describes</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">✓</div>
+                                <h3>verify</h3>
+                                <p>Re-hash a folder against its manifest, including manifests written by older builds</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔗</div>
+                                <h3>Portable Manifests</h3>
+                                <p>Paths resolve in other vendors' readers, not only in these tools</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖥️</div>
+                                <h3>Universal &amp; Notarized</h3>
+                                <p>arm64 + x86_64, signed, notarized and stapled; installs to <code>/usr/local/bin</code></p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="mhl-tool" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>MHL v1.1 create and verify from the shell</li>
+                            <li>Same hash engine as the GUI apps</li>
+                            <li>Manifests written where their paths resolve</li>
+                            <li>Reads manifests from older layouts</li>
+                            <li>Configurable output path</li>
+                            <li>Scriptable for cron and render-farm steps</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="mhl-tool">v2.7.7</span><br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Installer:</strong> .pkg &rarr; /usr/local/bin
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FCP Reports -->
                         <div class="app-card">
                             <div class="app-icon">🎬</div>
                             <h3>FCP Reports</h3>
@@ -1588,6 +1791,42 @@
                             </div>
                             <a href="#find-file-type">Learn more →</a>
                         </div>
+
+                        <!-- P5 Search Jumper -->
+                        <div class="app-card">
+                            <div class="app-icon">🎯</div>
+                            <h3>P5 Search Jumper</h3>
+                            <p class="app-subtitle">Find the shot, restore it from tape</p>
+                            <span class="api-badge rest">REST API &middot; Beta</span>
+                            <div class="app-features">
+                                Search a Jumper analysis cache by what is on screen or what is said, then restore the exact P5 archive entry when the source file is no longer on disk. Requires a Jumper cache.
+                            </div>
+                            <a href="#search-jumper">Learn more →</a>
+                        </div>
+
+                        <!-- Project Folder Creator -->
+                        <div class="app-card">
+                            <div class="app-icon">🏗️</div>
+                            <h3>Project Folder Creator</h3>
+                            <p class="app-subtitle">One numbered project, every storage</p>
+                            <span class="api-badge fft">Workflow Tool &middot; Beta</span>
+                            <div class="app-features">
+                                Create one numbered project across edit, archive, cloud, or custom storage from a single folder template, with per-destination copy rules, verification, and receipts.
+                            </div>
+                            <a href="#project-folder-creator">Learn more →</a>
+                        </div>
+
+                        <!-- mhl-tool CLI -->
+                        <div class="app-card">
+                            <div class="app-icon">⌨️</div>
+                            <h3>mhl-tool</h3>
+                            <p class="app-subtitle">Create and verify MHLs from the shell</p>
+                            <span class="api-badge mhl">CLI &middot; MHL v1.1</span>
+                            <div class="app-features">
+                                The command-line half of the Media Trust tools. Create and verify MHL manifests in scripts, cron jobs, and render-farm steps. Universal, signed and notarized, installs to <code>/usr/local/bin</code>.
+                            </div>
+                            <a href="#mhl-tool">Learn more →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1632,7 +1871,7 @@
                                 <span>🖥</span>
                                 <h3>P5 Archive Export</h3>
                             </div>
-                            <div class="card-meta">macOS 12+ &middot; SwiftUI &middot; v1.4</div>
+                            <div class="card-meta">macOS 12+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5 build 4</span></div>
                             <div class="card-desc">Full windowed app with dashboard, sidebar query browser, results table, real-time progress, and log viewer with level filtering.</div>
                             <a href="#archive-export">Learn more →</a>
                         </div>
@@ -1642,7 +1881,7 @@
                                 <span>📦</span>
                                 <h3>P5 Archive Export MenuBar</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v1.4</div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5 build 4</span></div>
                             <div class="card-desc">Lightweight menu bar utility — no Dock icon. One-click exports, inline settings, and quick status checks from the popover.</div>
                             <a href="#archive-export-menubar">Learn more →</a>
                         </div>
@@ -1690,7 +1929,7 @@
                                 <span>🔐</span>
                                 <h3>MHL Verify</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.7</div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="mhl-verify">v2.6.0</span></div>
                             <div class="card-desc">Load any MHL file and verify media files still match. Reports matched, mismatched, and missing files with explicit issue details.</div>
                             <a href="#mhl-verify">Learn more →</a>
                         </div>
@@ -1700,7 +1939,7 @@
                                 <span>📋</span>
                                 <h3>Drop Verify</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.7</div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="drop-verify">v2.8.1 build 21</span></div>
                             <div class="card-desc">Drag one folder, generate an MHL manifest, contact sheet PDF, and EXIF metadata CSV. Trust artifacts in one step.</div>
                             <a href="#drop-verify">Learn more →</a>
                         </div>
@@ -1710,7 +1949,7 @@
                                 <span>🛡️</span>
                                 <h3>CopyTrust</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.1.7</div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.8.2 build 23</span></div>
                             <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -1763,7 +2002,7 @@
                                 <span>🗂️</span>
                                 <h3>Folder Compare</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v2.2</div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="folder-copy-compare">v2.8.1 build 21</span></div>
                             <div class="card-desc">Drop two folders and compare their full file trees using xxHash64. Results show every matched, mismatched, and missing file side-by-side, with P5 stub file cleanup available before final sign-off.</div>
                             <a href="#folder-copy-compare">Learn more →</a>
                         </div>
@@ -1773,7 +2012,7 @@
                                 <span>🗃️</span>
                                 <h3>Subfolder View <span style="font-size:0.75rem; background: rgba(34,211,238,0.2); color: #22d3ee; padding: 2px 8px; border-radius: 10px; font-weight: 700; vertical-align: middle;">NEW</span></h3>
                             </div>
-                            <div class="card-meta">v2.2 &middot; Drill-down hash comparison</div>
+                            <div class="card-meta"><span data-version="folder-copy-compare">v2.8.1 build 21</span> &middot; Drill-down hash comparison</div>
                             <div class="card-desc">Compare folders organised into subfolders — camera reels, shoot days, card dumps. See a pass/fail per subfolder, then tap to hash just that pair on demand.</div>
                             <a href="#folder-copy-compare">Learn more →</a>
                         </div>
@@ -1831,7 +2070,7 @@
                                 <span>🧭</span>
                                 <h3>Find File Type</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; v1.1 (build 4)</div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="find-file-type">v1.6 build 1</span></div>
                             <div class="card-desc">Recursive scanning, SQLite-backed history, and a file-type breakdown built for post-production storage triage. See exactly how much space is going to camera originals versus editorial media, graphics, documents, or archive artifacts.</div>
                             <a href="#find-file-type">Learn more →</a>
                         </div>
@@ -1874,9 +2113,9 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>Choose the established <strong>nsdchat CLI</strong> edition or the new <strong>REST API beta v0.10 (build 22)</strong>. The API edition connects over the network and can search every configured archive index without requiring local CLI access to the P5 server.</p>
+                        <p>Choose the established <strong>nsdchat CLI</strong> edition (<span data-version="p5-archive-manager">v3.7.1 build 5</span>) or the new <strong>REST API beta <span data-version="p5-archive-manager-api">v4.0.0 build 25</span></strong>. The API edition connects over the network and can search every configured archive index without requiring local CLI access to the P5 server.</p>
                         <p>The REST API edition adds a complete proof-first lifecycle. Delete local copies that are already verified in P5, then submit files that are not yet archived directly to a configured P5 plan and client, monitor the archive job, re-check the files, and delete the newly archived local copies only after P5 proof is confirmed.</p>
-                        <p>New in v0.10: add an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
+                        <p>The REST edition keeps an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
                         
                         <div class="features">
                             <div class="feature-card">
@@ -1918,8 +2157,8 @@
                         
                         <div class="buttons">
                             <a href="https://github.com/macvfx/p5ArchiveManager" class="btn btn-primary" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveManager/releases" class="btn btn-secondary" target="_blank">Download Release</a>
-                            <a href="https://github.com/macvfx/p5ArchiveManager/releases/tag/0.10%2B22" class="btn btn-secondary" target="_blank">REST API Beta 0.10</a>
+                            <a href="https://github.com/macvfx/p5ArchiveManager/releases" data-release="p5-archive-manager" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveManager/releases" data-release="p5-archive-manager-api" class="btn btn-secondary" target="_blank">REST API Beta</a>
                         </div>
                     </div>
                     
@@ -1939,7 +2178,8 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
-                            <strong>REST release:</strong> v0.10 build 22 (Beta &mdash; test only)
+                            <strong>REST release:</strong> <span data-version="p5-archive-manager-api">v4.0.0 build 25</span> (Beta &mdash; test only)<br>
+                            <strong>nsdchat release:</strong> <span data-version="p5-archive-manager">v3.7.1 build 5</span>
                         </div>
                     </div>
                 </div>
@@ -1985,7 +2225,7 @@
                         
                         <div class="buttons">
                             <a href="https://github.com/macvfx/p5ArchiveOverview" class="btn btn-primary overview" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveOverview/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveOverview/releases" data-release="p5-archive-overview" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
                     
@@ -1999,6 +2239,7 @@
                             <li>CSV and JSON exports</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-archive-overview">v2.0.2 build 10</span><br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/overview
                         </div>
@@ -2056,7 +2297,7 @@
                         
                         <div class="buttons">
                             <a href="https://github.com/macvfx/p5ArchiveSearch" class="btn btn-primary search" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveSearch/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveSearch/releases" data-release="p5-archive-search" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
                     
@@ -2070,6 +2311,7 @@
                             <li>Handles spaces in paths (URL encoding)</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.1.1 build 9</span><br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/indexes/.../inventory
                         </div>
@@ -2127,7 +2369,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/P5-Archive-Browser" class="btn btn-primary overview" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/P5-Archive-Browser/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/P5-Archive-Browser/releases" data-release="p5-archive-browser" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2145,6 +2387,7 @@
                             <li>Optional read-only P5 REST integration</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-archive-browser">v0.31 build 42</span><br>
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Sources:</strong> TSV &middot; CSV &middot; P5 REST API
                         </div>
@@ -2204,7 +2447,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/p5ArchiveExport" class="btn btn-primary export" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveExport/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveExport/releases" data-release="p5-archive-export" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2247,6 +2490,7 @@
                             <li>Configurable time</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5 build 4</span><br>
                             <strong>Requires:</strong> macOS 12 (Monterey)+<br>
                             <strong>API:</strong> SQLite (read-only) &middot; nsdchat CLI
                         </div>
@@ -2294,7 +2538,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/p5ArchiveExport" class="btn btn-primary export" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5ArchiveExport/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5ArchiveExport/releases" data-release="p5-archive-export" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2314,6 +2558,7 @@
                             <li>Login Items integration</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5 build 4</span><br>
                             <strong>Requires:</strong> macOS 14 (Sonoma)+<br>
                             <strong>API:</strong> SQLite (read-only)
                         </div>
@@ -2366,7 +2611,7 @@
 
                         <div class="buttons">
                            <a href="https://github.com/macvfx/p5HealthCheck" class="btn btn-primary export" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/p5HealthCheck/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/p5HealthCheck/releases" data-release="p5-health-check" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2383,6 +2628,7 @@
                             <li>CLI output: JSON, warnings CSV, errors CSV, volumes CSV</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-health-check">v1.7.1 build 3</span><br>
                             <strong>Requires:</strong> macOS 13.5+ (Mac), macOS 14+ (Menu Bar), iOS 17+ (iPhone)<br>
                             <strong>API:</strong> P5 REST API
                         </div>
@@ -2430,7 +2676,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/FCPXML" class="btn btn-primary export" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/FCPXML/releases/" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/FCPXML/releases" data-release="fcp-reports" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2446,6 +2692,7 @@
                             <li>Direct local build via <code>swift build</code></li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="fcp-reports">v1.6.1</span><br>
                             <strong>Project:</strong> FCP Reports<br>
                             <strong>Build:</strong> Swift Package / Xcode project<br>
                             <strong>Mode:</strong> Library capture, reporting &amp; conversion utility
@@ -2493,7 +2740,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/FCP-Backup-Manager" class="btn btn-primary export" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/FCP-Backup-Manager/releases/" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/FCP-Backup-Manager/releases" data-release="fcp-backup-manager" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2510,6 +2757,7 @@
                             <li>Comprehensive session and destination logging</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="fcp-backup-manager">v0.9.1 build 1</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Type:</strong> Menu Bar Utility
                         </div>
@@ -2557,6 +2805,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/SMB-Connect" class="btn btn-primary export" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/SMB-Connect/releases" data-release="smb-connect" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2570,7 +2819,8 @@
                             <li>SwiftUI macOS desktop experience</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Requires:</strong> macOS<br>
+                            <strong>Latest:</strong> <span data-version="smb-connect">v0.7.5 build 28</span><br>
+                            <strong>Requires:</strong> macOS 14+<br>
                             <strong>Protocol:</strong> SMB
                         </div>
                     </div>
@@ -2616,8 +2866,8 @@
                         </div>
 
                         <div class="buttons">
-                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/MHL-Verify" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL-Verify/releases" data-release="mhl-verify" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2632,6 +2882,7 @@
                             <li>Deep Compare for path-agnostic integrity</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="mhl-verify">v2.6.0</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Format:</strong> MHL v1.1 (XML)
                         </div>
@@ -2679,7 +2930,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="drop-verify" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2695,6 +2946,7 @@
                             <li>Operator name and settings</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="drop-verify">v2.8.1 build 21</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Output:</strong> MHL, PDF, CSV
                         </div>
@@ -2752,6 +3004,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/Find-File-Type" class="btn btn-primary fft" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/Find-File-Type/releases" data-release="find-file-type" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2768,7 +3021,7 @@
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
-                            <strong>Latest:</strong> v1.1 (build 4)<br>
+                            <strong>Latest:</strong> <span data-version="find-file-type">v1.6 build 1</span><br>
                             <strong>Best for:</strong> Editorial storage audits, camera-original triage, and workflow cleanup
                         </div>
                     </div>
@@ -2830,7 +3083,7 @@
 
                         <div class="buttons">
                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="folder-copy-compare" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2848,7 +3101,7 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64<br>
-                            <strong>Latest:</strong> v2.2 — Subfolder Compare
+                            <strong>Latest:</strong> <span data-version="folder-copy-compare">v2.8.1 build 21</span> — Subfolder Compare
                         </div>
                     </div>
                 </div>
@@ -2904,6 +3157,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/Backup-Trust" class="btn btn-primary backup" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/Backup-Trust/releases" data-release="backuptrust" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2920,6 +3174,7 @@
                             <li>Sandboxed folder access with re-select prompts when bookmarks need refreshing</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="backuptrust">v1.6 build 12</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>App Style:</strong> Menu bar app, sandboxed folder access
                         </div>
@@ -2977,7 +3232,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/MHL/releases" class="btn btn-secondary" target="_blank">Download Release</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="copytrust" class="btn btn-secondary" target="_blank">Download Release</a>
                         </div>
                     </div>
 
@@ -2996,6 +3251,7 @@
                             <li>Incremental subfolder naming</li>
                         </ul>
                         <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="copytrust">v2.8.2 build 23</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
@@ -3102,6 +3358,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-08</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>

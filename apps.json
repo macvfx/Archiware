@@ -1,0 +1,121 @@
+{
+  "_comment": [
+    "Source of truth for every version number shown on code.matx.ca.",
+    "Nothing here is a version string: versions come from GitHub Releases at build time.",
+    "Run scripts/update-versions.py to refresh index.html; --check fails if it is stale.",
+    "",
+    "  repo         owner/name of the PUBLIC repo the release is published to.",
+    "  title_match  optional regex against the release TITLE, for repos that ship",
+    "               several apps (macvfx/MHL ships five). Omit to accept any release.",
+    "  channel      'stable' = newest non-prerelease (falls back to newest overall),",
+    "               'latest' = newest release of any kind, for apps on a beta track.",
+    "  label        how the app is named on the site, for the generated report only."
+  ],
+
+  "apps": {
+    "p5-archive-manager": {
+      "label": "P5 Archive Manager (nsdchat edition)",
+      "repo": "macvfx/p5ArchiveManager",
+      "title_match": "^(?!API version)",
+      "channel": "stable"
+    },
+    "p5-archive-manager-api": {
+      "label": "P5 Archive Manager API",
+      "repo": "macvfx/p5ArchiveManager",
+      "title_match": "^API version",
+      "channel": "latest"
+    },
+    "p5-archive-overview": {
+      "label": "P5 Archive Overview",
+      "repo": "macvfx/p5ArchiveOverview",
+      "channel": "stable"
+    },
+    "p5-archive-search": {
+      "label": "P5 Archive Search",
+      "repo": "macvfx/p5ArchiveSearch",
+      "channel": "stable"
+    },
+    "p5-archive-browser": {
+      "label": "P5 Archive Browser",
+      "repo": "macvfx/P5-Archive-Browser",
+      "channel": "latest"
+    },
+    "p5-archive-export": {
+      "label": "P5 Archive Export",
+      "repo": "macvfx/p5ArchiveExport",
+      "channel": "stable"
+    },
+    "p5-health-check": {
+      "label": "P5 Health Check",
+      "repo": "macvfx/p5HealthCheck",
+      "channel": "stable"
+    },
+    "p5-search-jumper": {
+      "label": "P5 Search Jumper",
+      "repo": "macvfx/P5-Search-Jumper",
+      "channel": "latest"
+    },
+
+    "copytrust": {
+      "label": "CopyTrust",
+      "repo": "macvfx/MHL",
+      "title_match": "^(CopyTrust|Media Trust Tools) ",
+      "channel": "latest"
+    },
+    "drop-verify": {
+      "label": "Drop Verify",
+      "repo": "macvfx/MHL",
+      "title_match": "^Media Trust Tools ",
+      "channel": "latest"
+    },
+    "folder-copy-compare": {
+      "label": "Folder Copy Compare",
+      "repo": "macvfx/MHL",
+      "title_match": "^Media Trust Tools ",
+      "channel": "latest"
+    },
+    "mhl-tool": {
+      "label": "mhl-tool CLI",
+      "repo": "macvfx/MHL",
+      "title_match": "^mhl-tool ",
+      "channel": "latest"
+    },
+    "project-folder-creator": {
+      "label": "Project Folder Creator",
+      "repo": "macvfx/MHL",
+      "title_match": "^Project Folder Creator ",
+      "channel": "latest"
+    },
+    "mhl-verify": {
+      "label": "MHL Verify",
+      "repo": "macvfx/MHL-Verify",
+      "channel": "stable"
+    },
+
+    "find-file-type": {
+      "label": "Find File Type",
+      "repo": "macvfx/Find-File-Type",
+      "channel": "stable"
+    },
+    "backuptrust": {
+      "label": "BackupTrust",
+      "repo": "macvfx/Backup-Trust",
+      "channel": "stable"
+    },
+    "smb-connect": {
+      "label": "SMB Connect",
+      "repo": "macvfx/SMB-Connect",
+      "channel": "latest"
+    },
+    "fcp-reports": {
+      "label": "FCP Reports",
+      "repo": "macvfx/FCPXML",
+      "channel": "stable"
+    },
+    "fcp-backup-manager": {
+      "label": "FCP Backup Manager",
+      "repo": "macvfx/FCP-Backup-Manager",
+      "channel": "stable"
+    }
+  }
+}

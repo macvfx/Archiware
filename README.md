@@ -47,3 +47,36 @@ Apache 2.0 License - See LICENSE file for details.
 ## Acknowledgments
 
 Built for use with [Archiware P5](https://www.archiware.com/)
+
+## The code.matx.ca site
+
+`index.html` in this repo is the site served at code.matx.ca (see `CNAME`).
+
+**Never type a version number into `index.html` by hand.** Every version string and
+every download link is generated from GitHub Releases:
+
+```bash
+scripts/update-versions.py            # rewrite index.html from GitHub Releases
+scripts/update-versions.py --check    # exit 1 if index.html is stale (for CI)
+scripts/update-versions.py --report    # print the resolved table, write nothing
+```
+
+`apps.json` maps each app to its public repo, an optional release-title regex (one
+repo can ship several apps), and a channel — `stable` for the newest non-prerelease,
+`latest` for apps on a beta track. `versions.json` is the generated lockfile and
+records exactly which release each number came from.
+
+The script fills two kinds of marked slot and touches nothing else:
+
+```html
+<span data-version="copytrust">v2.8.2 build 23</span>
+<a data-release="copytrust" href="https://github.com/macvfx/MHL/releases">Download Release</a>
+```
+
+Adding an app: give it an entry in `apps.json`, add a card with those slots, run the
+script. It reports any resolved app that has no slot yet, and any slot whose key is
+not in `apps.json`.
+
+**Download links always point at a repo's `/releases` page, never at a pinned tag.**
+A pinned tag link is how this site once served a two-major-versions-old beta of
+P5 Archive Manager while a current release sat one click away.
