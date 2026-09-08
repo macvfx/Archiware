@@ -1493,209 +1493,6 @@
                             <a href="#backuptrust">Learn more →</a>
                         </div>
 
-                        <!-- P5 Search Jumper Section -->
-            <section id="search-jumper" class="app-section">
-                <div class="app-section-header">
-                    <div class="app-section-icon overview">🎯</div>
-                    <div class="app-section-title">
-                        <h2>P5 Search Jumper</h2>
-                        <span class="api-tag rest">Uses REST API</span>
-                    </div>
-                </div>
-
-                <div class="app-section-content">
-                    <div class="app-description">
-                        <p>A SwiftUI macOS app that bridges <strong>Jumper</strong> — a local media analysis app that builds a searchable cache of visual and speech analysis over your footage — and <strong>Archiware P5</strong>, which holds the source media on tape.</p>
-                        <p>Search Jumper's analysis cache for the exact shot or spoken phrase you need. When the source file is no longer on disk, resolve its exact P5 <code>ArchiveEntry</code> handle and restore just that file, straight from the result. The restore folder defaults to the file's original parent directory, so a missing file returns to the path it came from.</p>
-                        <p><strong>Requires a Jumper analysis cache</strong>, local or on shared storage. Search Jumper does not create the cache; it searches one Jumper has already built.</p>
-
-                        <div class="features">
-                            <div class="feature-card">
-                                <div class="feature-icon">🔎</div>
-                                <h3>Visual &amp; Transcript Search</h3>
-                                <p>Semantic search over what is on screen or what is said, grouped by source file</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">📼</div>
-                                <h3>Restore From P5</h3>
-                                <p>Offline results offer Restore from P5 — one archive entry handle, one restore job</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">🎛️</div>
-                                <h3>Metadata Filters</h3>
-                                <p>Narrow by media kind, resolution, codec, camera, and duration</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">▶️</div>
-                                <h3>Clip Preview</h3>
-                                <p>Play the source from the matched timecode inline; stills open in a viewer</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">📌</div>
-                                <h3>Menu Bar Quick Search</h3>
-                                <p>A compact popover that opens the main window on the matching result</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">🕐</div>
-                                <h3>Restore History</h3>
-                                <p>SQLite-backed audit trail, plus an API log with credentials redacted</p>
-                            </div>
-                        </div>
-
-                        <div class="buttons">
-                            <a href="https://github.com/macvfx/P5-Search-Jumper" class="btn btn-primary overview" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/P5-Search-Jumper/releases" data-release="p5-search-jumper" class="btn btn-secondary" target="_blank">Download Release</a>
-                        </div>
-                    </div>
-
-                    <div class="app-info-box">
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>Semantic visual and transcript search</li>
-                            <li>Results-per-file limit and same-name collapsing</li>
-                            <li>Restore an exact P5 ArchiveEntry handle</li>
-                            <li>Restores default to the original folder</li>
-                            <li>Inventory tab: check paths against the cache</li>
-                            <li>Shared-storage path remapping</li>
-                            <li>Keychain-stored Jumper and P5 credentials</li>
-                        </ul>
-                        <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-search-jumper">v0.2.1-beta build 4</span> (Beta &mdash; test only)<br>
-                            <strong>Requires:</strong> macOS 14+, a Jumper analysis cache<br>
-                            <strong>API:</strong> REST /restore/restoreselections
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project Folder Creator Section -->
-            <section id="project-folder-creator" class="app-section">
-                <div class="app-section-header">
-                    <div class="app-section-icon fft">🏗️</div>
-                    <div class="app-section-title">
-                        <h2>Project Folder Creator</h2>
-                        <span class="api-tag utility">Workflow Utility</span>
-                    </div>
-                </div>
-
-                <div class="app-section-content">
-                    <div class="app-description">
-                        <p>Creates one numbered project across edit, archive, cloud, or custom storage from a single main folder template. The same project number and name land everywhere they need to, with the copy rules each destination requires, rather than being made by hand on one volume and forgotten on the next.</p>
-                        <p>The app opens in <strong>Simple</strong> mode: a project number, a project name, the projects already on the storage, and one row per storage saying whether it is loaded and how much room is left. Nothing in that window can change what gets created. <strong>Advanced</strong> — the other half of the picker in the header, or ⇧⌘M — is where the template, copy rules, renaming, and destinations live. Storage is checked before you type, so an unmounted archive is reported up front rather than after a number, a name and a wait.</p>
-                        <p>Saved profiles carry a whole set-up, including the template itself, to another Mac. Destinations can be taken from a CopyTrust preset.</p>
-
-                        <div class="features">
-                            <div class="feature-card">
-                                <div class="feature-icon">🗂️</div>
-                                <h3>One Template, Every Storage</h3>
-                                <p>Edit, archive, cloud, or custom destinations from a single main folder template</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">👁️</div>
-                                <h3>Simple and Advanced</h3>
-                                <p>A window for whoever works under a set-up, and a window for whoever made it</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">✅</div>
-                                <h3>Verified Creation</h3>
-                                <p>Per-destination verification, partial-failure reporting, retry, and JSON/text receipts</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">📦</div>
-                                <h3>Portable Profiles</h3>
-                                <p>A profile carries the whole set-up, template included, to another Mac</p>
-                            </div>
-                        </div>
-
-                        <div class="buttons">
-                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary fft" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/MHL/releases" data-release="project-folder-creator" class="btn btn-secondary" target="_blank">Download Release</a>
-                        </div>
-                    </div>
-
-                    <div class="app-info-box">
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>One numbered project across every storage</li>
-                            <li>Per-destination copy rules</li>
-                            <li>Storage loaded/free reported before you type</li>
-                            <li>Verification and partial-failure reporting</li>
-                            <li>Retry, plus JSON and text receipts</li>
-                            <li>Profiles that carry the template itself</li>
-                            <li>Destinations importable from a CopyTrust preset</li>
-                        </ul>
-                        <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="project-folder-creator">v0.5.0 build 23</span> (Beta &mdash; test only)<br>
-                            <strong>Requires:</strong> macOS 14+<br>
-                            <strong>Ships with:</strong> the Media Trust tools
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- mhl-tool Section -->
-            <section id="mhl-tool" class="app-section">
-                <div class="app-section-header">
-                    <div class="app-section-icon mhl">⌨️</div>
-                    <div class="app-section-title">
-                        <h2>mhl-tool</h2>
-                        <span class="api-tag mhl">CLI &middot; MHL v1.1</span>
-                    </div>
-                </div>
-
-                <div class="app-section-content">
-                    <div class="app-description">
-                        <p>The command-line half of the Media Trust tools. <code>mhl-tool</code> creates and verifies MHL manifests without a window, so the same hashing and the same manifest format used by CopyTrust, Drop Verify and MHL Verify can run inside a script, a cron job, a watch folder, or a render-farm step.</p>
-                        <p>Manifests are written into the folder they describe, beside the files they list, so their relative paths resolve in any vendor's reader. Older manifests still sitting in a <code>Receipts</code>, <code>*_Receipts</code> or <code>ascmhl</code> subfolder keep verifying against the parent, so nothing already written is stranded.</p>
-
-                        <div class="features">
-                            <div class="feature-card">
-                                <div class="feature-icon">📄</div>
-                                <h3>create</h3>
-                                <p>Write an MHL v1.1 manifest for a folder, in the folder it describes</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">✓</div>
-                                <h3>verify</h3>
-                                <p>Re-hash a folder against its manifest, including manifests written by older builds</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">🔗</div>
-                                <h3>Portable Manifests</h3>
-                                <p>Paths resolve in other vendors' readers, not only in these tools</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon">🖥️</div>
-                                <h3>Universal &amp; Notarized</h3>
-                                <p>arm64 + x86_64, signed, notarized and stapled; installs to <code>/usr/local/bin</code></p>
-                            </div>
-                        </div>
-
-                        <div class="buttons">
-                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
-                            <a href="https://github.com/macvfx/MHL/releases" data-release="mhl-tool" class="btn btn-secondary" target="_blank">Download Release</a>
-                        </div>
-                    </div>
-
-                    <div class="app-info-box">
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>MHL v1.1 create and verify from the shell</li>
-                            <li>Same hash engine as the GUI apps</li>
-                            <li>Manifests written where their paths resolve</li>
-                            <li>Reads manifests from older layouts</li>
-                            <li>Configurable output path</li>
-                            <li>Scriptable for cron and render-farm steps</li>
-                        </ul>
-                        <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="mhl-tool">v2.7.7</span><br>
-                            <strong>Requires:</strong> macOS 14+<br>
-                            <strong>Installer:</strong> .pkg &rarr; /usr/local/bin
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- FCP Reports -->
                         <div class="app-card">
                             <div class="app-icon">🎬</div>
@@ -2631,6 +2428,209 @@
                             <strong>Latest:</strong> <span data-version="p5-health-check">v1.7.1 build 3</span><br>
                             <strong>Requires:</strong> macOS 13.5+ (Mac), macOS 14+ (Menu Bar), iOS 17+ (iPhone)<br>
                             <strong>API:</strong> P5 REST API
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- P5 Search Jumper Section -->
+            <section id="search-jumper" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon overview">🎯</div>
+                    <div class="app-section-title">
+                        <h2>P5 Search Jumper</h2>
+                        <span class="api-tag rest">Uses REST API</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A SwiftUI macOS app that bridges <strong>Jumper</strong> — a local media analysis app that builds a searchable cache of visual and speech analysis over your footage — and <strong>Archiware P5</strong>, which holds the source media on tape.</p>
+                        <p>Search Jumper's analysis cache for the exact shot or spoken phrase you need. When the source file is no longer on disk, resolve its exact P5 <code>ArchiveEntry</code> handle and restore just that file, straight from the result. The restore folder defaults to the file's original parent directory, so a missing file returns to the path it came from.</p>
+                        <p><strong>Requires a Jumper analysis cache</strong>, local or on shared storage. Search Jumper does not create the cache; it searches one Jumper has already built.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Visual &amp; Transcript Search</h3>
+                                <p>Semantic search over what is on screen or what is said, grouped by source file</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📼</div>
+                                <h3>Restore From P5</h3>
+                                <p>Offline results offer Restore from P5 — one archive entry handle, one restore job</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎛️</div>
+                                <h3>Metadata Filters</h3>
+                                <p>Narrow by media kind, resolution, codec, camera, and duration</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">▶️</div>
+                                <h3>Clip Preview</h3>
+                                <p>Play the source from the matched timecode inline; stills open in a viewer</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📌</div>
+                                <h3>Menu Bar Quick Search</h3>
+                                <p>A compact popover that opens the main window on the matching result</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🕐</div>
+                                <h3>Restore History</h3>
+                                <p>SQLite-backed audit trail, plus an API log with credentials redacted</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/P5-Search-Jumper" class="btn btn-primary overview" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/P5-Search-Jumper/releases" data-release="p5-search-jumper" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Semantic visual and transcript search</li>
+                            <li>Results-per-file limit and same-name collapsing</li>
+                            <li>Restore an exact P5 ArchiveEntry handle</li>
+                            <li>Restores default to the original folder</li>
+                            <li>Inventory tab: check paths against the cache</li>
+                            <li>Shared-storage path remapping</li>
+                            <li>Keychain-stored Jumper and P5 credentials</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-search-jumper">v0.2.1-beta build 4</span> (Beta &mdash; test only)<br>
+                            <strong>Requires:</strong> macOS 14+, a Jumper analysis cache<br>
+                            <strong>API:</strong> REST /restore/restoreselections
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Folder Creator Section -->
+            <section id="project-folder-creator" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon fft">🏗️</div>
+                    <div class="app-section-title">
+                        <h2>Project Folder Creator</h2>
+                        <span class="api-tag utility">Workflow Utility</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>Creates one numbered project across edit, archive, cloud, or custom storage from a single main folder template. The same project number and name land everywhere they need to, with the copy rules each destination requires, rather than being made by hand on one volume and forgotten on the next.</p>
+                        <p>The app opens in <strong>Simple</strong> mode: a project number, a project name, the projects already on the storage, and one row per storage saying whether it is loaded and how much room is left. Nothing in that window can change what gets created. <strong>Advanced</strong> — the other half of the picker in the header, or ⇧⌘M — is where the template, copy rules, renaming, and destinations live. Storage is checked before you type, so an unmounted archive is reported up front rather than after a number, a name and a wait.</p>
+                        <p>Saved profiles carry a whole set-up, including the template itself, to another Mac. Destinations can be taken from a CopyTrust preset.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🗂️</div>
+                                <h3>One Template, Every Storage</h3>
+                                <p>Edit, archive, cloud, or custom destinations from a single main folder template</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">👁️</div>
+                                <h3>Simple and Advanced</h3>
+                                <p>A window for whoever works under a set-up, and a window for whoever made it</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">✅</div>
+                                <h3>Verified Creation</h3>
+                                <p>Per-destination verification, partial-failure reporting, retry, and JSON/text receipts</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📦</div>
+                                <h3>Portable Profiles</h3>
+                                <p>A profile carries the whole set-up, template included, to another Mac</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary fft" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="project-folder-creator" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>One numbered project across every storage</li>
+                            <li>Per-destination copy rules</li>
+                            <li>Storage loaded/free reported before you type</li>
+                            <li>Verification and partial-failure reporting</li>
+                            <li>Retry, plus JSON and text receipts</li>
+                            <li>Profiles that carry the template itself</li>
+                            <li>Destinations importable from a CopyTrust preset</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="project-folder-creator">v0.5.0 build 23</span> (Beta &mdash; test only)<br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Ships with:</strong> the Media Trust tools
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- mhl-tool Section -->
+            <section id="mhl-tool" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon mhl">⌨️</div>
+                    <div class="app-section-title">
+                        <h2>mhl-tool</h2>
+                        <span class="api-tag mhl">CLI &middot; MHL v1.1</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>The command-line half of the Media Trust tools. <code>mhl-tool</code> creates and verifies MHL manifests without a window, so the same hashing and the same manifest format used by CopyTrust, Drop Verify and MHL Verify can run inside a script, a cron job, a watch folder, or a render-farm step.</p>
+                        <p>Manifests are written into the folder they describe, beside the files they list, so their relative paths resolve in any vendor's reader. Older manifests still sitting in a <code>Receipts</code>, <code>*_Receipts</code> or <code>ascmhl</code> subfolder keep verifying against the parent, so nothing already written is stranded.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📄</div>
+                                <h3>create</h3>
+                                <p>Write an MHL v1.1 manifest for a folder, in the folder it describes</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">✓</div>
+                                <h3>verify</h3>
+                                <p>Re-hash a folder against its manifest, including manifests written by older builds</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔗</div>
+                                <h3>Portable Manifests</h3>
+                                <p>Paths resolve in other vendors' readers, not only in these tools</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖥️</div>
+                                <h3>Universal &amp; Notarized</h3>
+                                <p>arm64 + x86_64, signed, notarized and stapled; installs to <code>/usr/local/bin</code></p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/MHL" class="btn btn-primary mhl" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/MHL/releases" data-release="mhl-tool" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>MHL v1.1 create and verify from the shell</li>
+                            <li>Same hash engine as the GUI apps</li>
+                            <li>Manifests written where their paths resolve</li>
+                            <li>Reads manifests from older layouts</li>
+                            <li>Configurable output path</li>
+                            <li>Scriptable for cron and render-farm steps</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="mhl-tool">v2.7.7</span><br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>Installer:</strong> .pkg &rarr; /usr/local/bin
                         </div>
                     </div>
                 </div>
