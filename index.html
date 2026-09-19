@@ -1437,10 +1437,10 @@
                         <div class="app-card">
                             <div class="app-icon">🔍</div>
                             <h3>P5 Archive Search</h3>
-                            <p class="app-subtitle">Index inventory browser & search</p>
+                            <p class="app-subtitle">Index browser, search &amp; restore</p>
                             <span class="api-badge rest">REST API</span>
                             <div class="app-features">
-                                Browse and search P5 archive index inventory. Navigate directories, build a local database, and find archived files quickly.
+                                Browse and search P5 archive index inventory. Navigate directories, build a local database, find archived files quickly, and restore a file or a whole folder from tape.
                             </div>
                             <a href="#archive-search">Learn more →</a>
                         </div>
@@ -1452,7 +1452,7 @@
                             <p class="app-subtitle">Find files and the exact LTO tape</p>
                             <span class="api-badge rest">TSV &middot; REST API</span>
                             <div class="app-features">
-                                Browse imported per-volume inventories, search across every tape, organize archive groups, and verify selected paths against live P5.
+                                Browse imported per-volume inventories, search across every tape, organize archive groups, and restore a folder or a whole project from the tape that holds it.
                             </div>
                             <a href="#archive-browser">Learn more →</a>
                         </div>
@@ -1746,7 +1746,7 @@
                                 <span>🛡️</span>
                                 <h3>CopyTrust</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.8.2 build 23</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.8.3 build 24</span></div>
                             <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -1867,7 +1867,7 @@
                                 <span>🧭</span>
                                 <h3>Find File Type</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="find-file-type">v1.6 build 1</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="find-file-type">v1.7 build 1</span></div>
                             <div class="card-desc">Recursive scanning, SQLite-backed history, and a file-type breakdown built for post-production storage triage. See exactly how much space is going to camera originals versus editorial media, graphics, documents, or archive artifacts.</div>
                             <a href="#find-file-type">Learn more →</a>
                         </div>
@@ -1910,10 +1910,12 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>Choose the established <strong>nsdchat CLI</strong> edition (<span data-version="p5-archive-manager">v3.7.1 build 5</span>) or the new <strong>REST API beta <span data-version="p5-archive-manager-api">v4.0.0 build 25</span></strong>. The API edition connects over the network and can search every configured archive index without requiring local CLI access to the P5 server.</p>
+                        <p>Choose the established <strong>nsdchat CLI</strong> edition (<span data-version="p5-archive-manager">v3.7.1 build 5</span>) or the new <strong>REST API beta <span data-version="p5-archive-manager-api">v4.1.0 build 30</span></strong>. The API edition connects over the network and can search every configured archive index without requiring local CLI access to the P5 server.</p>
                         <p>The REST API edition adds a complete proof-first lifecycle. Delete local copies that are already verified in P5, then submit files that are not yet archived directly to a configured P5 plan and client, monitor the archive job, re-check the files, and delete the newly archived local copies only after P5 proof is confirmed.</p>
                         <p>The REST edition keeps an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
-                        
+                        <p>An archive plan can be configured in P5 to delete at the source &mdash; either the archived files, or the files <em>and their folders</em>. Archive Manager reads both flags, names in the plan picker and the confirm dialog exactly what a plan removes, and <strong>blocks such plans by default</strong>: P5 performs those deletions itself, without this app's proof report or receipt. The guard can be turned off in Settings &#9656; Archiving.</p>
+                        <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate inspection, explicit trust and Forget Certificate. Redirects are refused, and there is no automatic fallback to HTTP.</p>
+
                         <div class="features">
                             <div class="feature-card">
                                 <div class="feature-icon">✓</div>
@@ -1950,6 +1952,16 @@
                                 <h3>Historical Locations</h3>
                                 <p>Automatically search older storage roots when a project has moved since it was archived</p>
                             </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🚫</div>
+                                <h3>Plan Delete Guard</h3>
+                                <p>Plans that delete files &mdash; or files and folders &mdash; at the source are named and blocked by default</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>HTTPS Per Server</h3>
+                                <p>Per-server TLS with certificate inspection and explicit trust</p>
+                            </div>
                         </div>
                         
                         <div class="buttons">
@@ -1971,11 +1983,13 @@
                             <li>Historical archived-location fallback</li>
                             <li>Archive unarchived files through a P5 plan and client</li>
                             <li>Proof reports, deletion receipts, and audit logs</li>
+                            <li>Source-deleting archive plans detected and blocked by default</li>
+                            <li>Per-server HTTP/HTTPS with certificate trust</li>
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
-                            <strong>REST release:</strong> <span data-version="p5-archive-manager-api">v4.0.0 build 25</span> (Beta &mdash; test only)<br>
+                            <strong>REST release:</strong> <span data-version="p5-archive-manager-api">v4.1.0 build 30</span> (Beta &mdash; test only)<br>
                             <strong>nsdchat release:</strong> <span data-version="p5-archive-manager">v3.7.1 build 5</span>
                         </div>
                     </div>
@@ -2018,6 +2032,16 @@
                                 <h3>Export Options</h3>
                                 <p>JSON and CSV export functionality</p>
                             </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Status Filter</h3>
+                                <p>Filter History by Finished, Error, Cancelled or Running, each with its row count</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>HTTPS Per Server</h3>
+                                <p>Per-server TLS on port 8443 with certificate pinning</p>
+                            </div>
                         </div>
                         
                         <div class="buttons">
@@ -2034,9 +2058,13 @@
                             <li>Pool usage monitoring</li>
                             <li>SQLite history database</li>
                             <li>CSV and JSON exports</li>
+                            <li>Status filter over saved history</li>
+                            <li>Per-server HTTP/HTTPS with certificate pinning</li>
+                            <li>In-app user guide and What's New</li>
+                            <li>Monitoring only &mdash; it starts and restores nothing</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-overview">v2.0.2 build 10</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-overview">v2.2 build 16</span><br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/overview
                         </div>
@@ -2058,7 +2086,9 @@
                     <div class="app-description">
                         <p>A SwiftUI macOS application for browsing and searching P5 Archive Index inventory. Navigate through archived directories with a familiar file browser interface and maintain a local SQLite database for fast offline searching.</p>
                         <p>Uses the P5 <strong>REST API</strong> endpoint <code>/rest/v1/archive/indexes/{index}/inventory/{path}</code> to browse archive contents. Features breadcrumb navigation, double-click to drill down into folders, and comprehensive search functionality.</p>
-                        
+                        <p><strong>Search now restores.</strong> Right-click an archived file in Browse or in Search DB and choose Restore from P5, or submit a whole folder as one directory handle and let P5 perform the recursion. Before anything is submitted, the app asks P5 which tape the item is on, whether it is online and where it is, so a restore that will wait for a cassette says so rather than looking stalled. Progress names the tape P5 is loading, a job still running when the window closes is picked up again at next launch, and every attempt — including the ones that did not finish — is kept in Restore History.</p>
+                        <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate pinning for P5's self-signed placeholder certificate. Servers configured before this keep working unchanged.</p>
+
                         <div class="features">
                             <div class="feature-card">
                                 <div class="feature-icon">📁</div>
@@ -2090,6 +2120,26 @@
                                 <h3>Bar codes</h3>
                                 <p>Shows barcodes for P5 volumes</p>
                             </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📼</div>
+                                <h3>Restore From P5</h3>
+                                <p>Restore a single file or a whole folder, to a P5 client and folder you choose</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">💿</div>
+                                <h3>Which Tape It Needs</h3>
+                                <p>Asks P5 for the volume, its online state and its location before you submit</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🕐</div>
+                                <h3>Restore History</h3>
+                                <p>Every restore asked for, with job id, destination and outcome</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>HTTPS Per Server</h3>
+                                <p>Per-server TLS on port 8443 with certificate pinning</p>
+                            </div>
                         </div>
                         
                         <div class="buttons">
@@ -2106,11 +2156,18 @@
                             <li>Double-click folder browsing</li>
                             <li>Filter by server, index, type</li>
                             <li>Handles spaces in paths (URL encoding)</li>
+                            <li>Restore a file, or a folder as one directory handle</li>
+                            <li>Tape pre-flight: volume, online state and location</li>
+                            <li>Running jobs resumed at next launch</li>
+                            <li>Restore History and restore monitoring settings</li>
+                            <li>Per-server HTTP/HTTPS with certificate pinning</li>
+                            <li>In-app user guide, Activity Log and Configuration Log</li>
+                            <li>Identify and adopt orphaned server aliases</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.1.1 build 9</span><br>
-                            <strong>Requires:</strong> macOS 14.0+<br>
-                            <strong>API:</strong> REST /archive/indexes/.../inventory
+                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.7 build 18</span><br>
+                            <strong>Requires:</strong> macOS 14.6+<br>
+                            <strong>API:</strong> REST /archive/indexes/.../inventory &middot; /restore
                         </div>
                     </div>
                 </div>
@@ -2129,7 +2186,9 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A native macOS app for browsing the contents of P5 Archive volumes, usually LTO tapes. Import per-volume TSV inventories, search filenames and paths across the complete local catalog, and identify the exact tape to load for a restore.</p>
-                        <p>The Browser combines fast SQLite-backed offline navigation with optional read-only P5 REST checks. Organize tapes into archive groups, add operator-owned aliases and location notes, review catalog data sources, and safely import matching volume-list CSV metadata without changing data on the P5 server.</p>
+                        <p>The Browser combines fast SQLite-backed offline navigation with an optional P5 REST connection. Organize tapes into archive groups, add operator-owned aliases and location notes, review catalog data sources, and safely import matching volume-list CSV metadata.</p>
+                        <p><strong>Restore straight from the catalog.</strong> Right-click a folder and restore its whole subtree in one request, or restore a project from the search result that found it. Restore is off by default and enabled in Settings &#9656; Restore. The confirmation sheet gives the expected file count and bytes, the tape's online state, your own location note and P5's last known slot, and says plainly that P5 waits for an offline tape. After the job the Browser reconciles what arrived against what was expected rather than trusting the job's own result.</p>
+                        <p>Everything else the Browser asks P5 is read-only &mdash; refreshing volume metadata and verifying selected paths change nothing on the server.</p>
 
                         <div class="features">
                             <div class="feature-card">
@@ -2158,9 +2217,24 @@
                                 <p>Import only new or changed stable TSV inventories while preserving the last good catalog</p>
                             </div>
                             <div class="feature-card">
+                                <div class="feature-icon">📼</div>
+                                <h3>Restore a Folder or Project</h3>
+                                <p>One request restores a whole subtree; off by default, with preview, confirmation and post-job reconciliation</p>
+                            </div>
+                            <div class="feature-card">
                                 <div class="feature-icon">🛡️</div>
-                                <h3>Read-Only P5 Checks</h3>
-                                <p>Refresh volume metadata and verify selected paths without restoring or modifying server data</p>
+                                <h3>Read-Only by Default</h3>
+                                <p>Volume refresh and path verification change nothing on the server; restore is opt-in in Settings</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧰</div>
+                                <h3>Tools Menu</h3>
+                                <p>Server Info for a server's indexes and plans, volume discovery, and catalog backup and reset</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>HTTPS Per Server</h3>
+                                <p>Per-server TLS on port 8443 with certificate pinning</p>
                             </div>
                         </div>
 
@@ -2181,10 +2255,13 @@
                             <li>Saved and recent searches</li>
                             <li>Automatic TSV watch folder</li>
                             <li>Portable catalog backup and guarded reset</li>
-                            <li>Optional read-only P5 REST integration</li>
+                            <li>Optional P5 REST integration, read-only unless restore is enabled</li>
+                            <li>Folder and project restore with reconciliation</li>
+                            <li>Detect Roots and a Projects scope over the catalog</li>
+                            <li>Per-server HTTP/HTTPS with certificate pinning</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-browser">v0.31 build 44</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-browser">v0.37 build 56</span><br>
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Sources:</strong> TSV &middot; CSV &middot; P5 REST API
                         </div>
@@ -2500,7 +2577,7 @@
                             <li>Keychain-stored Jumper and P5 credentials</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-search-jumper">v0.2.1-beta build 4</span> (Beta &mdash; test only)<br>
+                            <strong>Latest:</strong> <span data-version="p5-search-jumper">v0.2.2-beta build 6</span> (Beta &mdash; test only)<br>
                             <strong>Requires:</strong> macOS 14+, a Jumper analysis cache<br>
                             <strong>API:</strong> REST /restore/restoreselections
                         </div>
@@ -2819,7 +2896,7 @@
                             <li>SwiftUI macOS desktop experience</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="smb-connect">v0.7.5 build 28</span><br>
+                            <strong>Latest:</strong> <span data-version="smb-connect">v0.7.7 build 33</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Protocol:</strong> SMB
                         </div>
@@ -3021,7 +3098,7 @@
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
-                            <strong>Latest:</strong> <span data-version="find-file-type">v1.6 build 1</span><br>
+                            <strong>Latest:</strong> <span data-version="find-file-type">v1.7 build 1</span><br>
                             <strong>Best for:</strong> Editorial storage audits, camera-original triage, and workflow cleanup
                         </div>
                     </div>
@@ -3251,7 +3328,7 @@
                             <li>Incremental subfolder naming</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="copytrust">v2.8.2 build 23</span><br>
+                            <strong>Latest:</strong> <span data-version="copytrust">v2.8.3 build 24</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
@@ -3358,7 +3435,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-08</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-19</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
