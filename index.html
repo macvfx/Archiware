@@ -1416,7 +1416,7 @@
                             <p class="app-subtitle">Verify, archive, and safely delete</p>
                             <span class="api-badge rest">nsdchat &middot; REST API Beta</span>
                             <div class="app-features">
-                                Verify what is already in P5, delete proven-archived local copies, and use the REST API beta to archive the remaining files, re-check them, and then safely delete them.
+                                Verify what is already in P5, delete proven-archived local copies, and use the REST API beta to archive the remaining files, re-check them, and then safely delete them. Per-server HTTPS; plans that delete at the source are blocked by default.
                             </div>
                             <a href="#archive-manager">Learn more →</a>
                         </div>
@@ -1428,7 +1428,7 @@
                             <p class="app-subtitle">Archive jobs & pool monitoring</p>
                             <span class="api-badge rest">REST API</span>
                             <div class="app-features">
-                                Query current and historical archive jobs via REST API. Monitor pool usage and track archive operations over time.
+                                Query current and historical archive jobs via REST API, over HTTP or HTTPS. Monitor pool usage and track archive operations over time.
                             </div>
                             <a href="#archive-overview">Learn more →</a>
                         </div>
@@ -1659,7 +1659,7 @@
                     <div class="export-hero-text">
                         <span class="new-badge">New</span>
                         <h2>P5 Archive Export</h2>
-                        <p class="subtitle">SwiftUI macOS software for exporting Archiware P5 archive job data, volume inventories, and server backup archives. 13 built-in analytical queries, nsdchat-driven TSV inventory export, configurable scheduling, and network volume sync — available as a full windowed app or a lightweight menu bar utility.</p>
+                        <p class="subtitle">SwiftUI macOS software for exporting Archiware P5 archive job data, volume inventories, and server backup archives. 14 built-in analytical queries, nsdchat-driven TSV inventory export, configurable scheduling, and network volume sync — available as a full windowed app or a lightweight menu bar utility.</p>
 
                         <div class="export-hero-highlights">
                             <div class="export-highlight">
@@ -1696,7 +1696,7 @@
                                 <span>🖥</span>
                                 <h3>P5 Archive Export</h3>
                             </div>
-                            <div class="card-meta">macOS 13.5+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.1 build 6</span></div>
+                            <div class="card-meta">macOS 13.5+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.5 build 10</span></div>
                             <div class="card-desc">Full windowed app with dashboard, sidebar query browser, results table, real-time progress, and log viewer with level filtering.</div>
                             <a href="#archive-export">Learn more →</a>
                         </div>
@@ -1706,7 +1706,7 @@
                                 <span>📦</span>
                                 <h3>P5 Archive Export MenuBar</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.1 build 6</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.5 build 10</span></div>
                             <div class="card-desc">Lightweight menu bar utility — no Dock icon. One-click exports, inline settings, and quick status checks from the popover.</div>
                             <a href="#archive-export-menubar">Learn more →</a>
                         </div>
@@ -1895,7 +1895,7 @@
                                 <span>🧭</span>
                                 <h3>Find File Type</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="find-file-type">v1.7 build 1</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="find-file-type">v1.7.1 build 2</span></div>
                             <div class="card-desc">Recursive scanning, SQLite-backed history, and a file-type breakdown built for post-production storage triage. See exactly how much space is going to camera originals versus editorial media, graphics, documents, or archive artifacts.</div>
                             <a href="#find-file-type">Learn more →</a>
                         </div>
@@ -2310,7 +2310,9 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application that reads the Archiware P5 <code>resources.db</code> database and exports archive job data to CSV. Features a full dashboard with sidebar query browser, results table, progress reporting, and a filterable log viewer.</p>
-                        <p>Ships with 13 analytical queries covering throughput analysis, storage growth trends, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
+                        <p>Ships with 14 analytical queries covering throughput, weekly volume, storage growth, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
+                        <p><strong>Charts.</strong> A Charts tab draws archived volume per week, month, quarter or year, cumulative growth, outcome by year, and where the volume sits by size range. Quiet periods are shown, not skipped. The charts come straight from the database, or from a folder of exported CSVs on a machine that never sees the database. Every export run also writes the chart data as CSV, plus a self-contained HTML dashboard and a PDF of it.</p>
+                        <p><strong>Keep the server's queries current.</strong> <em>Deploy to Server</em> writes the bundled queries straight into the server's query folder. A signed, notarized installer package does the same through the macOS installer, and leaves a receipt showing which query set a server has.</p>
                         <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume TSV inventories to dated run folders for snapshots or a standard <code>VolumeExport</code> folder for incremental runs. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and optionally copy outputs to a network destination.</p>
                         <p>The backup workflow creates compressed archives of the local P5 config and log folders, with optional clip exclusion and separate clip backup support for migration, disaster recovery, and regular server snapshots.</p>
 
@@ -2318,7 +2320,17 @@
                             <div class="feature-card">
                                 <div class="feature-icon">📊</div>
                                 <h3>Dashboard &amp; Results</h3>
-                                <p>Sidebar query list, results table with row/column counts and execution time. Now with nice looking charts. Export as HTML or PDF.</p>
+                                <p>Sidebar query list, results table with row/column counts and execution time, and a filterable log.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📈</div>
+                                <h3>Charts &amp; Dashboard</h3>
+                                <p>Weekly to yearly volume, cumulative growth and size ranges, plus an HTML dashboard and PDF with every export</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📦</div>
+                                <h3>Query Deployment</h3>
+                                <p>Deploy the bundled queries to the server from the app, or install them with a signed installer package</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">💿</div>
@@ -2356,7 +2368,7 @@
                     <div class="app-info-box">
                         <h4>SQL Export</h4>
                         <ul>
-                            <li>13 bundled analytical SQL queries</li>
+                            <li>14 bundled analytical SQL queries</li>
                             <li>Custom SQL directory with overrides</li>
                             <li>Configurable size threshold (512 MB – 50 GB)</li>
                             <li>CSV delimiter options (comma, tab, semicolon)</li>
@@ -2364,6 +2376,9 @@
                             <li>Path validation with status indicators</li>
                             <li>Read-only database access</li>
                             <li>Shared settings with Menu Bar app</li>
+                            <li>Charts tab: week, month, quarter, year, growth and size ranges</li>
+                            <li>HTML dashboard, PDF and chart-data CSVs written with every export</li>
+                            <li>Deploy to Server, or a signed installer package, for the queries</li>
                         </ul>
                         <h4>Volume Inventory Export</h4>
                         <ul>
@@ -2393,7 +2408,7 @@
                             <li>Check for Updates in both apps, on demand and quietly at launch</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.1 build 6</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.5 build 10</span><br>
                             <strong>Requires:</strong> macOS 13.5+<br>
                             <strong>API:</strong> SQLite (read-only) &middot; nsdchat CLI
                         </div>
@@ -2451,8 +2466,10 @@
                             <li>Menu bar popover with status display</li>
                             <li>Last run info with CSV and row counts</li>
                             <li>Next scheduled run indicator</li>
+                            <li>Last archive time and size in the popover</li>
+                            <li>Every setting reachable, including chart outputs</li>
                             <li>Compact inline settings panel</li>
-                            <li>Same 13 built-in queries as Mac app</li>
+                            <li>Same 14 built-in queries as Mac app</li>
                             <li>Volume inventory TSV export with dated or standard folder modes</li>
                             <li>Volume list CSV export</li>
                             <li>P5 config/log backup export</li>
@@ -2461,7 +2478,7 @@
                             <li>Login Items integration</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.1 build 6</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.5 build 10</span><br>
                             <strong>Requires:</strong> macOS 14 (Sonoma)+<br>
                             <strong>API:</strong> SQLite (read-only)
                         </div>
@@ -3127,7 +3144,7 @@
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
-                            <strong>Latest:</strong> <span data-version="find-file-type">v1.7 build 1</span><br>
+                            <strong>Latest:</strong> <span data-version="find-file-type">v1.7.1 build 2</span><br>
                             <strong>Best for:</strong> Editorial storage audits, camera-original triage, and workflow cleanup
                         </div>
                     </div>
@@ -3477,7 +3494,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-19</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-20</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>

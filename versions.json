@@ -65,13 +65,13 @@
     "p5-archive-export": {
       "label": "P5 Archive Export",
       "repo": "macvfx/p5ArchiveExport",
-      "version": "1.5.1",
-      "build": "6",
-      "display": "v1.5.1 build 6",
+      "version": "1.5.5",
+      "build": "10",
+      "display": "v1.5.5 build 10",
       "prerelease": false,
-      "tag": "1.5.1+6",
-      "title": "One click to dismiss — P5 Archive Export 1.5.1 (build 6)",
-      "published": "2026-09-19",
+      "tag": "1.5.5+10",
+      "title": "Install the queries, don't copy them — P5 Archive Export 1.5.5 (build 10)",
+      "published": "2026-09-20",
       "url": "https://github.com/macvfx/p5ArchiveExport/releases"
     },
     "p5-health-check": {
@@ -173,13 +173,13 @@
     "find-file-type": {
       "label": "Find File Type",
       "repo": "macvfx/Find-File-Type",
-      "version": "1.7",
-      "build": "1",
-      "display": "v1.7 build 1",
+      "version": "1.7.1",
+      "build": "2",
+      "display": "v1.7.1 build 2",
       "prerelease": false,
-      "tag": "1.7+1",
-      "title": "Find File Type 1.7 (Build 1)",
-      "published": "2026-09-09",
+      "tag": "1.7.1+2",
+      "title": "Find File Type 1.7.1 (Build 2)",
+      "published": "2026-09-20",
       "url": "https://github.com/macvfx/Find-File-Type/releases"
     },
     "backuptrust": {
