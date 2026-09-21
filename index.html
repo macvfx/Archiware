@@ -1464,7 +1464,7 @@
                             <p class="app-subtitle">CSV export, volume inventory & backup</p>
                             <span class="api-badge rest">SQLite &middot; nsdchat</span>
                             <div class="app-features">
-                                Export archive job analytics, per-volume TSV inventories, volume list CSVs, and P5 config/log backups with scheduling.
+                                Export archive job analytics, per-volume TSV inventories, volume list CSVs, and P5 config/log backups with scheduling. Now charts archive throughput and storage growth over time.
                             </div>
                             <a href="#archive-export">Learn more →</a>
                         </div>
@@ -1481,6 +1481,53 @@
                             <a href="#health-check">Learn more →</a>
                         </div>
 
+                        <!-- P5Kit Docs -->
+                        <div class="app-card">
+                            <div class="app-icon">🧩</div>
+                            <h3>P5Kit Docs</h3>
+                            <p class="app-subtitle">The shared P5 layer behind these apps</p>
+                            <span class="api-badge rest">REST API &middot; Docs</span>
+                            <div class="app-features">
+                                Public documentation for P5Kit, the shared Swift library these apps use for P5 connections, archive, restore, and job tracking, with illustrative P5 REST API requests. Documentation only &mdash; the implementation stays private.
+                            </div>
+                            <a href="https://github.com/macvfx/P5Kit-Docs" target="_blank">View docs →</a>
+                        </div>
+
+                        <!-- P5 Search Jumper -->
+                        <div class="app-card">
+                            <div class="app-icon">🎯</div>
+                            <h3>P5 Search Jumper</h3>
+                            <p class="app-subtitle">Find the shot, restore it from tape</p>
+                            <span class="api-badge rest">REST API &middot; Beta</span>
+                            <div class="app-features">
+                                Search a Jumper analysis cache by what is on screen or what is said, then restore the exact P5 archive entry when the source file is no longer on disk. Requires a Jumper cache.
+                            </div>
+                            <a href="#search-jumper">Learn more →</a>
+                        </div>
+
+                        <!-- CopyTrust -->
+                        <div class="app-card">
+                            <div class="app-icon">🛡️</div>
+                            <h3>CopyTrust</h3>
+                            <p class="app-subtitle">Camera card ingest, proxies &amp; P5 archive</p>
+                            <span class="api-badge mhl">MHL v1.1 &middot; P5 REST API</span>
+                            <div class="app-features">
+                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts. Now makes proxies and sends verified media to a P5 archive.
+                            </div>
+                            <a href="#copytrust">Learn more →</a>
+                        </div>
+
+                        <!-- Project Folder Tracker (placeholder — no public repo yet) -->
+                        <div class="app-card">
+                            <div class="app-icon">📍</div>
+                            <h3>Project Folder Tracker</h3>
+                            <p class="app-subtitle">Projects across storage and P5 archive</p>
+                            <span class="api-badge rest">Coming Soon</span>
+                            <div class="app-features">
+                                Track where each project lives &mdash; on active storage, in the P5 archive, or both. Details to follow.
+                            </div>
+                        </div>
+
                         <!-- BackupTrust -->
                         <div class="app-card">
                             <div class="app-icon">🗃️</div>
@@ -1493,7 +1540,7 @@
                             <a href="#backuptrust">Learn more →</a>
                         </div>
 
-            <!-- FCP Reports -->
+                        <!-- FCP Reports -->
                         <div class="app-card">
                             <div class="app-icon">🎬</div>
                             <h3>FCP Reports</h3>
@@ -1553,18 +1600,6 @@
                             <a href="#drop-verify">Learn more →</a>
                         </div>
 
-                        <!-- CopyTrust -->
-                        <div class="app-card">
-                            <div class="app-icon">🛡️</div>
-                            <h3>CopyTrust</h3>
-                            <p class="app-subtitle">Camera card ingest & verify</p>
-                            <span class="api-badge mhl">MHL v1.1</span>
-                            <div class="app-features">
-                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts.
-                            </div>
-                            <a href="#copytrust">Learn more →</a>
-                        </div>
-
                         <!-- Folder Copy Compare -->
                         <div class="app-card">
                             <div class="app-icon">🗂️</div>
@@ -1587,18 +1622,6 @@
                                 Watch edit storage, NAS shares, and cloud workspaces to see which file types are consuming space. Ideal for answering why camera originals like <code>.mxf</code>, <code>.r3d</code>, or <code>.braw</code> are filling an editor's volume.
                             </div>
                             <a href="#find-file-type">Learn more →</a>
-                        </div>
-
-                        <!-- P5 Search Jumper -->
-                        <div class="app-card">
-                            <div class="app-icon">🎯</div>
-                            <h3>P5 Search Jumper</h3>
-                            <p class="app-subtitle">Find the shot, restore it from tape</p>
-                            <span class="api-badge rest">REST API &middot; Beta</span>
-                            <div class="app-features">
-                                Search a Jumper analysis cache by what is on screen or what is said, then restore the exact P5 archive entry when the source file is no longer on disk. Requires a Jumper cache.
-                            </div>
-                            <a href="#search-jumper">Learn more →</a>
                         </div>
 
                         <!-- Project Folder Creator -->
@@ -1643,6 +1666,11 @@
                                 <div class="hl-icon">13</div>
                                 <h4>Built-in Queries</h4>
                                 <p>Throughput analysis, storage growth, tape utilization, and more</p>
+                            </div>
+                            <div class="export-highlight">
+                                <div class="hl-icon">📈</div>
+                                <h4>Charts</h4>
+                                <p>Throughput, storage growth, and idle periods charted from the same data as the CSVs</p>
                             </div>
                             <div class="export-highlight">
                                 <div class="hl-icon">⏱</div>
@@ -1747,7 +1775,7 @@
                                 <h3>CopyTrust</h3>
                             </div>
                             <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.8.3 build 24</span></div>
-                            <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts.</div>
+                            <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts. Now makes proxies and archives to P5.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
                     </div>
@@ -3266,13 +3294,14 @@
                     <div class="app-section-icon mhl">🛡️</div>
                     <div class="app-section-title">
                         <h2>CopyTrust</h2>
-                        <span class="api-tag mhl">MHL v1.1 &middot; xxHash64</span>
+                        <span class="api-tag mhl">MHL v1.1 &middot; xxHash64 &middot; P5 REST API</span>
                     </div>
                 </div>
 
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A full camera card ingest system with multi-source, multi-destination copy and verification. CopyTrust detects camera cards, copies media to multiple destinations simultaneously, verifies every byte with xxHash64, and generates MHL manifests, contact sheet PDFs, and session receipts.</p>
+                        <p>Per destination, CopyTrust can also <strong>create proxies</strong> and <strong>archive to P5</strong>. Tick <em>Create proxies</em> and <em>Archive to P5</em> on the destination rows you want them on — a typical chain archives the camera original from the first stop and generates editorial proxies on the last — and the run submits the archive and encodes the proxies after verification and the other artifacts have finished.</p>
                         <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
 
                         <div class="features">
@@ -3302,6 +3331,16 @@
                                 <p>Video frames with codec/FPS data, photo thumbnails with EXIF</p>
                             </div>
                             <div class="feature-card">
+                                <div class="feature-icon">🎞️</div>
+                                <h3>Proxy Generation</h3>
+                                <p>Per-destination editorial proxies, encoded after verification, never transcoded twice</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🗄️</div>
+                                <h3>Archive to P5</h3>
+                                <p>Submit a verified destination to an Archiware P5 archive over the REST API, with the job followed to its result</p>
+                            </div>
+                            <div class="feature-card">
                                 <div class="feature-icon">⏏️</div>
                                 <h3>Safe-to-Eject</h3>
                                 <p>Guided eject flow after successful verification completes</p>
@@ -3326,6 +3365,8 @@
                             <li>MHL v1.1 generation</li>
                             <li>Contact sheet PDF generation</li>
                             <li>Auto-advance multi-source copy</li>
+                            <li>Per-destination proxy generation</li>
+                            <li>Per-destination P5 archiving (REST API)</li>
                             <li>Incremental subfolder naming</li>
                         </ul>
                         <div class="version-info">
