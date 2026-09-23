@@ -14,7 +14,7 @@
 
   "apps": {
     "p5-archive-manager": {
-      "label": "P5 Archive Manager (nsdchat edition)",
+      "label": "P5 Archive Manager CLI",
       "repo": "macvfx/p5ArchiveManager",
       "title_match": "^(?!API version)",
       "channel": "stable"

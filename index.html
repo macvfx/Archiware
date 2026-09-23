@@ -99,6 +99,20 @@
             margin-bottom: 50px;
         }
 
+        .beta-notice {
+            max-width: 820px;
+            margin: -20px auto 40px;
+            padding: 14px 22px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            color: #e7edf5;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .beta-notice strong { color: #ffffff; }
+
         /* App Cards */
         .app-showcase {
             display: grid;
@@ -1407,16 +1421,17 @@
                 <div class="main-hero-content">
                     <h2>macOS Tools for Archive and Media Production Workflows</h2>
                     <p class="tagline">P5 Archive apps, Media Trust tools, and storage workflow utilities built for production</p>
+                    <p class="beta-notice"><strong>Many of these apps are in beta.</strong> Test on data you can afford to lose and keep your own verified backup. Anything that restores or deletes says so before it acts. Feedback is welcome &mdash; open an issue on the app's GitHub page.</p>
                     
                     <div class="app-showcase">
                         <!-- P5 Archive Manager -->
                         <div class="app-card">
                             <div class="app-icon">🗄️</div>
                             <h3>P5 Archive Manager</h3>
-                            <p class="app-subtitle">Verify, archive, and safely delete</p>
-                            <span class="api-badge rest">nsdchat &middot; REST API Beta</span>
+                            <p class="app-subtitle">Verify, archive, restore, and safely delete</p>
+                            <span class="api-badge rest">CLI &middot; REST API Beta</span>
                             <div class="app-features">
-                                Verify what is already in P5, delete proven-archived local copies, and use the REST API beta to archive the remaining files, re-check them, and then safely delete them. Per-server HTTPS; plans that delete at the source are blocked by default.
+                                Verify what is already in P5, delete proven-archived local copies, archive the rest, and now restore a whole project from the timeline or library an editor exported (Resolve .drt, Premiere or Resolve XML, FCPXML and .fcpxmld) or from a plain list of paths. The REST API edition is still a beta.
                             </div>
                             <a href="#archive-manager">Learn more →</a>
                         </div>
@@ -1488,7 +1503,7 @@
                             <p class="app-subtitle">The shared P5 layer behind these apps</p>
                             <span class="api-badge rest">REST API &middot; Docs</span>
                             <div class="app-features">
-                                Public documentation for P5Kit, the shared Swift library these apps use for P5 connections, archive, restore, and job tracking, with illustrative P5 REST API requests. Documentation only &mdash; the implementation stays private.
+                                Public documentation, still growing, for P5Kit &mdash; the shared Swift library P5 Archive Overview, Search, Browser, Search Jumper and CopyTrust use for P5 connections, archive, restore, and job tracking &mdash; with illustrative P5 REST API requests. Documentation only &mdash; the implementation stays private.
                             </div>
                             <a href="https://github.com/macvfx/P5Kit-Docs" target="_blank">View docs →</a>
                         </div>
@@ -1512,7 +1527,7 @@
                             <p class="app-subtitle">Camera card ingest, proxies &amp; P5 archive</p>
                             <span class="api-badge mhl">MHL v1.1 &middot; P5 REST API</span>
                             <div class="app-features">
-                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts. Now makes proxies and sends verified media to a P5 archive.
+                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts. Makes proxies and sends verified media to a P5 archive. Beta.
                             </div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -1663,7 +1678,7 @@
 
                         <div class="export-hero-highlights">
                             <div class="export-highlight">
-                                <div class="hl-icon">13</div>
+                                <div class="hl-icon">14</div>
                                 <h4>Built-in Queries</h4>
                                 <p>Throughput analysis, storage growth, tape utilization, and more</p>
                             </div>
@@ -1774,7 +1789,7 @@
                                 <span>🛡️</span>
                                 <h3>CopyTrust</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.8.3 build 24</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.8.7 build 28</span></div>
                             <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts. Now makes proxies and archives to P5.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -1931,14 +1946,16 @@
                     <div class="app-section-icon">🗄️</div>
                     <div class="app-section-title">
                         <h2>P5 Archive Manager</h2>
-                        <span class="api-tag rest">nsdchat CLI &middot; REST API Beta</span>
+                        <span class="api-tag rest">CLI (nsdchat) &middot; REST API Beta</span>
                     </div>
                 </div>
                 
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>Choose the established <strong>nsdchat CLI</strong> edition (<span data-version="p5-archive-manager">v3.7.1 build 5</span>) or the new <strong>REST API beta <span data-version="p5-archive-manager-api">v4.1.0 build 30</span></strong>. The API edition connects over the network and can search every configured archive index without requiring local CLI access to the P5 server.</p>
+                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.2.1 build 43</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
+                        <p><strong>Restore from Project File.</strong> Drop the project an editor delivered &mdash; a Resolve <code>.drt</code> timeline, a Resolve or Premiere XML, a Final Cut Pro <code>.fcpxml</code> or <code>.fcpxmld</code> bundle, or a plain text list of paths &mdash; and the app finds each media item in P5, across every archive index. Each row says what to do: <em>needs to be restored &mdash; not in its original location</em>, <em>in its original location</em>, or <em>not in P5</em>. Prepare Restore shows versions, archive dates and tapes, and whether each tape is online, then one P5 job restores everything to the original location or into a folder on a P5 client, and the app follows it to the end. FCPXML proxies are ignored, and a RED clip comes back whole: the timeline names one <code>_001.R3D</code>, but the app restores the entire <code>.RDC</code> folder of segments.</p>
+                        <p>Media that was moved or imported before it was archived is found by name through P5 volume-inventory TSVs, through P5 Archive Browser's tape catalogue when it is on the same Mac, or from a location pasted from the P5 web app. Restore into a folder first: restoring to the original location has not yet been tested against a live server.</p>
                         <p>The REST API edition adds a complete proof-first lifecycle. Delete local copies that are already verified in P5, then submit files that are not yet archived directly to a configured P5 plan and client, monitor the archive job, re-check the files, and delete the newly archived local copies only after P5 proof is confirmed.</p>
                         <p>The REST edition keeps an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
                         <p>An archive plan can be configured in P5 to delete at the source &mdash; either the archived files, or the files <em>and their folders</em>. Archive Manager reads both flags, names in the plan picker and the confirm dialog exactly what a plan removes, and <strong>blocks such plans by default</strong>: P5 performs those deletions itself, without this app's proof report or receipt. The guard can be turned off in Settings &#9656; Archiving.</p>
@@ -1990,6 +2007,26 @@
                                 <h3>HTTPS Per Server</h3>
                                 <p>Per-server TLS with certificate inspection and explicit trust</p>
                             </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎞️</div>
+                                <h3>Restore from Project File</h3>
+                                <p>Resolve .drt, Premiere or Resolve XML, FCPXML and .fcpxmld, or a plain list of paths, checked against P5 and restored in one job</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📼</div>
+                                <h3>RED Clips Come Back Whole</h3>
+                                <p>A timeline names one R3D segment; the whole .RDC folder is checked and restored</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Finds Moved Media</h3>
+                                <p>Volume-inventory TSVs and P5 Archive Browser's catalogue locate media archived from a different path</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🆕</div>
+                                <h3>What's New in Help</h3>
+                                <p>Release notes in the app, opened once after an update</p>
+                            </div>
                         </div>
                         
                         <div class="buttons">
@@ -2013,12 +2050,15 @@
                             <li>Proof reports, deletion receipts, and audit logs</li>
                             <li>Source-deleting archive plans detected and blocked by default</li>
                             <li>Per-server HTTP/HTTPS with certificate trust</li>
+                            <li>Restore from a Resolve .drt, XML, FCPXML / .fcpxmld or path list</li>
+                            <li>Restore to the original location or into a folder on a P5 client</li>
+                            <li>Tape and online state shown before you restore</li>
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
-                            <strong>REST release:</strong> <span data-version="p5-archive-manager-api">v4.1.0 build 30</span> (Beta &mdash; test only)<br>
-                            <strong>nsdchat release:</strong> <span data-version="p5-archive-manager">v3.7.1 build 5</span>
+                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.2.1 build 43</span> (Beta &mdash; test only)<br>
+                            <strong>CLI edition:</strong> <span data-version="p5-archive-manager">v3.7.2 build 6</span>
                         </div>
                     </div>
                 </div>
@@ -2311,7 +2351,7 @@
                     <div class="app-description">
                         <p>A SwiftUI macOS application that reads the Archiware P5 <code>resources.db</code> database and exports archive job data to CSV. Features a full dashboard with sidebar query browser, results table, progress reporting, and a filterable log viewer.</p>
                         <p>Ships with 14 analytical queries covering throughput, weekly volume, storage growth, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
-                        <p><strong>Charts.</strong> A Charts tab draws archived volume per week, month, quarter or year, cumulative growth, outcome by year, and where the volume sits by size range. Quiet periods are shown, not skipped. The charts come straight from the database, or from a folder of exported CSVs on a machine that never sees the database. Every export run also writes the chart data as CSV, plus a self-contained HTML dashboard and a PDF of it.</p>
+                        <p><strong>Charts.</strong> A Charts tab draws archived volume per week, month, quarter or year, cumulative growth, outcome by year, and where the volume sits by size range. Quiet periods are shown, not skipped. The charts come straight from the database, or from a folder of exported CSVs on a machine that never sees the database. Every export run also writes the chart data as CSV, plus a self-contained HTML dashboard and a PDF of it. These sit beside the existing CSV analysis by week, month and year and the per-volume TSV inventory export.</p>
                         <p><strong>Keep the server's queries current.</strong> <em>Deploy to Server</em> writes the bundled queries straight into the server's query folder. A signed, notarized installer package does the same through the macOS installer, and leaves a receipt showing which query set a server has.</p>
                         <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume TSV inventories to dated run folders for snapshots or a standard <code>VolumeExport</code> folder for incremental runs. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and optionally copy outputs to a network destination.</p>
                         <p>The backup workflow creates compressed archives of the local P5 config and log folders, with optional clip exclusion and separate clip backup support for migration, disaster recovery, and regular server snapshots.</p>
@@ -2815,7 +2855,7 @@
                             <li>Direct local build via <code>swift build</code></li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="fcp-reports">v1.6.1</span><br>
+                            <strong>Latest:</strong> <span data-version="fcp-reports">v1.6.2</span><br>
                             <strong>Project:</strong> FCP Reports<br>
                             <strong>Build:</strong> Swift Package / Xcode project<br>
                             <strong>Mode:</strong> Library capture, reporting &amp; conversion utility
@@ -3319,6 +3359,7 @@
                     <div class="app-description">
                         <p>A full camera card ingest system with multi-source, multi-destination copy and verification. CopyTrust detects camera cards, copies media to multiple destinations simultaneously, verifies every byte with xxHash64, and generates MHL manifests, contact sheet PDFs, and session receipts.</p>
                         <p>Per destination, CopyTrust can also <strong>create proxies</strong> and <strong>archive to P5</strong>. Tick <em>Create proxies</em> and <em>Archive to P5</em> on the destination rows you want them on — a typical chain archives the camera original from the first stop and generates editorial proxies on the last — and the run submits the archive and encodes the proxies after verification and the other artifacts have finished.</p>
+                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. Recent builds merge the pre-copy warnings into one review, add a Reveal menu with one section per destination, and make contact sheets for MKV cards.</p>
                         <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
 
                         <div class="features">
@@ -3387,7 +3428,7 @@
                             <li>Incremental subfolder naming</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="copytrust">v2.8.3 build 24</span><br>
+                            <strong>Latest:</strong> <span data-version="copytrust">v2.8.7 build 28</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
@@ -3494,7 +3535,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-20</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-23</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
