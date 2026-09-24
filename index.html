@@ -3378,7 +3378,9 @@
                     <div class="app-description">
                         <p>A full camera card ingest system with multi-source, multi-destination copy and verification. CopyTrust detects camera cards, copies media to multiple destinations simultaneously, verifies every byte with xxHash64, and generates MHL manifests, contact sheet PDFs, and session receipts.</p>
                         <p>Per destination, CopyTrust can also <strong>create proxies</strong> and <strong>archive to P5</strong>. Tick <em>Create proxies</em> and <em>Archive to P5</em> on the destination rows you want them on — a typical chain archives the camera original from the first stop and generates editorial proxies on the last — and the run submits the archive and encodes the proxies after verification and the other artifacts have finished.</p>
-                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. Recent builds merge the pre-copy warnings into one review, add a Reveal menu with one section per destination, and make contact sheets for MKV cards.</p>
+                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. Recent builds merge the pre-copy warnings into one review, add a Reveal menu with one section per destination, make contact sheets for MKV cards, and report a P5 archive in plain words (<em>Archiving in P5 job&hellip;</em>, <em>Archived by P5 job&hellip;</em>) instead of showing P5's interim &ldquo;failure&rdquo; status.</p>
+                        <p><strong>Enforced naming presets.</strong> A facility can describe how it files footage &mdash; project, unit, roll, and the folders each destination expects &mdash; and CopyTrust applies it as cards are staged. One preset sets up a whole job: the ingest options, the naming convention, what each destination is for (including proxies-only and P5), and the P5 server. Every card shows where it will land before the copy starts, and receipts record the project, unit, roll and exact folder each destination received. A tested preset can be pinned by name with a configuration profile so a fleet stays on one setup.</p>
+                        <p><strong>Check footage against the manifest it arrived with.</strong> A card offloaded elsewhere with OffShoot, Silverstack or ShotPut Pro can be verified against that MHL when it reaches the facility. CopyTrust can also be shown larger (1x to 2x).</p>
                         <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
 
                         <div class="features">
@@ -3418,6 +3420,21 @@
                                 <p>Submit a verified destination to an Archiware P5 archive over the REST API, with the job followed to its result</p>
                             </div>
                             <div class="feature-card">
+                                <div class="feature-icon">📐</div>
+                                <h3>Enforced Naming Presets</h3>
+                                <p>Project, unit and roll naming and per-destination roles applied as cards are staged, shown before the copy starts, and recorded in receipts</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧾</div>
+                                <h3>Verify Against Incoming MHL</h3>
+                                <p>Check a card offloaded elsewhere against the manifest it arrived with</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📂</div>
+                                <h3>Reveal by Destination</h3>
+                                <p>A menu per destination opens the copied files, the receipts, or the proxies</p>
+                            </div>
+                            <div class="feature-card">
                                 <div class="feature-icon">⏏️</div>
                                 <h3>Safe-to-Eject</h3>
                                 <p>Guided eject flow after successful verification completes</p>
@@ -3445,6 +3462,11 @@
                             <li>Per-destination proxy generation</li>
                             <li>Per-destination P5 archiving (REST API)</li>
                             <li>Incremental subfolder naming</li>
+                            <li>Enforced naming presets, lockable by profile</li>
+                            <li>Verify a card against its incoming MHL</li>
+                            <li>One pre-copy review; Reveal menu per destination</li>
+                            <li>MKV and other external-codec contact sheets</li>
+                            <li>Interface size 1x to 2x</li>
                         </ul>
                         <div class="version-info">
                             <strong>Latest:</strong> <span data-version="copytrust">v2.8.7 build 28</span><br>
