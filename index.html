@@ -2629,6 +2629,7 @@
                     <div class="app-description">
                         <p>A SwiftUI macOS app that bridges <strong>Jumper</strong> — a local media analysis app that builds a searchable cache of visual and speech analysis over your footage — and <strong>Archiware P5</strong>, which holds the source media on tape.</p>
                         <p>Search Jumper's analysis cache for the exact shot or spoken phrase you need. When the source file is no longer on disk, resolve its exact P5 <code>ArchiveEntry</code> handle and restore just that file, straight from the result. The restore folder defaults to the file's original parent directory, so a missing file returns to the path it came from.</p>
+                        <p>Restores are handled conservatively: a restore to this Mac is refused if the destination file already exists, and a canceled or terminated P5 job now ends as a failed restore rather than waiting out the timeout and reporting a timeout. Files whose archived path contains a backslash now resolve correctly. Search Jumper uses the shared P5Kit library for its P5 connection. It is a beta: test restores on files you can afford to lose.</p>
                         <p><strong>Requires a Jumper analysis cache</strong>, local or on shared storage. Search Jumper does not create the cache; it searches one Jumper has already built.</p>
 
                         <div class="features">
@@ -2677,6 +2678,9 @@
                             <li>Results-per-file limit and same-name collapsing</li>
                             <li>Restore an exact P5 ArchiveEntry handle</li>
                             <li>Restores default to the original folder</li>
+                            <li>Never overwrites an existing file on a local restore</li>
+                            <li>Canceled or terminated P5 jobs reported as failed</li>
+                            <li>Backslash paths in the archive resolve</li>
                             <li>Inventory tab: check paths against the cache</li>
                             <li>Shared-storage path remapping</li>
                             <li>Keychain-stored Jumper and P5 credentials</li>
