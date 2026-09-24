@@ -2157,6 +2157,7 @@
                         <p>A SwiftUI macOS application for browsing and searching P5 Archive Index inventory. Navigate through archived directories with a familiar file browser interface and maintain a local SQLite database for fast offline searching.</p>
                         <p>Uses the P5 <strong>REST API</strong> endpoint <code>/rest/v1/archive/indexes/{index}/inventory/{path}</code> to browse archive contents. Features breadcrumb navigation, double-click to drill down into folders, and comprehensive search functionality.</p>
                         <p><strong>Search now restores.</strong> Right-click an archived file in Browse or in Search DB and choose Restore from P5, or submit a whole folder as one directory handle and let P5 perform the recursion. Before anything is submitted, the app asks P5 which tape the item is on, whether it is online and where it is, so a restore that will wait for a cassette says so rather than looking stalled. Progress names the tape P5 is loading, a job still running when the window closes is picked up again at next launch, and every attempt — including the ones that did not finish — is kept in Restore History.</p>
+                        <p>Restore is new. Try it on a small folder you can afford to lose, and keep your own backup.</p>
                         <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate pinning for P5's self-signed placeholder certificate. Servers configured before this keep working unchanged.</p>
 
                         <div class="features">
@@ -2233,6 +2234,7 @@
                             <li>Per-server HTTP/HTTPS with certificate pinning</li>
                             <li>In-app user guide, Activity Log and Configuration Log</li>
                             <li>Identify and adopt orphaned server aliases</li>
+                            <li>The P5 password is kept out of process arguments</li>
                         </ul>
                         <div class="version-info">
                             <strong>Latest:</strong> <span data-version="p5-archive-search">v2.7 build 18</span><br>
