@@ -3308,7 +3308,7 @@
                         <p>A macOS menu bar backup app for folders that change every day. BackupTrust creates scheduled plans that copy only new or changed files from a source folder to one or more destinations, helping protect active projects without repeating a full backup every run.</p>
                         <p>Built for real working storage on macOS, BackupTrust supports local disks, external SSDs, NAS volumes, and other mounted folders. Plans can include file filters, excluded-directory presets, mirror mode, versioned overwrite protection, optional post-copy verification, and overflow routing for files that need a separate destination.</p>
 
-                        <p><strong>Two editions.</strong> <strong>BackupTrust Standard</strong> is the sandboxed edition and ships through the Mac App Store. <strong>BackupTrust Pro</strong> is the direct-access edition, notarized and downloaded from GitHub, with its own update checking. Pro adds <strong>per-file encryption</strong> of chosen destinations, pre- and post-backup shell scripts with timeout and abort controls, and opt-in proactive SMB preparation through SMB Connect. Standard neither creates nor restores encrypted backups.</p>
+                        <p><strong>Two editions.</strong> <strong>BackupTrust Standard</strong> is the sandboxed edition and ships through the <a href="https://apps.apple.com/ca/app/backuptrust/id6767965282?mt=12" target="_blank">Mac App Store</a>. <strong>BackupTrust Pro</strong> is the direct-access edition, notarized and downloaded from GitHub, with its own update checking. Pro adds <strong>per-file encryption</strong> of chosen destinations, pre- and post-backup shell scripts with timeout and abort controls, and opt-in proactive SMB preparation through SMB Connect. Standard neither creates nor restores encrypted backups.</p>
                         <p><strong>Encrypted backups you can open without the app.</strong> Pro encrypts each file with Apple Encrypted Archive using a public key, so the Mac that runs the backup holds no secret and cannot read its own backups. Recovery uses a key file you export and keep. Restore Files&hellip; rebuilds the original folders and modification dates, skips files already present unless you ask, checks the key before writing anything, and reports any file that fails without stopping the rest. Every encrypted destination also carries a restore script that works with Apple's own <code>aea</code> tool on any Mac. <em>Test a Restore&hellip;</em> proves a backup opens without writing anything.</p>
                         <p><strong>Pro is a beta.</strong> It is for testing only, is not a commercial product, and comes with no support or warranty. Keep your own independent backup of everything you protect with it. It has not yet been tried against every kind of storage (SMB NAS and LucidLink volumes in particular), so test it before you trust it.</p>
 
@@ -3362,6 +3362,7 @@
 
                         <div class="buttons">
                             <a href="https://github.com/macvfx/BackupTrust-Pro" class="btn btn-primary backup" target="_blank">BackupTrust Pro on GitHub</a>
+                            <a href="https://apps.apple.com/ca/app/backuptrust/id6767965282?mt=12" class="btn btn-secondary" target="_blank">BackupTrust on the App Store</a>
                             <a href="https://github.com/macvfx/BackupTrust-Pro/releases" data-release="backuptrust-pro" class="btn btn-secondary" target="_blank">Download Pro (Beta)</a>
                             <a href="https://github.com/macvfx/Backup-Trust" class="btn btn-secondary" target="_blank">Standard docs (archived)</a>
                         </div>
@@ -3385,7 +3386,7 @@
                         </ul>
                         <div class="version-info">
                             <strong>Pro:</strong> <span data-version="backuptrust-pro">v2.4 build 24</span> (Beta &mdash; test only)<br>
-                            <strong>Standard:</strong> Mac App Store (last GitHub release <span data-version="backuptrust">v1.6 build 12</span>)<br>
+                            <strong>Standard:</strong> <a href="https://apps.apple.com/ca/app/backuptrust/id6767965282?mt=12" target="_blank">Mac App Store</a> (last GitHub release <span data-version="backuptrust">v1.6 build 12</span>)<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>App Style:</strong> Menu bar app; Standard sandboxed, Pro direct access
                         </div>
