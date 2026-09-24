@@ -2359,6 +2359,8 @@
                         <p>Ships with 14 analytical queries covering throughput, weekly volume, storage growth, tape utilization, size distribution, and stale job detection. Add custom SQL queries with the <code>{{MIN_SIZE_KB}}</code> placeholder for configurable size thresholds.</p>
                         <p><strong>Charts.</strong> A Charts tab draws archived volume per week, month, quarter or year, cumulative growth, outcome by year, and where the volume sits by size range. Quiet periods are shown, not skipped. The charts come straight from the database, or from a folder of exported CSVs on a machine that never sees the database. Every export run also writes the chart data as CSV, plus a self-contained HTML dashboard and a PDF of it. These sit beside the existing CSV analysis by week, month and year and the per-volume TSV inventory export.</p>
                         <p><strong>Keep the server's queries current.</strong> <em>Deploy to Server</em> writes the bundled queries straight into the server's query folder. A signed, notarized installer package does the same through the macOS installer, and leaves a receipt showing which query set a server has.</p>
+                        <p><strong>Charts without the app.</strong> A standalone script, <code>p5chart.py</code>, draws the same weekly, monthly, quarterly and yearly charts as a self-contained HTML dashboard from the P5 job database or from a folder of exported CSVs, and can find which <code>resources.db</code> on a server holds the job history. The exports now carry plain numeric columns beside the formatted ones, so the CSVs chart cleanly in a spreadsheet too, and a weekly volume query was added.</p>
+                        <p>Both apps have an in-app user guide and What's New under the Help menu.</p>
                         <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume TSV inventories to dated run folders for snapshots or a standard <code>VolumeExport</code> folder for incremental runs. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and optionally copy outputs to a network destination.</p>
                         <p>The backup workflow creates compressed archives of the local P5 config and log folders, with optional clip exclusion and separate clip backup support for migration, disaster recovery, and regular server snapshots.</p>
 
@@ -2425,6 +2427,8 @@
                             <li>Charts tab: week, month, quarter, year, growth and size ranges</li>
                             <li>HTML dashboard, PDF and chart-data CSVs written with every export</li>
                             <li>Deploy to Server, or a signed installer package, for the queries</li>
+                            <li>Numeric columns beside formatted ones, and a weekly volume query</li>
+                            <li>p5chart.py for charts from a database or CSV folder</li>
                         </ul>
                         <h4>Volume Inventory Export</h4>
                         <ul>
