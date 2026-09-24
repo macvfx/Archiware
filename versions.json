@@ -194,6 +194,18 @@
       "published": "2026-05-25",
       "url": "https://github.com/macvfx/Backup-Trust/releases"
     },
+    "backuptrust-pro": {
+      "label": "BackupTrust Pro",
+      "repo": "macvfx/BackupTrust-Pro",
+      "version": "2.4",
+      "build": "24",
+      "display": "v2.4 build 24",
+      "prerelease": false,
+      "tag": "2.4+24",
+      "title": "BackupTrust Pro 2.4 (24) — Beta",
+      "published": "2026-09-22",
+      "url": "https://github.com/macvfx/BackupTrust-Pro/releases"
+    },
     "smb-connect": {
       "label": "SMB Connect",
       "repo": "macvfx/SMB-Connect",

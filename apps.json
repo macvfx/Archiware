@@ -11,7 +11,6 @@
     "               'latest' = newest release of any kind, for apps on a beta track.",
     "  label        how the app is named on the site, for the generated report only."
   ],
-
   "apps": {
     "p5-archive-manager": {
       "label": "P5 Archive Manager CLI",
@@ -55,7 +54,6 @@
       "repo": "macvfx/P5-Search-Jumper",
       "channel": "latest"
     },
-
     "copytrust": {
       "label": "CopyTrust",
       "repo": "macvfx/MHL",
@@ -91,7 +89,6 @@
       "repo": "macvfx/MHL-Verify",
       "channel": "stable"
     },
-
     "find-file-type": {
       "label": "Find File Type",
       "repo": "macvfx/Find-File-Type",
@@ -101,6 +98,11 @@
       "label": "BackupTrust",
       "repo": "macvfx/Backup-Trust",
       "channel": "stable"
+    },
+    "backuptrust-pro": {
+      "label": "BackupTrust Pro",
+      "repo": "macvfx/BackupTrust-Pro",
+      "channel": "latest"
     },
     "smb-connect": {
       "label": "SMB Connect",
