@@ -1431,7 +1431,7 @@
                             <p class="app-subtitle">Verify, archive, restore, and safely delete</p>
                             <span class="api-badge rest">CLI &middot; REST API Beta</span>
                             <div class="app-features">
-                                Verify what is already in P5, delete proven-archived local copies, archive the rest, and now restore a whole project from the timeline or library an editor exported (Resolve .drt, Premiere or Resolve XML, FCPXML and .fcpxmld) or from a plain list of paths. The REST API edition is still a beta.
+                                Verify what is already in P5, delete proven-archived local copies, archive the rest, and now restore a whole project from the timeline or library an editor exported (Resolve .drt, Premiere or Resolve XML, FCPXML and .fcpxmld) or from a plain list of paths, including media on imported volumes. The REST API edition is still a beta.
                             </div>
                             <a href="#archive-manager">Learn more →</a>
                         </div>
@@ -1455,7 +1455,7 @@
                             <p class="app-subtitle">Index browser, search &amp; restore</p>
                             <span class="api-badge rest">REST API</span>
                             <div class="app-features">
-                                Browse and search P5 archive index inventory. Navigate directories, build a local database, find archived files quickly, and restore a file or a whole folder from tape.
+                                Browse and search P5 archive index inventory. Navigate directories, build a local database, find archived files quickly, including in imported volumes, and restore a file or a whole folder from tape.
                             </div>
                             <a href="#archive-search">Learn more →</a>
                         </div>
@@ -1953,11 +1953,12 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.2.1 build 43</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
+                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.3.0 build 45</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
                         <p><strong>Restore from Project File.</strong> Drop the project an editor delivered &mdash; a Resolve <code>.drt</code> timeline, a Resolve or Premiere XML, a Final Cut Pro <code>.fcpxml</code> or <code>.fcpxmld</code> bundle, or a plain text list of paths &mdash; and the app finds each media item in P5, across every archive index. Each row says what to do: <em>needs to be restored &mdash; not in its original location</em>, <em>in its original location</em>, or <em>not in P5</em>. Prepare Restore shows versions, archive dates and tapes, and whether each tape is online, then one P5 job restores everything to the original location or into a folder on a P5 client, and the app follows it to the end. </p>
                         <p><strong>What is read from each file.</strong> Resolve or Premiere XML: every <code>pathurl</code>. Final Cut Pro <code>.fcpxml</code>: every original-media reference, with proxies ignored. Final Cut Pro <code>.fcpxmld</code> bundle: the <code>Info.fcpxml</code> inside it. DaVinci Resolve <code>.drt</code> (a zip): every <code>MediaFilePath</code>. Text, TSV, CSV or log files: one absolute path or <code>file://</code> URL per line. P5's own media-list restore accepts an XML or FCPXML but not a <code>.fcpxmld</code> or <code>.drt</code>, and knows nothing about RED clips.</p>
                         <p><strong>RED clips come back whole.</strong> A RED clip is a <code>.RDC</code> folder of <code>_001.R3D</code>, <code>_002.R3D</code> and so on, but a timeline names only <code>_001.R3D</code>, and restoring that one file gives a clip that stops after its first segment. With <em>Restore the whole RED clip folder</em> on (the default), any <code>.R3D</code> inside an <code>.RDC</code> folder is replaced by the whole folder. The row shows how many segments P5 holds and which ones the project named, and on LTO it is one linear read instead of many single files.</p>
-                        <p>Media that was moved or imported before it was archived is found by name through P5 volume-inventory TSVs, through P5 Archive Browser's tape catalogue when it is on the same Mac, or from a location pasted from the P5 web app. Restore into a folder first: restoring to the original location has not yet been tested against a live server.</p>
+                        <p>Media that was moved or imported before it was archived is found by name through P5 volume-inventory TSVs, through P5 Archive Browser's tape catalogue when it is on the same Mac, or from a location pasted from the P5 web app. Restore into a folder first: restoring to the original location of imported media has not yet been tested against a live server.</p>
+                        <p><strong>Imported volumes, through the REST API alone.</strong> P5 does not list the volumes of an Imported-Volumes index over REST, so <em>Find imported volumes&hellip;</em> tries each volume's label as a top-level name and keeps the ones the index answers for. Media that was moved before it was archived (into a &ldquo;To Archive&rdquo; folder, say) is then found by listing those volumes for the project's folders, and every path is confirmed with P5 before an item counts as archived. On a real project file, all 53 items were found this way with the TSVs and the Browser catalogue turned off, and Prepare Restore and Restore into a folder worked on them.</p>
                         <p>The REST API edition adds a complete proof-first lifecycle. Delete local copies that are already verified in P5, then submit files that are not yet archived directly to a configured P5 plan and client, monitor the archive job, re-check the files, and delete the newly archived local copies only after P5 proof is confirmed.</p>
                         <p>The REST edition keeps an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
                         <p>An archive plan can be configured in P5 to delete at the source &mdash; either the archived files, or the files <em>and their folders</em>. Archive Manager reads both flags, names in the plan picker and the confirm dialog exactly what a plan removes, and <strong>blocks such plans by default</strong>: P5 performs those deletions itself, without this app's proof report or receipt. The guard can be turned off in Settings &#9656; Archiving.</p>
@@ -2022,7 +2023,12 @@
                             <div class="feature-card">
                                 <div class="feature-icon">🔎</div>
                                 <h3>Finds Moved Media</h3>
-                                <p>Volume-inventory TSVs and P5 Archive Browser's catalogue locate media archived from a different path</p>
+                                <p>Volume-inventory TSVs, P5 Archive Browser's catalogue, or listing the imported volumes over REST locate media archived from a different path</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📥</div>
+                                <h3>Imported Volumes over REST</h3>
+                                <p>Find imported volumes lists an Imported-Volumes index's volumes, with no TSVs or local catalogue needed</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">🆕</div>
@@ -2055,11 +2061,12 @@
                             <li>Restore from a Resolve .drt, XML, FCPXML / .fcpxmld or path list</li>
                             <li>Restore to the original location or into a folder on a P5 client</li>
                             <li>Tape and online state shown before you restore</li>
+                            <li>Imported volumes found through the REST API alone, with a bounded, read-only listing</li>
                         </ul>
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
-                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.2.1 build 43</span> (Beta &mdash; test only)<br>
+                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.3.0 build 45</span> (Beta &mdash; test only)<br>
                             <strong>CLI edition:</strong> <span data-version="p5-archive-manager">v3.7.2 build 6</span>
                         </div>
                     </div>
@@ -2158,6 +2165,8 @@
                         <p>Uses the P5 <strong>REST API</strong> endpoint <code>/rest/v1/archive/indexes/{index}/inventory/{path}</code> to browse archive contents. Features breadcrumb navigation, double-click to drill down into folders, and comprehensive search functionality.</p>
                         <p><strong>Search now restores.</strong> Right-click an archived file in Browse or in Search DB and choose Restore from P5, or submit a whole folder as one directory handle and let P5 perform the recursion. Before anything is submitted, the app asks P5 which tape the item is on, whether it is online and where it is, so a restore that will wait for a cassette says so rather than looking stalled. Progress names the tape P5 is loading, a job still running when the window closes is picked up again at next launch, and every attempt — including the ones that did not finish — is kept in Restore History.</p>
                         <p>Restore is new. Try it on a small folder you can afford to lose, and keep your own backup.</p>
+                        <p><strong>Imported volumes.</strong> An imported-volumes index is rooted at each volume's label rather than at a folder such as <code>Volumes</code>, and P5 does not list those labels over REST, so a scan had to be given each one by hand. <em>Find imported volumes&hellip;</em> in the server sheet tries each volume's label as a top-level name in the index and adds the ones it answers for as scan paths and browse roots; a pasted list covers a label it cannot find. The drive-icon menu lists them below <code>Volumes</code> and <code>mnt</code>, with a Scan all item that puts them into search.</p>
+                        <p><strong>A failed request says why.</strong> The log shows the HTTP status and what it means, or the cause when there was no answer (P5 answers a wrong password with HTTP 400, not 401), and every request the app makes is recorded in the system log without the password.</p>
                         <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate pinning for P5's self-signed placeholder certificate. Servers configured before this keep working unchanged.</p>
 
                         <div class="features">
@@ -2211,6 +2220,16 @@
                                 <h3>HTTPS Per Server</h3>
                                 <p>Per-server TLS on port 8443 with certificate pinning</p>
                             </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📥</div>
+                                <h3>Imported Volumes</h3>
+                                <p>Find an imported-volumes index's volumes, browse them from the roots menu and scan them into search</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🩺</div>
+                                <h3>Errors That Say Why</h3>
+                                <p>The HTTP status and its meaning in the log, and every request in the system log</p>
+                            </div>
                         </div>
                         
                         <div class="buttons">
@@ -2235,9 +2254,11 @@
                             <li>In-app user guide, Activity Log and Configuration Log</li>
                             <li>Identify and adopt orphaned server aliases</li>
                             <li>The P5 password is kept out of process arguments</li>
+                            <li>Find imported volumes, browse them and scan them into search</li>
+                            <li>A failed request reports its HTTP status and cause; every request is logged</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.7 build 18</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.8 build 19</span><br>
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>API:</strong> REST /archive/indexes/.../inventory &middot; /restore
                         </div>
@@ -3606,7 +3627,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-23</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-25</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
