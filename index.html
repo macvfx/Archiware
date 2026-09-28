@@ -1497,7 +1497,7 @@
                             <p class="app-subtitle">Multi-server health monitoring</p>
                             <span class="api-badge rest">REST API</span>
                             <div class="app-features">
-                                Health monitoring suite with a desktop app, menu bar monitor, iPhone companion app, and CLI script for quick checks, alerts, and CSV exports.
+                                Health monitoring suite with a desktop app, menu bar monitor, iPhone companion app, and CLI script — a running-jobs-first live monitor with status colours, quick checks, alerts, and CSV exports.
                             </div>
                             <a href="#health-check">Learn more →</a>
                         </div>
@@ -2577,7 +2577,8 @@
                     <div class="app-description">
                         <p>P5 Health Check provides quick operational visibility into one or more P5 servers. It includes a full Mac app (<code>P5Window</code>), a menu bar monitor (<code>P5MenuBar</code>), an iPhone companion app (<code>P5iPhone</code>), and a CLI script (<code>p5_health_check.sh</code>) for terminal automation.</p>
                         <p>The tools surface actionable signals including server uptime, drive cleaning requirements, warning/error jobs, and tape mode pressure across <code>Appendable</code>, <code>Readonly</code>, and <code>Full</code> volumes.</p>
-                        <p><strong>New in 1.8.0 (Mac apps).</strong> A live job monitor with <em>Active</em> and <em>Recent Archives</em> tabs. Recent Archives is a read-only look at P5's archive overview, showing each finished archive's client, plan, pool, size, time and archived paths; it is not durable job history and does not include restores or backups. The monitor refreshes every 30 seconds, 1, 5 or 10 minutes, one setting shared by the window and menu bar apps. The window app gains native Settings, Help and What's New windows, an in-app guide, refreshed dashboard cards, and HTTPS locks beside server names. Refresh All now shows each server as soon as it answers, so one slow server no longer holds back the rest. Automated tests pass; testing against a live P5 server and on the oldest supported macOS is still to do, so try it on servers you can watch. The iPhone app is unchanged at 1.2.1.</p>
+                        <p><strong>New in 1.9.0 (Mac apps).</strong> The live monitor now lists <em>running jobs only</em> by default, with a <strong>Show queued jobs</strong> setting (off by default, remembered) to add queued and pending work back in, and a note showing how many are hidden. A new status header (Drives, P5 Server, Uptime, Running jobs) and one traffic-light colour scheme — green fine, orange needs a look, red needs action — run through the window, the menu bar, and the All Servers view, where each server is now one coloured row. In-app Help and What's New were updated to match. The iPhone app is unchanged at 1.2.1.</p>
+                        <p><strong>1.8.0.</strong> A live job monitor with <em>Active</em> and <em>Recent Archives</em> tabs. Recent Archives is a read-only look at P5's archive overview, showing each finished archive's client, plan, pool, size, time and archived paths; it is not durable job history and does not include restores or backups. The monitor refreshes every 30 seconds, 1, 5 or 10 minutes, one setting shared by the window and menu bar apps. The window app gains native Settings, Help and What's New windows, an in-app guide, refreshed dashboard cards, and HTTPS locks beside server names. Refresh All shows each server as soon as it answers, so one slow server no longer holds back the rest.</p>
 
                         <div class="features">
                             <div class="feature-card">
@@ -2597,8 +2598,13 @@
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">📡</div>
-                                <h3>Live Job Monitor <span style="font-size:0.75rem; opacity:0.8;">(1.8.0)</span></h3>
-                                <p>Active jobs and Recent Archives on an interval you choose, in both Mac apps</p>
+                                <h3>Live Job Monitor</h3>
+                                <p>Running jobs by default (queued jobs optional), Recent Archives, on an interval you choose, in both Mac apps</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🚦</div>
+                                <h3>Status Colours <span style="font-size:0.75rem; opacity:0.8;">(1.9.0)</span></h3>
+                                <p>One traffic-light scheme for drives, uptime and server reachability, shared everywhere</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">⚠️</div>
@@ -2628,13 +2634,14 @@
                             <li>Volume mode and inventory monitoring</li>
                             <li>Jukebox status and license tracking</li>
                             <li>iPhone app with fleet dashboard and server detail drill-down</li>
+                            <li>1.9.0: Running-jobs-first monitor, optional queued jobs, status colours</li>
                             <li>1.8.0: Active and Recent Archives monitor, 30 s to 10 min refresh</li>
                             <li>1.8.0: In-app guide, What's New, and per-server HTTPS indicators</li>
                             <li>Read-only: it watches P5 and starts nothing</li>
                             <li>CLI output: JSON, warnings CSV, errors CSV, volumes CSV</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-health-check">v1.8.0 build 7</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-health-check">v1.9.0 build 8</span><br>
                             <strong>Requires:</strong> macOS 13.5+ (Mac), macOS 14+ (Menu Bar), iOS 17+ (iPhone)<br>
                             <strong>API:</strong> P5 REST API
                         </div>
@@ -3633,7 +3640,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-26</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-09-28</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>

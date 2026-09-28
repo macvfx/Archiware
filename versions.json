@@ -77,13 +77,13 @@
     "p5-health-check": {
       "label": "P5 Health Check",
       "repo": "macvfx/p5HealthCheck",
-      "version": "1.8.0",
-      "build": "7",
-      "display": "v1.8.0 build 7",
+      "version": "1.9.0",
+      "build": "8",
+      "display": "v1.9.0 build 8",
       "prerelease": false,
-      "tag": "1.8.0+7",
-      "title": "Live monitor and Recent Archives — P5 Health Check 1.8.0 (Build 7)",
-      "published": "2026-09-26",
+      "tag": "1.9.0+8",
+      "title": "P5 Health Check 1.9.0 (Build 8)",
+      "published": "2026-09-28",
       "url": "https://github.com/macvfx/p5HealthCheck/releases"
     },
     "p5-search-jumper": {
