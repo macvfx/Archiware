@@ -101,13 +101,13 @@
     "copytrust": {
       "label": "CopyTrust",
       "repo": "macvfx/MHL",
-      "version": "2.8.7",
-      "build": "28",
-      "display": "v2.8.7 build 28",
-      "prerelease": true,
-      "tag": "2.8.7+28",
-      "title": "CopyTrust 2.8.7 (build 28) — beta",
-      "published": "2026-09-22",
+      "version": "2.9.1",
+      "build": "31",
+      "display": "v2.9.1 build 31",
+      "prerelease": false,
+      "tag": "2.9.1+31",
+      "title": "CopyTrust 2.9.1 (build 31) — beta",
+      "published": "2026-10-01",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "drop-verify": {
