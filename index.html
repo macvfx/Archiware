@@ -1795,7 +1795,7 @@
                                 <span>🛡️</span>
                                 <h3>CopyTrust</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.9.1 build 31</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.9.2 build 32</span></div>
                             <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts. Now makes proxies and archives to P5.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -3444,8 +3444,8 @@
                     <div class="app-description">
                         <p>A full camera card ingest system with multi-source, multi-destination copy and verification. CopyTrust detects camera cards, copies media to multiple destinations simultaneously, verifies every byte with xxHash64, and generates MHL manifests, contact sheet PDFs, and session receipts.</p>
                         <p>Per destination, CopyTrust can also <strong>create proxies</strong> and <strong>archive to P5</strong>. Tick <em>Create proxies</em> and <em>Archive to P5</em> on the destination rows you want them on — a typical chain archives the camera original from the first stop and generates editorial proxies on the last — and the run submits the archive and encodes the proxies after verification and the other artifacts have finished.</p>
-                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. Recent builds merge the pre-copy warnings into one review that opens with a Go / Check banner, shows every destination's full path and whether a proxies-only destination will actually receive proxies, and warns <em>No destination set for proxies</em> when nothing is making them. The session summary now reports proxies, and the build also adds a Reveal menu with one section per destination, contact sheets for MKV cards, and plain-words P5 archive status (<em>Archiving in P5 job&hellip;</em>, <em>Archived by P5 job&hellip;</em>).</p>
-                        <p><strong>Enforced naming presets.</strong> A facility can describe how it files footage &mdash; project, unit, roll, and the folders each destination expects &mdash; and CopyTrust applies it as cards are staged. One preset sets up a whole job: the ingest options, the naming convention, what each destination is for (including proxies-only and P5), and the P5 server. Every card shows where it will land before the copy starts, and receipts record the project, unit, roll and exact folder each destination received. A card with no unit has no roll, and a preset can name which units get their files renamed (a drone, say) so the Rename choice is only offered where it matters. A preset can reload itself, and open in Card or Folder mode, every time the app launches, and a tested preset can be pinned by name with a configuration profile so a fleet stays on one setup.</p>
+                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. Recent builds merge the pre-copy warnings into one review that opens with a banner saying <em>Looks good &mdash; start the copy</em> or <em>Read below before you start</em>, shows every destination's full path and whether a proxies-only destination will actually receive proxies, and warns <em>No destination set for proxies</em> when nothing is making them. The session summary now reports proxies, and the build also adds a Reveal menu with one section per destination, contact sheets for MKV cards, and plain-words P5 archive status (<em>Archiving in P5 job&hellip;</em>, <em>Archived by P5 job&hellip;</em>).</p>
+                        <p><strong>Enforced naming presets.</strong> A facility can describe how it files footage &mdash; project, unit, roll, and the folders each destination expects &mdash; and CopyTrust applies it as cards are staged. One preset sets up a whole job: the ingest options, the naming convention, what each destination is for (including proxies-only and P5), and the P5 server. Every card shows where it will land before the copy starts, and receipts record the project, unit, roll and exact folder each destination received. A card with no unit has no roll, and a preset can name which units get their files renamed (Drone files, for example) so the Rename choice is only offered where it matters. A preset can reload itself, and open in Card or Folder mode, every time the app launches, and a tested preset can be pinned by name with a configuration profile so a fleet stays on one setup.</p>
                         <p><strong>Check footage against the manifest it arrived with.</strong> A card offloaded elsewhere with OffShoot, Silverstack or ShotPut Pro can be verified against that MHL when it reaches the facility. CopyTrust can also be shown larger (1x to 2x).</p>
                         <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
 
@@ -3535,7 +3535,7 @@
                             <li>Interface size 1x to 2x</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="copytrust">v2.9.1 build 31</span><br>
+                            <strong>Latest:</strong> <span data-version="copytrust">v2.9.2 build 32</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
@@ -3642,7 +3642,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-10-01</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-10-02</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
