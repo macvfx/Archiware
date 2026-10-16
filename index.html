@@ -1785,7 +1785,7 @@
                                 <span>📋</span>
                                 <h3>Drop Verify</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="drop-verify">v2.9.8 build 45</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="drop-verify">v2.9.9 build 49</span></div>
                             <div class="card-desc">Drag one folder, generate an MHL manifest, contact sheet PDF, and EXIF metadata CSV. Trust artifacts in one step.</div>
                             <a href="#drop-verify">Learn more →</a>
                         </div>
@@ -1795,7 +1795,7 @@
                                 <span>🛡️</span>
                                 <h3>CopyTrust</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.9.8 build 45</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v2.9.9 build 49</span></div>
                             <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts. Now makes proxies and archives to P5.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -1848,7 +1848,7 @@
                                 <span>🗂️</span>
                                 <h3>Folder Compare</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="folder-copy-compare">v2.9.8 build 45</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="folder-copy-compare">v2.9.9 build 49</span></div>
                             <div class="card-desc">Drop two folders and compare their full file trees using xxHash64. Results show every matched, mismatched, and missing file side-by-side, with P5 stub file cleanup available before final sign-off.</div>
                             <a href="#folder-copy-compare">Learn more →</a>
                         </div>
@@ -1858,7 +1858,7 @@
                                 <span>🗃️</span>
                                 <h3>Subfolder View <span style="font-size:0.75rem; background: rgba(34,211,238,0.2); color: #22d3ee; padding: 2px 8px; border-radius: 10px; font-weight: 700; vertical-align: middle;">NEW</span></h3>
                             </div>
-                            <div class="card-meta"><span data-version="folder-copy-compare">v2.9.8 build 45</span> &middot; Drill-down hash comparison</div>
+                            <div class="card-meta"><span data-version="folder-copy-compare">v2.9.9 build 49</span> &middot; Drill-down hash comparison</div>
                             <div class="card-desc">Compare folders organised into subfolders — camera reels, shoot days, card dumps. See a pass/fail per subfolder, then tap to hash just that pair on demand.</div>
                             <a href="#folder-copy-compare">Learn more →</a>
                         </div>
@@ -3168,7 +3168,7 @@
                             <li>Operator name and settings</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="drop-verify">v2.9.8 build 45</span><br>
+                            <strong>Latest:</strong> <span data-version="drop-verify">v2.9.9 build 49</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Output:</strong> MHL, PDF, CSV
                         </div>
@@ -3323,7 +3323,7 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64<br>
-                            <strong>Latest:</strong> <span data-version="folder-copy-compare">v2.9.8 build 45</span> — Subfolder Compare
+                            <strong>Latest:</strong> <span data-version="folder-copy-compare">v2.9.9 build 49</span> — Subfolder Compare
                         </div>
                     </div>
                 </div>
@@ -3444,7 +3444,7 @@
                     <div class="app-description">
                         <p>A full camera card ingest system with multi-source, multi-destination copy and verification. CopyTrust detects camera cards, copies media to multiple destinations simultaneously, verifies every byte with xxHash64, and generates MHL manifests, contact sheet PDFs, and session receipts.</p>
                         <p>Per destination, CopyTrust can also <strong>create proxies</strong> and <strong>archive to P5</strong>. Tick <em>Create proxies</em> and <em>Archive to P5</em> on the destination rows you want them on — a typical chain archives the camera original from the first stop and generates editorial proxies on the last — and the run submits the archive and encodes the proxies after verification and the other artifacts have finished.</p>
-                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. The newest build writes a <em>Final Cut Relink Aliases</em> folder beside the proxies, so Final Cut Pro&rsquo;s Locate All relinks every proxy at once instead of one by one. Recent builds merge the pre-copy warnings into one review that opens with a banner saying <em>Looks good &mdash; start the copy</em> or <em>Read below before you start</em>, shows every destination's full path and whether a proxies-only destination will actually receive proxies, and warns <em>No destination set for proxies</em> when nothing is making them. The session summary now reports proxies, and the build also adds a Reveal menu with one section per destination, contact sheets for MKV cards, and plain-words P5 archive status (<em>Archiving in P5 job&hellip;</em>, <em>Archived by P5 job&hellip;</em>).</p>
+                        <p><strong>Beta.</strong> CopyTrust is being tested on real jobs. Test on media you can afford to lose and keep a separate verified backup. The newest build writes a <em>Final Cut Relink Aliases</em> folder beside the proxies, so Final Cut Pro&rsquo;s Locate All relinks every proxy at once instead of one by one; proxies sent to a proxies-only drive, such as a cloud volume, get their own aliases there and the delivery is counted, so a shortfall is reported. Recent builds merge the pre-copy warnings into one review that opens with a banner saying <em>Looks good &mdash; start the copy</em> or <em>Read below before you start</em>, shows every destination's full path and whether a proxies-only destination will actually receive proxies, and warns <em>No destination set for proxies</em> when nothing is making them. The session summary now reports proxies, and the build also adds a Reveal menu with one section per destination, contact sheets for MKV cards, and plain-words P5 archive status (<em>Archiving in P5 job&hellip;</em>, <em>Archived by P5 job&hellip;</em>).</p>
                         <p><strong>Enforced naming presets.</strong> A facility can describe how it files footage &mdash; project, unit, roll, and the folders each destination expects &mdash; and CopyTrust applies it as cards are staged. One preset sets up a whole job: the ingest options, the naming convention, what each destination is for (including proxies-only and P5), and the P5 server. Every card shows where it will land before the copy starts, and receipts record the project, unit, roll and exact folder each destination received. A card with no unit has no roll, and a preset can name which units get their files renamed (Drone files, for example) so the Rename choice is only offered where it matters. A preset can reload itself, and open in Card or Folder mode, every time the app launches, and a tested preset can be pinned by name with a configuration profile so a fleet stays on one setup.</p>
                         <p><strong>Check footage against the manifest it arrived with.</strong> A card offloaded elsewhere with OffShoot, Silverstack or ShotPut Pro can be verified against that MHL when it reaches the facility. CopyTrust can also be shown larger (1x to 2x).</p>
                         <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
@@ -3535,7 +3535,7 @@
                             <li>Interface size 1x to 2x</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="copytrust">v2.9.8 build 45</span><br>
+                            <strong>Latest:</strong> <span data-version="copytrust">v2.9.9 build 49</span><br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>Hash:</strong> xxHash64 (~9.6 GB/s)
                         </div>
@@ -3642,7 +3642,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-10-15</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-10-16</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
