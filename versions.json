@@ -137,13 +137,13 @@
     "mhl-tool": {
       "label": "mhl-tool CLI",
       "repo": "macvfx/MHL",
-      "version": "2.7.7",
+      "version": "2.9.8",
       "build": null,
-      "display": "v2.7.7",
+      "display": "v2.9.8",
       "prerelease": false,
-      "tag": "mhl-tool-2.7.7",
-      "title": "mhl-tool 2.7.7 — manifests that resolve",
-      "published": "2026-08-28",
+      "tag": "mhl-tool-2.9.8",
+      "title": "mhl-tool 2.9.8 — suite version, now with tests",
+      "published": "2026-10-16",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "project-folder-creator": {
