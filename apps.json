@@ -63,13 +63,13 @@
     "drop-verify": {
       "label": "Drop Verify",
       "repo": "macvfx/MHL",
-      "title_match": "^Media Trust Tools ",
+      "title_match": "^(Drop Verify |Media Trust Tools 3\\.0 \\()",
       "channel": "latest"
     },
     "folder-copy-compare": {
       "label": "Folder Copy Compare",
       "repo": "macvfx/MHL",
-      "title_match": "^Media Trust Tools ",
+      "title_match": "^(Folder Copy Compare |Media Trust Tools 3\\.0 \\()",
       "channel": "latest"
     },
     "mhl-tool": {

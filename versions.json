@@ -113,13 +113,13 @@
     "drop-verify": {
       "label": "Drop Verify",
       "repo": "macvfx/MHL",
-      "version": "3.0",
-      "build": "50",
-      "display": "v3.0 build 50",
-      "prerelease": false,
-      "tag": "3.0+50",
-      "title": "Media Trust Tools 3.0 (build 50) — beta",
-      "published": "2026-10-17",
+      "version": "3.0.1",
+      "build": "52",
+      "display": "v3.0.1 build 52",
+      "prerelease": true,
+      "tag": "3.0.1+52",
+      "title": "Drop Verify 3.0.1 (build 52) — beta",
+      "published": "2026-10-19",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "folder-copy-compare": {
