@@ -29,13 +29,13 @@
     "p5-archive-overview": {
       "label": "P5 Archive Overview",
       "repo": "macvfx/p5ArchiveOverview",
-      "version": "2.2",
-      "build": "16",
-      "display": "v2.2 build 16",
+      "version": "2.9",
+      "build": "23",
+      "display": "v2.9 build 23",
       "prerelease": false,
-      "tag": "2.2",
-      "title": "2.2 (Build 16)",
-      "published": "2026-09-18",
+      "tag": "2.9",
+      "title": "2.9 (Build 23)",
+      "published": "2026-10-18",
       "url": "https://github.com/macvfx/p5ArchiveOverview/releases"
     },
     "p5-archive-search": {
@@ -101,13 +101,13 @@
     "copytrust": {
       "label": "CopyTrust",
       "repo": "macvfx/MHL",
-      "version": "3.0",
-      "build": "50",
-      "display": "v3.0 build 50",
+      "version": "3.0.1",
+      "build": "51",
+      "display": "v3.0.1 build 51",
       "prerelease": false,
-      "tag": "3.0+50",
-      "title": "Media Trust Tools 3.0 (build 50) — beta",
-      "published": "2026-10-17",
+      "tag": "3.0.1+51",
+      "title": "Media Trust Tools 3.0.1 (build 51) — beta",
+      "published": "2026-10-19",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "drop-verify": {
