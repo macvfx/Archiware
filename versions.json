@@ -125,13 +125,13 @@
     "folder-copy-compare": {
       "label": "Folder Copy Compare",
       "repo": "macvfx/MHL",
-      "version": "3.0",
-      "build": "50",
-      "display": "v3.0 build 50",
-      "prerelease": false,
-      "tag": "3.0+50",
-      "title": "Media Trust Tools 3.0 (build 50) — beta",
-      "published": "2026-10-17",
+      "version": "3.0.1",
+      "build": "53",
+      "display": "v3.0.1 build 53",
+      "prerelease": true,
+      "tag": "3.0.1+53",
+      "title": "Folder Copy Compare 3.0.1 (build 53) — beta",
+      "published": "2026-10-19",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "mhl-tool": {
