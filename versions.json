@@ -102,12 +102,12 @@
       "label": "CopyTrust",
       "repo": "macvfx/MHL",
       "version": "3.0.1",
-      "build": "51",
-      "display": "v3.0.1 build 51",
+      "build": "54",
+      "display": "v3.0.1 build 54",
       "prerelease": false,
-      "tag": "3.0.1+51",
-      "title": "Media Trust Tools 3.0.1 (build 51) — beta",
-      "published": "2026-10-19",
+      "tag": "3.0.1+54",
+      "title": "CopyTrust 3.0.1 (build 54) — beta",
+      "published": "2026-10-20",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "drop-verify": {
