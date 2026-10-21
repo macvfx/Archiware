@@ -102,12 +102,12 @@
       "label": "CopyTrust",
       "repo": "macvfx/MHL",
       "version": "3.0.1",
-      "build": "54",
-      "display": "v3.0.1 build 54",
+      "build": "58",
+      "display": "v3.0.1 build 58",
       "prerelease": false,
-      "tag": "3.0.1+54",
-      "title": "CopyTrust 3.0.1 (build 54) — beta",
-      "published": "2026-10-20",
+      "tag": "3.0.1+58",
+      "title": "CopyTrust 3.0.1 (build 58) — beta",
+      "published": "2026-10-21",
       "url": "https://github.com/macvfx/MHL/releases"
     },
     "drop-verify": {
