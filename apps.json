@@ -69,21 +69,15 @@
       "label": "Drop Verify",
       "repo": "macvfx/MHL",
       "url": "https://github.com/macvfx/MHL#drop-verify",
-      "fixed": {
-        "version": "3.0.1",
-        "build": "52",
-        "published": "2026-10-19"
-      }
+      "title_match": "^(CopyTrust|Media Trust Tools) ",
+      "channel": "latest"
     },
     "folder-copy-compare": {
       "label": "Folder Copy Compare",
       "repo": "macvfx/MHL",
       "url": "https://github.com/macvfx/MHL#folder-copy-compare",
-      "fixed": {
-        "version": "3.0.1",
-        "build": "53",
-        "published": "2026-10-19"
-      }
+      "title_match": "^(CopyTrust|Media Trust Tools) ",
+      "channel": "latest"
     },
     "mhl-tool": {
       "label": "mhl-tool CLI",
