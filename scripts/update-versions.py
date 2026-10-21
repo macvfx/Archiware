@@ -13,8 +13,11 @@ and are written into marked slots in index.html:
     <a data-release="copytrust" href="...">Download Release</a>
 
 apps.json maps each slot key to a public repo, an optional release-title regex
-(macvfx/MHL ships five apps from one repo), and a channel. Nothing else in
-index.html is touched.
+(macvfx/MHL ships five apps from one repo), and a channel. Two optional keys:
+`url` links the app's button to that page instead of the repo's releases page, and
+`fixed` ({version, build, published}) shows an app at a typed version with no release
+lookup, for an app that rides in another app's release and has none of its own. Draft
+releases are ignored. Nothing else in index.html is touched.
 
 Usage:
     scripts/update-versions.py            rewrite index.html in place
@@ -64,7 +67,7 @@ def gh_releases(repo: str) -> list[dict]:
     try:
         out = subprocess.run(
             ["gh", "release", "list", "-R", repo, "-L", "100",
-             "--json", "tagName,name,isPrerelease,isLatest,publishedAt"],
+             "--json", "tagName,name,isPrerelease,isLatest,isDraft,publishedAt"],
             capture_output=True, text=True, check=True,
         ).stdout
     except FileNotFoundError:
@@ -72,7 +75,8 @@ def gh_releases(repo: str) -> list[dict]:
     except subprocess.CalledProcessError as exc:
         raise ResolveError(f"gh failed for {repo}: {exc.stderr.strip()}") from None
 
-    releases = json.loads(out or "[]")
+    # A draft is not public and carries no publish date; it must never be the "latest".
+    releases = [r for r in json.loads(out or "[]") if not r.get("isDraft")]
     releases.sort(key=lambda r: r["publishedAt"], reverse=True)
     return releases
 
@@ -103,6 +107,24 @@ def parse_version(release: dict) -> tuple[str, str | None]:
 
 
 def resolve(key: str, spec: dict, releases: list[dict]) -> dict:
+    fixed = spec.get("fixed")
+    if fixed:
+        # An app with no release of its own (it rides in another app's release) is shown at the
+        # version typed in apps.json, and linked to `url`, instead of being looked up.
+        version, build = fixed["version"], fixed.get("build")
+        return {
+            "label": spec.get("label", key),
+            "repo": spec["repo"],
+            "version": version,
+            "build": build,
+            "display": f"v{version}" + (f" build {build}" if build else ""),
+            "prerelease": bool(fixed.get("prerelease", True)),
+            "tag": "",
+            "title": "",
+            "published": fixed["published"],
+            "url": spec.get("url") or f"https://github.com/{spec['repo']}/releases",
+        }
+
     pattern = spec.get("title_match")
     if pattern:
         rx = re.compile(pattern)
@@ -140,7 +162,7 @@ def resolve(key: str, spec: dict, releases: list[dict]) -> dict:
         "published": chosen["publishedAt"][:10],
         # Always the releases page, never a pinned tag -- a pinned link is how
         # the site ended up serving a two-major-versions-old Archive Manager.
-        "url": f"https://github.com/{spec['repo']}/releases",
+        "url": spec.get("url") or f"https://github.com/{spec['repo']}/releases",
     }
 
 

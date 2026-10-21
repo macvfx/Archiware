@@ -9,7 +9,11 @@
     "               several apps (macvfx/MHL ships five). Omit to accept any release.",
     "  channel      'stable' = newest non-prerelease (falls back to newest overall),",
     "               'latest' = newest release of any kind, for apps on a beta track.",
-    "  label        how the app is named on the site, for the generated report only."
+    "  label        how the app is named on the site, for the generated report only.",
+    "  url          optional: where the app's button goes instead of the repo's releases page.",
+    "  fixed        optional {version, build, published}: show this app at a typed version with no release",
+    "               lookup. For an app that ships inside another app's release (Drop Verify and Folder Copy",
+    "               Compare ride in the CopyTrust release): update it by hand when the app is rebuilt."
   ],
   "apps": {
     "p5-archive-manager": {
@@ -58,19 +62,28 @@
       "label": "CopyTrust",
       "repo": "macvfx/MHL",
       "title_match": "^(CopyTrust|Media Trust Tools) ",
-      "channel": "latest"
+      "channel": "latest",
+      "url": "https://github.com/macvfx/MHL#copytrust"
     },
     "drop-verify": {
       "label": "Drop Verify",
       "repo": "macvfx/MHL",
-      "title_match": "^(Drop Verify |Media Trust Tools 3\\.0 \\()",
-      "channel": "latest"
+      "url": "https://github.com/macvfx/MHL#drop-verify",
+      "fixed": {
+        "version": "3.0.1",
+        "build": "52",
+        "published": "2026-10-19"
+      }
     },
     "folder-copy-compare": {
       "label": "Folder Copy Compare",
       "repo": "macvfx/MHL",
-      "title_match": "^(Folder Copy Compare |Media Trust Tools 3\\.0 \\()",
-      "channel": "latest"
+      "url": "https://github.com/macvfx/MHL#folder-copy-compare",
+      "fixed": {
+        "version": "3.0.1",
+        "build": "53",
+        "published": "2026-10-19"
+      }
     },
     "mhl-tool": {
       "label": "mhl-tool CLI",
