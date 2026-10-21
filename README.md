@@ -69,7 +69,7 @@ records exactly which release each number came from.
 The script fills two kinds of marked slot and touches nothing else:
 
 ```html
-<span data-version="copytrust">v2.8.2 build 23</span>
+<span data-version="copytrust">v3.0.2 build 64</span>
 <a data-release="copytrust" href="https://github.com/macvfx/MHL/releases">Download Release</a>
 ```
 

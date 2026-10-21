@@ -9,7 +9,7 @@ hard-pinned tag link to a two-major-versions-old beta.
 Version strings and download links now come from `gh release list` at build time
 and are written into marked slots in index.html:
 
-    <span data-version="copytrust">v2.8.2 build 23</span>
+    <span data-version="copytrust">v3.0.2 build 64</span>
     <a data-release="copytrust" href="...">Download Release</a>
 
 apps.json maps each slot key to a public repo, an optional release-title regex

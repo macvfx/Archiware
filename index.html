@@ -1533,7 +1533,7 @@
                             <p class="app-subtitle">Camera card ingest, proxies &amp; P5 archive</p>
                             <span class="api-badge mhl">MHL v1.1 &middot; P5 REST API</span>
                             <div class="app-features">
-                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts. Makes proxies and sends verified media to a P5 archive. Beta.
+                                Multi-source, multi-destination camera card ingest with xxHash64 verification, MHL generation, contact sheet PDFs, and session receipts. Makes proxies and sends verified media to a P5 archive. On a laptop, a power chip shows whether the queued copy fits the battery. Beta.
                             </div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
@@ -1796,7 +1796,7 @@
                                 <h3>CopyTrust</h3>
                             </div>
                             <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="copytrust">v3.0.2 build 64</span></div>
-                            <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts. Now makes proxies and archives to P5.</div>
+                            <div class="card-desc">Multi-source, multi-destination camera card ingest with verification, MHL generation, contact sheets, and session receipts. Makes proxies and archives to P5. On a laptop, a power chip in the bottom bar shows the charge and whether the queue fits the battery; every drive shows how it is connected, and a slow USB 2 port is flagged.</div>
                             <a href="#copytrust">Learn more →</a>
                         </div>
                     </div>
@@ -3454,6 +3454,7 @@
                         <p><strong>Enforced naming presets.</strong> A facility can describe how it files footage &mdash; project, unit, roll, and the folders each destination expects &mdash; and CopyTrust applies it as cards are staged. One preset sets up a whole job: the ingest options, the naming convention, what each destination is for (including proxies-only and P5), and the P5 server. Every card shows where it will land before the copy starts, and receipts record the project, unit, roll and exact folder each destination received. A card with no unit has no roll, and a preset can name which units get their files renamed (Drone files, for example) so the Rename choice is only offered where it matters. A preset can reload itself, and open in Card or Folder mode, every time the app launches, and a tested preset can be pinned by name with a configuration profile so a fleet stays on one setup.</p>
                         <p><strong>Ordinary presets, too.</strong> Not every job needs a naming convention. <em>Preset &#9656; Build a Preset</em> steps through how a copy is checked, the reports made afterwards, proxies, what is left out, folder names and who is notified, and starts from the defaults so nothing is inherited from an earlier preset. <em>Preset &#9656; Unload</em> lets go of a loaded preset. Almost nothing is excluded by default, so a facility&rsquo;s own proxy folders are copied.</p>
                         <p><strong>Check footage against the manifest it arrived with.</strong> A card offloaded elsewhere with OffShoot, Silverstack or ShotPut Pro can be verified against that MHL when it reaches the facility. CopyTrust can also be shown larger (1x to 2x).</p>
+                        <p><strong>Power, ports and resume.</strong> On a laptop a power chip in the bottom bar shows the charge, or the battery and the time left, and turns orange or red when the queued copy will not fit; a banner warns if the battery is draining while plugged in. Every drive shows how it is connected (USB speed, Thunderbolt, network), a card reader or drive on a slow USB 2 port is flagged, and CopyTrust suggests the fastest drive first in relay order. A copy stopped at Quick verification resumes where it left off instead of starting over, and the Dest button in Volumes can make a new destination folder.</p>
                         <p>Features a Volume Browser for discovering mounted drives, camera cards, and network shares. Per-destination preflight checks validate free space, write permissions, and reachability before copying begins. Four-phase tracking shows progress from scanning through verification.</p>
 
                         <div class="features">
@@ -3506,6 +3507,11 @@
                                 <div class="feature-icon">📂</div>
                                 <h3>Reveal by Destination</h3>
                                 <p>A menu per destination opens the copied files, the receipts, or the proxies</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔋</div>
+                                <h3>Power Chip &amp; Drive Links</h3>
+                                <p>On a laptop, the charge and whether the queue fits the battery; each drive's connection speed, with a slow USB 2 port flagged</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">⏏️</div>
