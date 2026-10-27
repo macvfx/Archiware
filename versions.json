@@ -29,12 +29,12 @@
     "p5-archive-overview": {
       "label": "P5 Archive Overview",
       "repo": "macvfx/p5ArchiveOverview",
-      "version": "2.10",
-      "build": "25",
-      "display": "v2.10 build 25",
+      "version": "2.12",
+      "build": "27",
+      "display": "v2.12 build 27",
       "prerelease": false,
-      "tag": "2.10",
-      "title": "2.10 (Build 25)",
+      "tag": "2.12",
+      "title": "2.12 (Build 27)",
       "published": "2026-10-27",
       "url": "https://github.com/macvfx/p5ArchiveOverview/releases"
     },
