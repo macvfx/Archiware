@@ -41,13 +41,13 @@
     "p5-archive-search": {
       "label": "P5 Archive Search",
       "repo": "macvfx/p5ArchiveSearch",
-      "version": "2.9",
-      "build": "22",
-      "display": "v2.9 build 22",
+      "version": "2.11",
+      "build": "26",
+      "display": "v2.11 build 26",
       "prerelease": false,
-      "tag": "2.9+22",
-      "title": "Index root browse and certificate change prompt — P5 Archive Search 2.9 (Build 22)",
-      "published": "2026-10-14",
+      "tag": "2.11+26",
+      "title": "A demo server, sidebar management, and selective delete — P5 Archive Search 2.11 (Build 26)",
+      "published": "2026-10-28",
       "url": "https://github.com/macvfx/p5ArchiveSearch/releases"
     },
     "p5-archive-browser": {
