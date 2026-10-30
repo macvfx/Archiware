@@ -30,6 +30,12 @@ A quick reference for the macOS tools that work alongside **Archiware P5**. All 
 | **Drop Verify / MHL Verify** | Drop Verify: make a manifest and contact sheet for one folder. MHL Verify: later, re-check media against any manifest (also reads Silverstack, OffShoot, ShotPut Pro, YoYotta). |
 | **Project Folder Creator** | Create the same numbered project folder on edit, archive, and cloud storage in one step. *(Beta)* |
 
+## Keeping storage under control
+
+| App | Use it when you want to… |
+|---|---|
+| **Find File Type** | See what is filling an edit drive, NAS, or LucidLink share, broken down by file type (camera originals, proxies, renders, exports). Tracks growth over time, so you can tell what is safe to archive with P5 and clear. |
+
 ## Which one do I open?
 
 - **"Can I delete this folder?"** → P5 Archive Manager
@@ -38,5 +44,6 @@ A quick reference for the macOS tools that work alongside **Archiware P5**. All 
 - **"Is the P5 server OK?"** → P5 Health Check
 - **"How much did we archive this year?"** → P5 Archive Export or P5 Archive Overview
 - **"Did that copy finish correctly?"** → Folder Copy Compare or MHL Verify
+- **"Why is this drive full?"** → Find File Type
 
 *For administrators:* a set of Bash scripts for P5 (job lists, tape inventories, marking full tapes read-only) lives in the [Archiware scripts repo](https://github.com/macvfx/Archiware).
