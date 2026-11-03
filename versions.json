@@ -173,13 +173,13 @@
     "find-file-type": {
       "label": "Find File Type",
       "repo": "macvfx/Find-File-Type",
-      "version": "1.7.2",
-      "build": "3",
-      "display": "v1.7.2 build 3",
+      "version": "1.7.3",
+      "build": "1",
+      "display": "v1.7.3 build 1",
       "prerelease": false,
-      "tag": "1.7.2+3",
-      "title": "Find File Type 1.7.2 (Build 3)",
-      "published": "2026-10-26",
+      "tag": "1.7.3+1",
+      "title": "Find File Type 1.7.3 (Build 1)",
+      "published": "2026-11-03",
       "url": "https://github.com/macvfx/Find-File-Type/releases"
     },
     "backuptrust": {
