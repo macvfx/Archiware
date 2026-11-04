@@ -1041,6 +1041,110 @@
             align-items: start;
         }
 
+        .developer-tools-intro {
+            max-width: 900px;
+            margin-bottom: 28px;
+            font-size: 1.1rem;
+            color: #424b57;
+            line-height: 1.7;
+        }
+
+        .developer-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .developer-tool-panel {
+            border: 1px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 28px;
+            background: linear-gradient(145deg, #f8fafc 0%, #eef8ff 100%);
+            scroll-margin-top: 24px;
+        }
+
+        .developer-tool-panel h3 {
+            margin-bottom: 6px;
+            color: #172033;
+            font-size: 1.4rem;
+        }
+
+        .developer-tool-panel .tool-kicker {
+            color: #0369a1;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 14px;
+        }
+
+        .developer-tool-panel p {
+            color: #424b57;
+            margin-bottom: 14px;
+            line-height: 1.65;
+        }
+
+        .developer-tool-panel ul {
+            margin: 0 0 20px 20px;
+            color: #424b57;
+        }
+
+        .developer-tool-panel li {
+            margin-bottom: 8px;
+        }
+
+        .developer-tool-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .developer-tool-links a {
+            display: inline-block;
+            padding: 9px 14px;
+            border-radius: 8px;
+            background: #e0f2fe;
+            color: #075985;
+            text-decoration: none;
+            font-weight: 650;
+            border: 1px solid #bae6fd;
+        }
+
+        .developer-tool-links a:hover {
+            background: #bae6fd;
+        }
+
+        .developer-learning-flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .developer-learning-step {
+            padding: 15px;
+            border-radius: 12px;
+            background: #172033;
+            color: #f8fafc;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .developer-learning-step strong {
+            display: block;
+            color: #7dd3fc;
+            margin-bottom: 3px;
+        }
+
+        .developer-reference-note {
+            margin-top: 20px;
+            padding: 16px 18px;
+            border-left: 4px solid #0ea5e9;
+            background: #f0f9ff;
+            color: #334155;
+            line-height: 1.6;
+        }
+
         .app-description p {
             font-size: 1.1rem;
             color: #424b57;
@@ -1381,6 +1485,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .developer-tools-grid {
+                grid-template-columns: 1fr;
+            }
+
             .main-hero h2 {
                 font-size: 2rem;
             }
@@ -1401,6 +1509,10 @@
             }
 
             .features {
+                grid-template-columns: 1fr;
+            }
+
+            .developer-learning-flow {
                 grid-template-columns: 1fr;
             }
 
@@ -1511,7 +1623,7 @@
                             <div class="app-features">
                                 Public documentation, still growing, for P5Kit &mdash; the shared Swift library P5 Archive Overview, Search, Browser, Search Jumper and CopyTrust use for P5 connections, archive, restore, and job tracking &mdash; with illustrative P5 REST API requests. Documentation only &mdash; the implementation stays private.
                             </div>
-                            <a href="https://github.com/macvfx/P5Kit-Docs" target="_blank">View docs →</a>
+                            <a href="#p5kit-docs">Learn more →</a>
                         </div>
 
                         <!-- P5 Command Lab -->
@@ -1523,7 +1635,7 @@
                             <div class="app-features">
                                 Preview and compare local, remote, REST API, and nsdchat commands in a presentation-friendly macOS app. Save repeatable recipes, inspect HTTPS certificates, and run reviewed read-only demonstrations.
                             </div>
-                            <a href="https://github.com/macvfx/CommandLabP5" target="_blank" rel="noopener">View on GitHub →</a>
+                            <a href="#p5-command-lab">Learn more →</a>
                         </div>
 
                         <!-- P5 Search Jumper -->
@@ -1958,6 +2070,63 @@
         </section>
 
         <div class="container">
+            <!-- P5 Developer Tools and API Learning Section -->
+            <section id="developer-tools" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon">🧰</div>
+                    <div class="app-section-title">
+                        <h2>P5 Developer Tools &amp; API Learning</h2>
+                        <span class="api-tag rest">REST API &middot; nsdchat &middot; Public Docs</span>
+                    </div>
+                </div>
+
+                <p class="developer-tools-intro">Learn the P5 interfaces in the public P5Kit documentation, then bring repeatable read-only examples into P5 Command Lab to preview, compare, and demonstrate the commands. Together they explain the shared connection and archive patterns used throughout the P5 apps on this site.</p>
+
+                <div class="developer-tools-grid">
+                    <article id="p5kit-docs" class="developer-tool-panel">
+                        <div class="tool-kicker">Learn and reference</div>
+                        <h3>P5Kit Docs</h3>
+                        <p>Public documentation for the shared P5 connection layer used by several of these macOS apps. It collects fictional REST requests, integration patterns, workflow guidance, and focused material such as ArchiveEntry handle lookup.</p>
+                        <ul>
+                            <li>REST connection, archive, restore, and job-tracking examples</li>
+                            <li>Public workflow and capability documentation</li>
+                            <li>Fictional hosts, credentials, paths, and identifiers throughout</li>
+                            <li>Documentation only &mdash; the P5Kit Swift implementation remains private</li>
+                        </ul>
+                        <div class="developer-tool-links">
+                            <a href="https://github.com/macvfx/P5Kit-Docs" target="_blank" rel="noopener">Open P5Kit Docs ↗</a>
+                            <a href="https://github.com/macvfx/P5Kit-Docs/blob/main/P5_API_EXAMPLES.md" target="_blank" rel="noopener">API examples ↗</a>
+                            <a href="https://github.com/macvfx/P5Kit-Docs/blob/main/P5_ARCHIVE_ENTRY_HANDLES.md" target="_blank" rel="noopener">ArchiveEntry guide ↗</a>
+                        </div>
+                    </article>
+
+                    <article id="p5-command-lab" class="developer-tool-panel">
+                        <div class="tool-kicker">Preview and demonstrate</div>
+                        <h3>P5 Command Lab</h3>
+                        <p>A native SwiftUI presentation console for constructing and comparing P5 REST API and <code>nsdchat</code> commands. It shows the exact redacted command before anything contacts a configured server.</p>
+                        <ul>
+                            <li>Local direct, local <code>awfile</code>, and remote <code>awsock</code> CLI forms</li>
+                            <li>HTTP or reviewable HTTPS connections with certificate-change detection</li>
+                            <li>Versioned JSON command packs with strict read-only import validation</li>
+                            <li>Presentation-focused REST JSON and amber terminal output</li>
+                        </ul>
+                        <div class="developer-tool-links">
+                            <a href="https://github.com/macvfx/CommandLabP5" target="_blank" rel="noopener">View source ↗</a>
+                            <a href="https://github.com/macvfx/CommandLabP5/blob/main/Docs/USER_GUIDE.md" target="_blank" rel="noopener">User Guide ↗</a>
+                            <a href="https://github.com/macvfx/CommandLabP5/blob/main/CommandPacks/P5-Read-Only-Comparisons.json" target="_blank" rel="noopener">Example command pack ↗</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="developer-learning-flow" aria-label="P5 learning workflow">
+                    <div class="developer-learning-step"><strong>1. Learn</strong>P5Kit Docs explains the API patterns.</div>
+                    <div class="developer-learning-step"><strong>2. Import and compare</strong>Command Lab previews REST and nsdchat forms.</div>
+                    <div class="developer-learning-step"><strong>3. Apply carefully</strong>Use reviewed patterns in P5 workflows and apps.</div>
+                </div>
+
+                <p class="developer-reference-note"><strong>Safety boundary:</strong> the included Command Lab pack is read-only. Write operations and job-starting commands are planned as a separate safety tier with exact-target confirmation and post-operation verification. Archiware's <a href="https://www.archiware.com/blog/redoc/p5_rest_api/awp5api.html" target="_blank" rel="noopener">REST API reference</a> and <a href="https://support.archiware.com/downloads/cli.pdf" target="_blank" rel="noopener">P5 CLI manual</a> remain the authoritative references for the installed P5 version.</p>
+            </section>
+
             <!-- P5 Archive Manager Section -->
             <section id="archive-manager" class="app-section">
                 <div class="app-section-header">
