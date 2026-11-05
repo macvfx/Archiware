@@ -17,13 +17,13 @@
     "p5-archive-manager-api": {
       "label": "P5 Archive Manager API",
       "repo": "macvfx/p5ArchiveManager",
-      "version": "4.3.0",
-      "build": "45",
-      "display": "v4.3.0 build 45",
+      "version": "4.3.4",
+      "build": "59",
+      "display": "v4.3.4 build 59",
       "prerelease": false,
-      "tag": "4.3.0+45",
-      "title": "API version 4.3.0 build 45 — the results row no longer resizes",
-      "published": "2026-09-25",
+      "tag": "4.3.4+59",
+      "title": "P5 Archive Manager API 4.3.4 (build 59) — beta",
+      "published": "2026-11-05",
       "url": "https://github.com/macvfx/p5ArchiveManager/releases"
     },
     "p5-archive-overview": {

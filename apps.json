@@ -19,13 +19,13 @@
     "p5-archive-manager": {
       "label": "P5 Archive Manager CLI",
       "repo": "macvfx/p5ArchiveManager",
-      "title_match": "^(?!API version)",
+      "title_match": "^(?!API version|P5 Archive Manager API)",
       "channel": "stable"
     },
     "p5-archive-manager-api": {
       "label": "P5 Archive Manager API",
       "repo": "macvfx/p5ArchiveManager",
-      "title_match": "^API version",
+      "title_match": "^(API version|P5 Archive Manager API)",
       "channel": "latest"
     },
     "p5-archive-overview": {
