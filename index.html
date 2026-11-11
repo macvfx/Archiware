@@ -2140,7 +2140,7 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.4.0 build 62</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
+                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.5.0 build 67</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
                         <p><strong>Restore from Project File.</strong> Drop the project an editor delivered &mdash; a Resolve <code>.drt</code> timeline, a Resolve or Premiere XML, a Final Cut Pro <code>.fcpxml</code> or <code>.fcpxmld</code> bundle, or a plain text list of paths &mdash; and the app finds each media item in P5, across every archive index. Each row says what to do: <em>needs to be restored &mdash; not in its original location</em>, <em>in its original location</em>, or <em>not in P5</em>. Prepare Restore shows versions, archive dates and tapes, and whether each tape is online, then one P5 job restores everything to the original location or into a folder on a P5 client, and the app follows it to the end. </p>
                         <p><strong>What is read from each file.</strong> Resolve or Premiere XML: every <code>pathurl</code>. Final Cut Pro <code>.fcpxml</code>: every original-media reference, with proxies ignored. Final Cut Pro <code>.fcpxmld</code> bundle: the <code>Info.fcpxml</code> inside it. DaVinci Resolve <code>.drt</code> (a zip): every <code>MediaFilePath</code>. Text, TSV, CSV or log files: one absolute path or <code>file://</code> URL per line. P5's own media-list restore accepts an XML or FCPXML but not a <code>.fcpxmld</code> or <code>.drt</code>, and knows nothing about RED clips.</p>
                         <p><strong>RED clips come back whole.</strong> A RED clip is a <code>.RDC</code> folder of <code>_001.R3D</code>, <code>_002.R3D</code> and so on, but a timeline names only <code>_001.R3D</code>, and restoring that one file gives a clip that stops after its first segment. With <em>Restore the whole RED clip folder</em> on (the default), any <code>.R3D</code> inside an <code>.RDC</code> folder is replaced by the whole folder. The row shows how many segments P5 holds and which ones the project named, and on LTO it is one linear read instead of many single files.</p>
@@ -2150,6 +2150,7 @@
                         <p>The REST edition keeps an ordered list of historical archived locations for each server. If the current or mapped path returns no archived files, Archive Manager automatically checks those older storage roots and reports which locations were tried, which one matched, and why the others did not.</p>
                         <p>An archive plan can be configured in P5 to delete at the source &mdash; either the archived files, or the files <em>and their folders</em>. Archive Manager reads both flags, names in the plan picker and the confirm dialog exactly what a plan removes, and <strong>blocks such plans by default</strong>: P5 performs those deletions itself, without this app's proof report or receipt. The guard can be turned off in Settings &#9656; Archiving.</p>
                         <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate inspection, explicit trust and Forget Certificate. Redirects are refused, and there is no automatic fallback to HTTP.</p>
+                        <p><strong>Server lists and site settings.</strong> The REST edition reads and writes the <code>P5Servers.json</code> file shared with P5 Health Check, P5 Archive Search and P5 Archive Overview, so servers set up once are not typed in again; a file in <code>/Users/Shared</code> or Documents is offered when the app opens, showing which servers it would add before anything changes. For administrators, a <code>P5SiteSettings.json</code> supplies the TSV inventory folder, path mappings and historical locations for every server or for one. Operators' own mappings stay editable, settings are suggestions unless a configuration profile holds them, and Settings can import a site file into place or export one from a Mac that is already set up. Passwords and pinned certificates are never in either file.</p>
 
                         <div class="features">
                             <div class="feature-card">
@@ -2250,7 +2251,7 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
-                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.4.0 build 62</span> (Beta &mdash; test only)<br>
+                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.5.0 build 67</span> (Beta &mdash; test only)<br>
                             <strong>CLI edition:</strong> <span data-version="p5-archive-manager">v3.7.2 build 6</span>
                         </div>
                     </div>
@@ -2328,7 +2329,7 @@
                             <li>Monitoring only &mdash; it starts and restores nothing</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-overview">v2.12 build 28</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-overview">v2.14</span><br>
                             <strong>Requires:</strong> macOS 14.0+<br>
                             <strong>API:</strong> REST /archive/overview
                         </div>
@@ -3614,7 +3615,7 @@
                             <li>Hidden files backed up, restored and mirrored consistently (Pro 2.4)</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Pro:</strong> <span data-version="backuptrust-pro">v2.5 build 25</span> (Beta &mdash; test only)<br>
+                            <strong>Pro:</strong> <span data-version="backuptrust-pro">v2.7 build 28</span> (Beta &mdash; test only)<br>
                             <strong>Standard:</strong> <a href="https://apps.apple.com/ca/app/backuptrust/id6767965282?mt=12" target="_blank">Mac App Store</a> (last GitHub release <span data-version="backuptrust">v1.6 build 12</span>)<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>App Style:</strong> Menu bar app; Standard sandboxed, Pro direct access
@@ -3847,7 +3848,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-11-09</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-11-11</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
