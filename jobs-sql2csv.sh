@@ -6,7 +6,7 @@
 timestamp=$(date +%Y%m%d-%H%M%S)
 outfile="/private/tmp/p5-all-Jobs-ExportSelectFields-${timestamp}.csv"
 
-sqlite3 /usr/local/aw/config/joblog/resources.db <<EOF
+sqlite3 -readonly /usr/local/aw/config/joblog/resources.db <<EOF
 .header on
 .mode csv
 .output $outfile
