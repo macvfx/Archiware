@@ -6,6 +6,7 @@ Archiware P5 scripts
 - Or check archive pool usage via the API
 
 ## Random scripts
+- **p5-version** Print the installed P5 version in one word, starting P5 first if it is off (needs root to start). Prints "failed" if P5 will not start, "missing" if P5 is not installed,
 - *jobs-sql2csv* Output all system, backup, and archive jobs ever into a CSV,
 - **jobs-archive-only-sql2csv** Output only all archive jobs ever into a CSV,
 - See [P5 Archive Export](https://github.com/macvfx/p5ArchiveExport) **repo** for a SQL to CSV script which analyses all the data. And there's now a Mac app too. 
