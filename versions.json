@@ -41,13 +41,13 @@
     "p5-archive-search": {
       "label": "P5 Archive Search",
       "repo": "macvfx/p5ArchiveSearch",
-      "version": "2.13",
-      "build": "29",
-      "display": "v2.13 build 29",
+      "version": "2.14",
+      "build": "30",
+      "display": "v2.14 build 30",
       "prerelease": false,
-      "tag": "2.13+29",
-      "title": "P5 Archive Search 2.13 (build 29) — beta",
-      "published": "2026-11-14",
+      "tag": "2.14+30",
+      "title": "P5 Archive Search 2.14 (build 30) — beta",
+      "published": "2026-11-15",
       "url": "https://github.com/macvfx/p5ArchiveSearch/releases"
     },
     "p5-archive-browser": {
