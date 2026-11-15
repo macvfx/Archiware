@@ -2355,6 +2355,7 @@
                         <p>Restore is new. Try it on a small folder you can afford to lose, and keep your own backup.</p>
                         <p><strong>Imported volumes.</strong> An imported-volumes index is rooted at each volume's label rather than at a folder such as <code>Volumes</code>, and P5 does not list those labels over REST, so a scan had to be given each one by hand. <em>Find imported volumes&hellip;</em> in the server sheet tries each volume's label as a top-level name in the index and adds the ones it answers for as scan paths and browse roots; a pasted list covers a label it cannot find. The drive-icon menu lists them below <code>Volumes</code> and <code>mnt</code>, with a Scan all item that puts them into search.</p>
                         <p><strong>A failed request says why.</strong> The log shows the HTTP status and what it means, or the cause when there was no answer (P5 answers a wrong password with HTTP 400, not 401), and every request the app makes is recorded in the system log without the password.</p>
+                        <p><strong>Folders say what is in them.</strong> P5 lists many folders without a volume of their own, which used to make them look unarchived. A folder now shows its own archive date, and once analyzed it also shows the volumes, barcodes and newest dates of what is inside it. <strong>Scan History</strong> records every Analyze run with its folder, how long it took and how much it read, and exports to CSV.</p>
                         <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate pinning for P5's self-signed placeholder certificate. Servers configured before this keep working unchanged.</p>
 
                         <div class="features">
@@ -2402,6 +2403,11 @@
                                 <div class="feature-icon">🕐</div>
                                 <h3>Restore History</h3>
                                 <p>Every restore asked for, with job id, destination and outcome</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⏱️</div>
+                                <h3>Scan History</h3>
+                                <p>How long each Analyze took and how much it read, per folder, with CSV export</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">🔒</div>
