@@ -2356,6 +2356,7 @@
                         <p><strong>Imported volumes.</strong> An imported-volumes index is rooted at each volume's label rather than at a folder such as <code>Volumes</code>, and P5 does not list those labels over REST, so a scan had to be given each one by hand. <em>Find imported volumes&hellip;</em> in the server sheet tries each volume's label as a top-level name in the index and adds the ones it answers for as scan paths and browse roots; a pasted list covers a label it cannot find. The drive-icon menu lists them below <code>Volumes</code> and <code>mnt</code>, with a Scan all item that puts them into search.</p>
                         <p><strong>A failed request says why.</strong> The log shows the HTTP status and what it means, or the cause when there was no answer (P5 answers a wrong password with HTTP 400, not 401), and every request the app makes is recorded in the system log without the password.</p>
                         <p><strong>Folders say what is in them.</strong> P5 lists many folders without a volume of their own, which used to make them look unarchived. A folder now shows its own archive date, and once analyzed it also shows the volumes, barcodes and newest dates of what is inside it. <strong>Scan History</strong> records every Analyze run with its folder, how long it took and how much it read, and exports to CSV.</p>
+                        <p><strong>Move an index to another Mac.</strong> Export Database saves a server's index, analyzed folder sizes and barcodes to one file, and Import Database on another Mac reads it, so the archive does not have to be scanned twice. The file never holds a password. Settings shows the size of the database, with Compact to reclaim space.</p>
                         <p>Each server chooses <strong>HTTP or HTTPS</strong>, with certificate pinning for P5's self-signed placeholder certificate. Servers configured before this keep working unchanged.</p>
 
                         <div class="features">
@@ -2455,7 +2456,7 @@
                             <li>A failed request reports its HTTP status and cause; every request is logged</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.14 build 30</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-search">v2.15 build 31</span><br>
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>API:</strong> REST /archive/indexes/.../inventory &middot; /restore
                         </div>
