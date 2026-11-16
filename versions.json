@@ -53,13 +53,13 @@
     "p5-archive-browser": {
       "label": "P5 Archive Browser",
       "repo": "macvfx/P5-Archive-Browser",
-      "version": "0.37",
-      "build": "56",
-      "display": "v0.37 build 56",
+      "version": "0.38",
+      "build": "63",
+      "display": "v0.38 build 63",
       "prerelease": false,
-      "tag": "0.37+56",
-      "title": "P5 Archive Browser 0.37 (build 56) — beta",
-      "published": "2026-09-18",
+      "tag": "0.38+63",
+      "title": "P5 Archive Browser 0.38 (build 63) — beta",
+      "published": "2026-11-16",
       "url": "https://github.com/macvfx/P5-Archive-Browser/releases"
     },
     "p5-archive-export": {
