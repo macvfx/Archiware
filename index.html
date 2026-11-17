@@ -1841,7 +1841,7 @@
                                 <span>🖥</span>
                                 <h3>P5 Archive Export</h3>
                             </div>
-                            <div class="card-meta">macOS 13.5+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.6 build 12</span></div>
+                            <div class="card-meta">macOS 13.5+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.7 build 13</span></div>
                             <div class="card-desc">Full windowed app with dashboard, sidebar query browser, results table, real-time progress, and log viewer with level filtering.</div>
                             <a href="#archive-export">Learn more →</a>
                         </div>
@@ -1851,7 +1851,7 @@
                                 <span>📦</span>
                                 <h3>P5 Archive Export MenuBar</h3>
                             </div>
-                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.6 build 12</span></div>
+                            <div class="card-meta">macOS 14+ &middot; SwiftUI &middot; <span data-version="p5-archive-export">v1.5.7 build 13</span></div>
                             <div class="card-desc">Lightweight menu bar utility — no Dock icon. One-click exports, inline settings, and quick status checks from the popover.</div>
                             <a href="#archive-export-menubar">Learn more →</a>
                         </div>
@@ -2585,6 +2585,7 @@
                         <p><strong>Keep the server's queries current.</strong> <em>Deploy to Server</em> writes the bundled queries straight into the server's query folder. A signed, notarized installer package does the same through the macOS installer, and leaves a receipt showing which query set a server has.</p>
                         <p><strong>Charts without the app.</strong> A standalone script, <code>p5chart.py</code>, draws the same weekly, monthly, quarterly and yearly charts as a self-contained HTML dashboard from the P5 job database or from a folder of exported CSVs, and can find which <code>resources.db</code> on a server holds the job history. The exports now carry plain numeric columns beside the formatted ones, so the CSVs chart cleanly in a spreadsheet too, and a weekly volume query was added.</p>
                         <p><strong>Reads a database that won't open.</strong> A <code>resources.db</code> with no <code>-shm</code> file beside it (P5 stopped, or the file copied without its companions) now opens from a temporary copy that is deleted afterwards, with a setting to read in place only for a very large database. Settings opens on the section for the workflow you are in.</p>
+                        <p><strong>Clearer layout.</strong> Results, Log and Charts are underline tabs under the workflow switch instead of a second row of the same orange buttons, and the Charts tab's size-range panel is drawn as labelled rows.</p>
                         <p>Both apps have an in-app user guide and What's New under the Help menu.</p>
                         <p>Also includes a <strong>Volume Inventory Export</strong> powered by <code>nsdchat</code> — export per-volume TSV inventories to dated run folders for snapshots or a standard <code>VolumeExport</code> folder for incremental runs. Sort by LTO generation, filter archive-only volumes, export a volume list CSV, and optionally copy outputs to a network destination.</p>
                         <p>The backup workflow creates compressed archives of the local P5 config and log folders, with optional clip exclusion and separate clip backup support for migration, disaster recovery, and regular server snapshots.</p>
@@ -2683,7 +2684,7 @@
                             <li>Check for Updates in both apps, on demand and quietly at launch</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.6 build 12</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.7 build 13</span><br>
                             <strong>Requires:</strong> macOS 13.5+<br>
                             <strong>API:</strong> SQLite (read-only) &middot; nsdchat CLI
                         </div>
@@ -2753,7 +2754,7 @@
                             <li>Login Items integration</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.6 build 12</span><br>
+                            <strong>Latest:</strong> <span data-version="p5-archive-export">v1.5.7 build 13</span><br>
                             <strong>Requires:</strong> macOS 14 (Sonoma)+<br>
                             <strong>API:</strong> SQLite (read-only)
                         </div>
