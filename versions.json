@@ -41,13 +41,13 @@
     "p5-archive-search": {
       "label": "P5 Archive Search",
       "repo": "macvfx/p5ArchiveSearch",
-      "version": "2.16",
-      "build": "32",
-      "display": "v2.16 build 32",
+      "version": "2.18",
+      "build": "36",
+      "display": "v2.18 build 36",
       "prerelease": false,
-      "tag": "2.16+32",
-      "title": "P5 Archive Search 2.16 (build 32) — beta",
-      "published": "2026-11-16",
+      "tag": "2.18+36",
+      "title": "P5 Archive Search 2.18 (build 36) — beta",
+      "published": "2026-11-18",
       "url": "https://github.com/macvfx/p5ArchiveSearch/releases"
     },
     "p5-archive-browser": {
@@ -209,13 +209,13 @@
     "smb-connect": {
       "label": "SMB Connect",
       "repo": "macvfx/SMB-Connect",
-      "version": "0.7.8",
-      "build": "35",
-      "display": "v0.7.8 build 35",
-      "prerelease": false,
-      "tag": "0.7.8+35",
-      "title": "Connect all for one",
-      "published": "2026-10-22",
+      "version": "0.7.9",
+      "build": "37",
+      "display": "v0.7.9 build 37",
+      "prerelease": true,
+      "tag": "0.7.9+37",
+      "title": "SMB Connect 0.7.9 (build 37) — beta",
+      "published": "2026-11-18",
       "url": "https://github.com/macvfx/SMB-Connect/releases"
     },
     "fcp-reports": {
