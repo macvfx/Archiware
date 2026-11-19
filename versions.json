@@ -197,12 +197,12 @@
     "backuptrust-pro": {
       "label": "BackupTrust Pro",
       "repo": "macvfx/BackupTrust-Pro",
-      "version": "2.8",
-      "build": "29",
-      "display": "v2.8 build 29",
+      "version": "2.9",
+      "build": "30",
+      "display": "v2.9 build 30",
       "prerelease": true,
-      "tag": "2.8+29",
-      "title": "BackupTrust Pro 2.8 (build 29) — beta",
+      "tag": "2.9+30",
+      "title": "BackupTrust Pro 2.9 (build 30) — beta",
       "published": "2026-11-19",
       "url": "https://github.com/macvfx/BackupTrust-Pro/releases"
     },
