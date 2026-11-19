@@ -197,14 +197,26 @@
     "backuptrust-pro": {
       "label": "BackupTrust Pro",
       "repo": "macvfx/BackupTrust-Pro",
-      "version": "2.7",
-      "build": "28",
-      "display": "v2.7 build 28",
-      "prerelease": false,
-      "tag": "2.7+28",
-      "title": "BackupTrust Pro 2.7 (28) — Beta",
-      "published": "2026-11-09",
+      "version": "2.8",
+      "build": "29",
+      "display": "v2.8 build 29",
+      "prerelease": true,
+      "tag": "2.8+29",
+      "title": "BackupTrust Pro 2.8 (build 29) — beta",
+      "published": "2026-11-19",
       "url": "https://github.com/macvfx/BackupTrust-Pro/releases"
+    },
+    "code-project-backup": {
+      "label": "Code Project Backup",
+      "repo": "macvfx/CodeCleanUp",
+      "version": "1.1.0",
+      "build": "2",
+      "display": "v1.1.0 build 2",
+      "prerelease": true,
+      "tag": "1.1.0+2",
+      "title": "Code Project Backup 1.1.0 (build 2) — beta",
+      "published": "2026-11-19",
+      "url": "https://github.com/macvfx/CodeCleanUp/releases"
     },
     "smb-connect": {
       "label": "SMB Connect",

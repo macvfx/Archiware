@@ -1685,6 +1685,18 @@
                             <a href="#backuptrust">Learn more →</a>
                         </div>
 
+                        <!-- Code Project Backup -->
+                        <div class="app-card">
+                            <div class="app-icon">🧹</div>
+                            <h3>Code Project Backup</h3>
+                            <p class="app-subtitle">Clean build output, then back up code</p>
+                            <span class="api-badge backup">Menu Bar &middot; Beta</span>
+                            <div class="app-features">
+                                Finds and removes Xcode and SwiftPM build folders by what they contain, then zips your projects folder with a password, on a schedule. A preview mode deletes nothing.
+                            </div>
+                            <a href="#code-project-backup">Learn more →</a>
+                        </div>
+
                         <!-- FCP Reports -->
                         <div class="app-card">
                             <div class="app-icon">🎬</div>
@@ -3620,7 +3632,8 @@
                             <li>Hourly, daily, or weekly schedules with busy windows</li>
                             <li>Conflict handling: overwrite, skip, or version and keep</li>
                             <li>Mirror mode for destination cleanup</li>
-                            <li>Excluded-directory presets for Xcode, Final Cut Pro, Adobe, Node, and macOS system folders</li>
+                            <li>Excluded-directory presets for Xcode, Python and dev tools, Final Cut Pro, Adobe, Node, and macOS system folders</li>
+                            <li>Pro 2.8: code-folder filters for current Xcode build data, plus optional switches to skip credential files, compiler output and sparse files</li>
                             <li>Optional overflow destination for oversized or long-filename files</li>
                             <li>Sandboxed folder access with re-select prompts when bookmarks need refreshing</li>
                             <li>Pro: per-file public-key encryption and in-app restore</li>
@@ -3629,10 +3642,75 @@
                             <li>Hidden files backed up, restored and mirrored consistently (Pro 2.4)</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Pro:</strong> <span data-version="backuptrust-pro">v2.7 build 28</span> (Beta &mdash; test only)<br>
+                            <strong>Pro:</strong> <span data-version="backuptrust-pro">v2.8 build 29</span> (Beta &mdash; test only)<br>
                             <strong>Standard:</strong> <a href="https://apps.apple.com/ca/app/backuptrust/id6767965282?mt=12" target="_blank">Mac App Store</a> (last GitHub release <span data-version="backuptrust">v1.6 build 12</span>)<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>App Style:</strong> Menu bar app; Standard sandboxed, Pro direct access
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Project Backup Section -->
+            <section id="code-project-backup" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon backup">🧹</div>
+                    <div class="app-section-title">
+                        <h2>Code Project Backup</h2>
+                        <span class="api-tag utility">Menu Bar Utility &middot; Beta</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>A macOS menu bar app for a folder full of code projects. It scans for Xcode projects, measures the build output they leave behind, optionally removes it, and creates a password-protected zip of what is left, on a schedule or on demand. It is the app version of the <a href="https://github.com/macvfx/find" target="_blank">find_xcode_projects_cleanup.sh</a> script.</p>
+                        <p>Build folders are recognised by what they contain, not by name, so folders such as <code>Build</code>, <code>BuildPortFix</code> and <code>build</code> are found, and a source folder that only shares the name is not. Folders with git-tracked files, or changed in the last hour, are never removed. Removal is off by default, and <strong>Preview Build Cleanup</strong> lists what would go and deletes nothing.</p>
+                        <p>The archive skips Xcode's compilation cache, which can report tens of GB while using almost no disk, along with module caches, worktrees and virtual environments. Credential files are left out when the zip has no password. Zip's built-in encryption is weak, so keep the archive on trusted storage.</p>
+                        <p><strong>This is a beta.</strong> It is not a commercial product and comes with no support or warranty. It deletes files when cleanup is turned on, so run the preview first and keep your own independent backup.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔎</div>
+                                <h3>Finds Build Output</h3>
+                                <p>SwiftPM <code>.build</code> and Xcode build folders, detected by their contents</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">👁️</div>
+                                <h3>Preview First</h3>
+                                <p>See every folder and its size before anything is removed</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔐</div>
+                                <h3>Password-Protected Zip</h3>
+                                <p>Keychain-backed password, with the cache and build exclusions applied</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⏱️</div>
+                                <h3>Scheduled Runs</h3>
+                                <p>Hourly, daily or weekly, with a report and run log for each run</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/CodeCleanUp" class="btn btn-primary backup" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/CodeCleanUp/releases" data-release="code-project-backup" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Menu bar app, no Dock icon</li>
+                            <li>Scans for Xcode projects and estimates recoverable space</li>
+                            <li>Optional removal of build folders, skipping tracked or recent ones</li>
+                            <li>Preview Build Cleanup mode that deletes nothing</li>
+                            <li>Password-protected zip with editable exclusions</li>
+                            <li>Hourly, daily or weekly schedule with catch-up after sleep</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="code-project-backup">v1.1.0 build 2</span> (Beta)<br>
+                            <strong>Requires:</strong> macOS 14+<br>
+                            <strong>App Style:</strong> Menu bar app, direct access (not sandboxed)
                         </div>
                     </div>
                 </div>

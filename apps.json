@@ -111,6 +111,11 @@
       "repo": "macvfx/BackupTrust-Pro",
       "channel": "latest"
     },
+    "code-project-backup": {
+      "label": "Code Project Backup",
+      "repo": "macvfx/CodeCleanUp",
+      "channel": "latest"
+    },
     "smb-connect": {
       "label": "SMB Connect",
       "repo": "macvfx/SMB-Connect",
