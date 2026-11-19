@@ -1692,7 +1692,7 @@
                             <p class="app-subtitle">Clean build output, then back up code</p>
                             <span class="api-badge backup">Menu Bar &middot; Beta</span>
                             <div class="app-features">
-                                Finds and removes Xcode and SwiftPM build folders by what they contain, then zips your projects folder with a password, on a schedule. A preview mode deletes nothing.
+                                Finds and removes Xcode and SwiftPM build folders by what they contain, then zips your projects folder with a password, on a schedule. Preview shows what a run would remove and zip, and changes nothing.
                             </div>
                             <a href="#code-project-backup">Learn more →</a>
                         </div>
@@ -3664,7 +3664,7 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A macOS menu bar app for a folder full of code projects. It scans for Xcode projects, measures the build output they leave behind, optionally removes it, and creates a password-protected zip of what is left, on a schedule or on demand. It is the app version of the <a href="https://github.com/macvfx/find" target="_blank">find_xcode_projects_cleanup.sh</a> script.</p>
-                        <p>Build folders are recognised by what they contain, not by name, so folders such as <code>Build</code>, <code>BuildPortFix</code> and <code>build</code> are found, and a source folder that only shares the name is not. Folders with git-tracked files, or changed in the last hour, are never removed. Removal is off by default, and <strong>Preview Build Cleanup</strong> lists what would go and deletes nothing.</p>
+                        <p>Build folders are recognised by what they contain, not by name, so folders such as <code>Build</code>, <code>BuildPortFix</code> and <code>build</code> are found, and a source folder that only shares the name is not. Folders with git-tracked files, or changed in the last hour, are never removed. Removal is off by default, and <strong>Preview</strong> opens a summary of what a run would remove and zip (projects scanned, build folders removed or kept, files and size before compression, what the exclusions leave out) and changes nothing.</p>
                         <p>The archive skips Xcode's compilation cache, which can report tens of GB while using almost no disk, along with module caches, worktrees and virtual environments. Credential files are left out when the zip has no password. Zip's built-in encryption is weak, so keep the archive on trusted storage.</p>
                         <p><strong>This is a beta.</strong> It is not a commercial product and comes with no support or warranty. It deletes files when cleanup is turned on, so run the preview first and keep your own independent backup.</p>
 
@@ -3677,7 +3677,7 @@
                             <div class="feature-card">
                                 <div class="feature-icon">👁️</div>
                                 <h3>Preview First</h3>
-                                <p>See every folder and its size before anything is removed</p>
+                                <p>A summary of what would be removed and zipped, before anything is</p>
                             </div>
                             <div class="feature-card">
                                 <div class="feature-icon">🔐</div>
@@ -3703,12 +3703,13 @@
                             <li>Menu bar app, no Dock icon</li>
                             <li>Scans for Xcode projects and estimates recoverable space</li>
                             <li>Optional removal of build folders, skipping tracked or recent ones</li>
-                            <li>Preview Build Cleanup mode that deletes nothing</li>
+                            <li>Preview summary window that changes nothing</li>
+                            <li>Status banner, warnings listing, saved run logs, and a Help window</li>
                             <li>Password-protected zip with editable exclusions</li>
                             <li>Hourly, daily or weekly schedule with catch-up after sleep</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="code-project-backup">v1.1.1 build 3</span> (Beta)<br>
+                            <strong>Latest:</strong> <span data-version="code-project-backup">v1.2.0 build 5</span> (Beta)<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>App Style:</strong> Menu bar app, direct access (not sandboxed)
                         </div>
