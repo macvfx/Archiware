@@ -1692,7 +1692,7 @@
                             <p class="app-subtitle">Clean build output, then back up code</p>
                             <span class="api-badge backup">Menu Bar &middot; Beta</span>
                             <div class="app-features">
-                                Finds and removes Xcode and SwiftPM build folders by what they contain, then zips your projects folder with a password, on a schedule. Preview shows what a run would remove and zip, and changes nothing.
+                                Finds and removes Xcode and SwiftPM build folders by what they contain, then zips your projects folder with a password, on a schedule. Optionally clears old Xcode archives, device support and caches too. Preview shows what a run would remove and zip, and changes nothing.
                             </div>
                             <a href="#code-project-backup">Learn more →</a>
                         </div>
@@ -3665,6 +3665,7 @@
                     <div class="app-description">
                         <p>A macOS menu bar app for a folder full of code projects. It scans for Xcode projects, measures the build output they leave behind, optionally removes it, and creates a password-protected zip of what is left, on a schedule or on demand. It is the app version of the <a href="https://github.com/macvfx/find" target="_blank">find_xcode_projects_cleanup.sh</a> script.</p>
                         <p>Build folders are recognised by what they contain, not by name, so folders such as <code>Build</code>, <code>BuildPortFix</code> and <code>build</code> are found, and a source folder that only shares the name is not. Folders with git-tracked files, or changed in the last hour, are never removed. Removal is off by default, and <strong>Preview</strong> opens a summary of what a run would remove and zip (projects scanned, build folders removed or kept, files and size before compression, what the exclusions leave out) and changes nothing.</p>
+                        <p>An optional, separate step clears old Xcode leftovers on the same schedule: archives older than a number of days you choose (the newest archive of each app is always kept, because it holds that build's debug symbols), old device-support folders, Xcode and SwiftPM caches (skipped while Xcode is open), and unavailable simulators. It is off by default, moves items to the Trash rather than deleting them, and only touches those Xcode folders.</p>
                         <p>The archive skips Xcode's compilation cache, which can report tens of GB while using almost no disk, along with module caches, worktrees and virtual environments. Credential files are left out when the zip has no password. Zip's built-in encryption is weak, so keep the archive on trusted storage.</p>
                         <p><strong>This is a beta.</strong> It is not a commercial product and comes with no support or warranty. It deletes files when cleanup is turned on, so run the preview first and keep your own independent backup.</p>
 
@@ -3703,13 +3704,14 @@
                             <li>Menu bar app, no Dock icon</li>
                             <li>Scans for Xcode projects and estimates recoverable space</li>
                             <li>Optional removal of build folders, skipping tracked or recent ones</li>
+                            <li>Optional Xcode leftovers cleanup: old archives, device support, caches</li>
                             <li>Preview summary window that changes nothing</li>
                             <li>Status banner, warnings listing, saved run logs, and a Help window</li>
                             <li>Password-protected zip with editable exclusions</li>
                             <li>Hourly, daily or weekly schedule with catch-up after sleep</li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="code-project-backup">v1.2.0 build 6</span> (Beta)<br>
+                            <strong>Latest:</strong> <span data-version="code-project-backup">v1.2.0 build 9</span> (Beta)<br>
                             <strong>Requires:</strong> macOS 14+<br>
                             <strong>App Style:</strong> Menu bar app, direct access (not sandboxed)
                         </div>
@@ -3941,7 +3943,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-11-19</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-11-20</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>

@@ -210,12 +210,12 @@
       "label": "Code Project Backup",
       "repo": "macvfx/CodeCleanUp",
       "version": "1.2.0",
-      "build": "6",
-      "display": "v1.2.0 build 6",
+      "build": "9",
+      "display": "v1.2.0 build 9",
       "prerelease": false,
-      "tag": "1.2.0+6",
-      "title": "Code Project Backup 1.2.0 (build 6) — beta",
-      "published": "2026-11-19",
+      "tag": "1.2.0+9",
+      "title": "Code Project Backup 1.2.0 (build 9) — beta",
+      "published": "2026-11-20",
       "url": "https://github.com/macvfx/CodeCleanUp/releases"
     },
     "smb-connect": {
