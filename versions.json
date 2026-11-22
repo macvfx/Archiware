@@ -17,13 +17,13 @@
     "p5-archive-manager-api": {
       "label": "P5 Archive Manager API",
       "repo": "macvfx/p5ArchiveManager",
-      "version": "4.5.0",
-      "build": "67",
-      "display": "v4.5.0 build 67",
+      "version": "4.6.1",
+      "build": "84",
+      "display": "v4.6.1 build 84",
       "prerelease": false,
-      "tag": "4.5.0+67",
-      "title": "P5 Archive Manager API 4.5.0 (build 67) — beta",
-      "published": "2026-11-11",
+      "tag": "4.6.1+84",
+      "title": "P5 Archive Manager API 4.6.1 (build 84) — beta",
+      "published": "2026-11-22",
       "url": "https://github.com/macvfx/p5ArchiveManager/releases"
     },
     "p5-archive-overview": {
