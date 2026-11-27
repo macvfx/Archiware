@@ -17,13 +17,13 @@
     "p5-archive-manager-api": {
       "label": "P5 Archive Manager API",
       "repo": "macvfx/p5ArchiveManager",
-      "version": "4.6.1",
-      "build": "84",
-      "display": "v4.6.1 build 84",
-      "prerelease": false,
-      "tag": "4.6.1+84",
-      "title": "P5 Archive Manager API 4.6.1 (build 84) — beta",
-      "published": "2026-11-22",
+      "version": "4.6.2",
+      "build": "97",
+      "display": "v4.6.2 build 97",
+      "prerelease": true,
+      "tag": "4.6.2+97",
+      "title": "P5 Archive Manager API 4.6.2 (build 97) — beta",
+      "published": "2026-11-24",
       "url": "https://github.com/macvfx/p5ArchiveManager/releases"
     },
     "p5-archive-overview": {
@@ -97,6 +97,18 @@
       "title": "P5 Search Jumper 0.2.2-beta (build 6) — beta",
       "published": "2026-09-15",
       "url": "https://github.com/macvfx/P5-Search-Jumper/releases"
+    },
+    "p5-preview-monitor": {
+      "label": "P5 Preview Monitor",
+      "repo": "macvfx/vid2mos",
+      "version": "0.3.0",
+      "build": "29",
+      "display": "v0.3.0 build 29",
+      "prerelease": true,
+      "tag": "p5-preview-monitor-0.3.0+29",
+      "title": "P5 Preview Monitor 0.3.0 (build 29) — pre-release",
+      "published": "2026-11-27",
+      "url": "https://github.com/macvfx/vid2mos/releases"
     },
     "copytrust": {
       "label": "CopyTrust",
@@ -233,13 +245,13 @@
     "fcp-reports": {
       "label": "FCP Reports",
       "repo": "macvfx/FCPXML",
-      "version": "1.6.2",
+      "version": "1.7.4",
       "build": null,
-      "display": "v1.6.2",
+      "display": "v1.7.4",
       "prerelease": false,
-      "tag": "1.6.2",
-      "title": "FCP Reports 1.6.2",
-      "published": "2026-09-23",
+      "tag": "1.7.4",
+      "title": "FCP Reports 1.7.4",
+      "published": "2026-11-23",
       "url": "https://github.com/macvfx/FCPXML/releases"
     },
     "fcp-backup-manager": {

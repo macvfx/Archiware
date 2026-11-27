@@ -58,6 +58,13 @@
       "repo": "macvfx/P5-Search-Jumper",
       "channel": "latest"
     },
+    "p5-preview-monitor": {
+      "label": "P5 Preview Monitor",
+      "repo": "macvfx/vid2mos",
+      "title_match": "^P5 Preview Monitor",
+      "channel": "latest",
+      "url": "https://github.com/macvfx/vid2mos/releases"
+    },
     "copytrust": {
       "label": "CopyTrust",
       "repo": "macvfx/MHL",

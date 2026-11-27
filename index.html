@@ -1650,6 +1650,18 @@
                             <a href="#search-jumper">Learn more →</a>
                         </div>
 
+                        <!-- P5 Preview Monitor -->
+                        <div class="app-card">
+                            <div class="app-icon">🖼️</div>
+                            <h3>P5 Preview Monitor</h3>
+                            <p class="app-subtitle">Watch P5 previews, and fix the ones that failed</p>
+                            <span class="api-badge rest">REST API &middot; Beta</span>
+                            <div class="app-features">
+                                See which preview client is working on what, from the server counter and every client's vid2mos log. Then fix failed previews in one window: check each file in P5, restore it if the source is gone, make the preview again on a client, and attach it to the archive entry. Works with the vid2mos preview script.
+                            </div>
+                            <a href="#preview-monitor">Learn more →</a>
+                        </div>
+
                         <!-- CopyTrust -->
                         <div class="app-card">
                             <div class="app-icon">🛡️</div>
@@ -2152,7 +2164,7 @@
                 <div class="app-section-content">
                     <div class="app-description">
                         <p>A SwiftUI macOS application designed to verify which files have been archived by Archiware P5. Simple drag-and-drop interface to check folders against your P5 Archive with detailed reporting.</p>
-                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.6.1 build 84</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
+                        <p>Two separate apps, each with its own updates. <strong>P5 Archive Manager CLI</strong> (<span data-version="p5-archive-manager">v3.7.2 build 6</span>) is the established <code>nsdchat</code> edition and remains the stable choice. <strong>P5 Archive Manager API</strong> (<span data-version="p5-archive-manager-api">v4.6.2 build 97</span>, beta) is where new development happens: it connects over the network and can search every configured archive index without local CLI access to the P5 server.</p>
                         <p><strong>Restore from Project File.</strong> Drop the project an editor delivered &mdash; a Resolve <code>.drt</code> timeline, a Resolve or Premiere XML, a Final Cut Pro <code>.fcpxml</code> or <code>.fcpxmld</code> bundle, or a plain text list of paths &mdash; and the app finds each media item in P5, across every archive index. Each row says what to do: <em>needs to be restored &mdash; not in its original location</em>, <em>in its original location</em>, or <em>not in P5</em>. Prepare Restore shows versions, archive dates and tapes, and whether each tape is online, then one P5 job restores everything to the original location or into a folder on a P5 client, and the app follows it to the end. </p>
                         <p><strong>What is read from each file.</strong> Resolve or Premiere XML: every <code>pathurl</code>. Final Cut Pro <code>.fcpxml</code>: every original-media reference, with proxies ignored. Final Cut Pro <code>.fcpxmld</code> bundle: the <code>Info.fcpxml</code> inside it. DaVinci Resolve <code>.drt</code> (a zip): every <code>MediaFilePath</code>. Text, TSV, CSV or log files: one absolute path or <code>file://</code> URL per line. P5's own media-list restore accepts an XML or FCPXML but not a <code>.fcpxmld</code> or <code>.drt</code>, and knows nothing about RED clips.</p>
                         <p><strong>RED clips come back whole.</strong> A RED clip is a <code>.RDC</code> folder of <code>_001.R3D</code>, <code>_002.R3D</code> and so on, but a timeline names only <code>_001.R3D</code>, and restoring that one file gives a clip that stops after its first segment. With <em>Restore the whole RED clip folder</em> on (the default), any <code>.R3D</code> inside an <code>.RDC</code> folder is replaced by the whole folder. The row shows how many segments P5 holds and which ones the project named, and on LTO it is one linear read instead of many single files.</p>
@@ -2263,7 +2275,7 @@
                         <div class="version-info">
                             <strong>Requires:</strong> macOS 14.6+<br>
                             <strong>Interfaces:</strong> nsdchat CLI &middot; P5 REST API<br>
-                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.6.1 build 84</span> (Beta &mdash; test only)<br>
+                            <strong>API edition:</strong> <span data-version="p5-archive-manager-api">v4.6.2 build 97</span> (Beta &mdash; test only)<br>
                             <strong>CLI edition:</strong> <span data-version="p5-archive-manager">v3.7.2 build 6</span>
                         </div>
                     </div>
@@ -2944,6 +2956,83 @@
                 </div>
             </section>
 
+            <!-- P5 Preview Monitor Section -->
+            <section id="preview-monitor" class="app-section">
+                <div class="app-section-header">
+                    <div class="app-section-icon overview">🖼️</div>
+                    <div class="app-section-title">
+                        <h2>P5 Preview Monitor</h2>
+                        <span class="api-tag rest">Uses REST API</span>
+                    </div>
+                </div>
+
+                <div class="app-section-content">
+                    <div class="app-description">
+                        <p>P5 makes previews of archived video on its preview clients, and shows only one counter on the server while it does. P5 Preview Monitor shows the rest: which client is working on which file, what failed and why, and when a batch has stalled. It reads the server's preview counter and each client's <strong>vid2mos</strong> log over SSH.</p>
+                        <p><strong>Fix previews</strong> takes a failed preview to a new one in P5, in one window. Each file shows its next step: <strong>Check in P5</strong> finds its archive entry and whether the source is still on disk; <strong>Restore</strong> brings it back from tape if not; <strong>Retry</strong> makes the preview again on a client, with the ffmpeg build and time limit you choose; <strong>Attach to P5</strong> makes the new preview the archived file's preview, confirmed by reading the entry back. No metadata is written.</p>
+                        <p>Restore and attach change things in P5 and are off until you turn them on in Settings. It is a beta: test on files you can afford to lose. Releases are published in the vid2mos repository, beside the preview script it works with.</p>
+
+                        <div class="features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📡</div>
+                                <h3>Live Preview Status</h3>
+                                <p>Server counter and every client's runs: OK, failed, running, hung</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🩺</div>
+                                <h3>Fix Previews</h3>
+                                <p>Check, restore, retry and attach, with each file's next step</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📼</div>
+                                <h3>Restore From P5</h3>
+                                <p>Into a dated folder, or back to the original location</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎞️</div>
+                                <h3>Retry With Any ffmpeg</h3>
+                                <p>P5's own, /usr/local/bin or Homebrew, tested on the client first</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>History</h3>
+                                <p>Every run, batch and issue, with failure rates and timings per client</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🖥️</div>
+                                <h3>Wallboard</h3>
+                                <p>Optional read-only status page for a second screen</p>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <a href="https://github.com/macvfx/vid2mos" class="btn btn-primary overview" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/macvfx/vid2mos/releases" data-release="p5-preview-monitor" class="btn btn-secondary" target="_blank">Download Release</a>
+                        </div>
+                    </div>
+
+                    <div class="app-info-box">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Per-client preview progress over SSH</li>
+                            <li>Stall and hung-run detection, notifications</li>
+                            <li>Failed files with full paths, from each client's log</li>
+                            <li>Check in P5: entry, tapes, preview, source on disk</li>
+                            <li>Restore to a dated folder or in place</li>
+                            <li>Retry with the ffmpeg build and time limit you choose</li>
+                            <li>Attach new previews, confirmed by read-back</li>
+                            <li>Receipts kept in a local history</li>
+                            <li>Works with vid2mos 1.4.0 and its ffmpeg fallback</li>
+                        </ul>
+                        <div class="version-info">
+                            <strong>Latest:</strong> <span data-version="p5-preview-monitor">v0.3.0 build 29</span> (Beta &mdash; test only)<br>
+                            <strong>Requires:</strong> macOS 14+, SSH key access to the clients<br>
+                            <strong>API:</strong> REST /archive/entries, /restore/restoreselections
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Project Folder Creator Section -->
             <section id="project-folder-creator" class="app-section">
                 <div class="app-section-header">
@@ -3128,7 +3217,7 @@
                             <li>Direct local build via <code>swift build</code></li>
                         </ul>
                         <div class="version-info">
-                            <strong>Latest:</strong> <span data-version="fcp-reports">v1.6.2</span><br>
+                            <strong>Latest:</strong> <span data-version="fcp-reports">v1.7.4</span><br>
                             <strong>Project:</strong> FCP Reports<br>
                             <strong>Build:</strong> Swift Package / Xcode project<br>
                             <strong>Mode:</strong> Library capture, reporting &amp; conversion utility
@@ -3943,7 +4032,7 @@
         <div class="container">
             <p>&copy; 2026 code.matx.ca - P5 Archive Tools for macOS & iOS</p>
             <p style="margin-top: 10px;">For support or feedback, reach out via <a href="https://github.com/macvfx" target="_blank">GitHub</a></p>
-            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-11-22</span>.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Version numbers on this page are generated from GitHub Releases. Newest release: <span data-generated>2026-11-27</span>.</p>
             <p style="margin-top: 8px;"><a href="https://www.paypal.com/ncp/payment/ZX52VNS49SRZA" target="_blank">Support this project</a></p>
         </div>
     </footer>
