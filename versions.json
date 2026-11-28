@@ -101,13 +101,13 @@
     "p5-preview-monitor": {
       "label": "P5 Preview Monitor",
       "repo": "macvfx/vid2mos",
-      "version": "0.3.0",
-      "build": "29",
-      "display": "v0.3.0 build 29",
+      "version": "0.3.1",
+      "build": "35",
+      "display": "v0.3.1 build 35",
       "prerelease": true,
-      "tag": "p5-preview-monitor-0.3.0+29",
-      "title": "P5 Preview Monitor 0.3.0 (build 29) — pre-release",
-      "published": "2026-11-27",
+      "tag": "p5-preview-monitor-0.3.1+35",
+      "title": "P5 Preview Monitor 0.3.1 (build 35) — pre-release",
+      "published": "2026-11-28",
       "url": "https://github.com/macvfx/vid2mos/releases"
     },
     "copytrust": {
